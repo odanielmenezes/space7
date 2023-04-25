@@ -287,6 +287,7 @@ Error generating stack: `+tt.message+`
                 transition: .3s;
             }
         }
+        
     }
     @media (max-width: 500px) {
         .SenderEmail{
