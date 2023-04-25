@@ -32,6 +32,9 @@ const style_footer = styled.div`
         }
       }
     }
+    .HomePage__Animation {
+      z-index: -10;
+    }
     @keyframes opaciter {
             from {
                 opacity: 0;
@@ -44,5 +47,24 @@ const style_footer = styled.div`
             }
         }
   }
+  @media (max-width: 600px) {
+      .HomePage {
+        min-height: 100vh;
+        flex-direction: column;
+        .HomePage__Main {
+          font-size: .5em;
+          .HomePage__Content{
+            h1{
+              text-align: center;
+              line-height: 30px;
+            } 
+          }
+        }
+        .HomePage__Animation {
+          margin-top: -70px;
+          width: 260px;
+        }
+      }
+    }
 `;
 export default style_footer;
