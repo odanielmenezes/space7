@@ -148,6 +148,7 @@ const styleHome = styled.div`
                 transition: .3s;
             }
         }
+        
     }
     @media (max-width: 500px) {
         .SenderEmail{
