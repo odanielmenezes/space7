@@ -151,7 +151,7 @@ const styleHome = styled.div`
         
     }
     @media (max-width: 500px) {
-        .SenderEmail{
+        .SenderEmail{ 
             width: 100vw;
             .test {
                 display: flex !important;
