@@ -2,6 +2,7 @@ import Styled from "./style";
 import { SenderEmail } from "../../components/form-email";
 import { Header } from "../../components/header";
 import { useLottie } from "lottie-react";
+import ImagePerson from "../../assets/homem-bonito-apontando-para-o-lateral.png"
 import AnimationLottie from "../../assets/9704-ecommerce.json";
 
 export function Home() {
@@ -32,7 +33,7 @@ export function Home() {
             </p>' */}
           </div>
         </main>
-        <div className="HomePage__Animation">{View}</div>
+        <div className="HomePage__Animation"><img src={ImagePerson} alt="" /></div>
       </div>
     </Styled>
   );

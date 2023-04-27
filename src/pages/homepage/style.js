@@ -16,7 +16,7 @@ const style_footer = styled.div`
         align-items: center;
         h1 {
           text-align: start;
-          line-height: 60px;
+          line-height: 70px;
           font-size: 4em;
           margin: 0;
           strong {
@@ -34,6 +34,9 @@ const style_footer = styled.div`
     }
     .HomePage__Animation {
       z-index: -10;
+      img {
+        width: 700px;
+      }
     }
     @keyframes opaciter {
             from {

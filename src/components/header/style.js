@@ -3,7 +3,7 @@ import styled from "styled-components";
 const style_header = styled.div`
   .Header {
     height: 80px;
-    color: #000;
+    color: #FFF;
     display: flex;
 
     .Header__Content {
@@ -34,7 +34,7 @@ const style_header = styled.div`
         align-items: baseline;
         gap: 30px;
         .lis {
-          color: rgba(0, 0, 0, 0.6);
+          color: rgba(255, 255, 255, 0.6);
           font-size: 1.1em;
           cursor: pointer;
           transition-duration: 0.3s;
@@ -42,7 +42,7 @@ const style_header = styled.div`
 
           &:nth-child(6) {
             background-color: #c750f1;
-            color: #fff;
+            color: rgba(255, 255, 255, 1);
             padding: 10px 15px;
             border-radius: 22px;
             :hover {
@@ -52,7 +52,7 @@ const style_header = styled.div`
           }
 
           :hover {
-            color: rgba(0, 0, 0, 1);
+            color: rgba(255, 255, 255, 1);
             transition-duration: 0.3s;
           }
         }
