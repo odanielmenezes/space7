@@ -1,23 +1,23 @@
 import Styled from "./style";
 import { SenderEmail } from "../../components/form-email";
 import { Header } from "../../components/header";
-import { useLottie } from "lottie-react";
-import ImagePerson from "../../assets/homem-bonito-apontando-para-o-lateral.png"
-import AnimationLottie from "../../assets/9704-ecommerce.json";
+import Lottie from "lottie-react";
+import ImagePerson from "../../assets/homem-bonito-apontando-para-o-lateral.png";
+import AnimationLottie from "../../assets/rocket.json";
+import RocketAnima from "../../assets/new-rocket.json";
 
 export function Home() {
-  const options = {
-    animationData: AnimationLottie,
-    loop: true,
-  };
-
-  const { View } = useLottie(options);
-
   return (
     <Styled>
       <Header />
       <div className="HomePage">
         <main className="HomePage__Main">
+        </main>
+        <div className="HomePage__Animation">
+          <Lottie animationData={AnimationLottie} />
+          <div className="Rocket">
+            <Lottie animationData={RocketAnima} />
+          </div>
           <div className="HomePage__Content">
             <h1>
               TENHA UM
@@ -32,8 +32,9 @@ export function Home() {
               <strong> e-commerce</strong> (novo canal de vendas)
             </p>' */}
           </div>
-        </main>
-        <div className="HomePage__Animation"><img src={ImagePerson} alt="" /></div>
+          <div className="HomePage__Text"></div>
+        </div>
+        <div className="HomePage__Services"></div>
       </div>
     </Styled>
   );

@@ -4,6 +4,7 @@ const style_footer = styled.div`
   .HomePage {
     min-height: 85vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     
@@ -34,9 +35,25 @@ const style_footer = styled.div`
     }
     .HomePage__Animation {
       z-index: -10;
+      margin: -200px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       img {
         width: 700px;
       }
+      .Rocket {
+        margin-top: -680px;
+        width: 100%;
+        position: absolute;
+        width: 100px;
+      }
+    }
+    .HomePage__Services {
+      height: 100vh;
+      width: 100vw;
     }
     @keyframes opaciter {
             from {
