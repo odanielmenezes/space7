@@ -265,14 +265,14 @@ Error generating stack: `+tt.message+`
 
             .HomePage__SmallText {
               background-color: rgba(0, 0, 0, 0.3);
-              width: 100vw;
+              max-width: 90vw !important;
               border-radius: 8px;
               box-shadow: none;
               padding: 20px 50px;
               font-size: 1em;
               width: 100vw !important;
               transition: 1s;
-              line-height: 18px;
+              line-height: 16px;
               animation: opacitor 1s ease-in-out;
             }
             h2 {
