@@ -113,9 +113,9 @@ Error generating stack: `+tt.message+`
             box-shadow: 0px 0px 4px 4px rgba(155, 155, 155, 0.2);
             padding: 20px 50px;
             font-size: 1.3em;
-            width: 100vw !important;
             background-color: rgba(0, 0, 0, 0.3);
             z-index: 10;
+            animation: opaciter 1s ease-in-out;
           }
           button {
             padding: 15px 100px;
@@ -126,6 +126,7 @@ Error generating stack: `+tt.message+`
             transition: 0.3s;
             border: 0;
             cursor: pointer;
+            animation: opaciter 1s ease-in-out;
 
             :hover {
               transform: scale(1.1);
@@ -154,7 +155,7 @@ Error generating stack: `+tt.message+`
             font-size: 4em;
             font-weight: 400;
             margin-top: 170px;
-            animation: slider 1s ease-in-out;
+            animation: opaciter 1s ease-in-out;
             span {
               .frase01 {
                 display: flex;
