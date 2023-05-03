@@ -116,6 +116,7 @@ Error generating stack: `+tt.message+`
             background-color: rgba(0, 0, 0, 0.3);
             z-index: 10;
             animation: opaciter 1s ease-in-out;
+            line-height: 20px;
           }
           button {
             padding: 15px 100px;
@@ -268,9 +269,10 @@ Error generating stack: `+tt.message+`
               border-radius: 8px;
               box-shadow: none;
               padding: 20px 50px;
-              font-size: 1.2em;
+              font-size: 1em;
               width: 100vw !important;
               transition: 1s;
+              line-height: 18px;
               animation: opacitor 1s ease-in-out;
             }
             h2 {
