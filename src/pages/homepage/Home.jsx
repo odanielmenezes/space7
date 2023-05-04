@@ -1,10 +1,11 @@
 import { useEffect, useCallback, useState } from "react";
 import Styled from "./style";
-import { Header } from "../../components/header";
+import animaEcommerce from "../../assets/eCommerce.json";
 import Lottie from "lottie-react";
 import AnimationLottie from "../../assets/rocket.json";
 import RocketAnima from "../../assets/rocket-image.png";
 import Balance from "react-wrap-balancer";
+import { BsShopWindow, BsCartCheck, BsLayoutThreeColumns, Bs1Circle, BsAndroid, BsGoogle, BsInstagram, BsChatSquareDots, BsHeadset} from "react-icons/bs"
 
 export function Home() {
   const frase = "Tenha um parceiro para sua transformação digital.";
@@ -39,19 +40,6 @@ export function Home() {
         cont++;
         if (cont === decCont) {
           clearInterval(mostrarLetras);
-          // setTimeout(() => {
-          //   var escondeLetras = setInterval(() => {
-          //     setFraseCompleta(fraseCompleta.pop());
-          //     decCont--;
-
-          //     if (decCont === 0) {
-          //       clearInterval(escondeLetras);
-          //       decCont = frase.split("").length - 1;
-          //       cont = 0;
-          //       animation();
-          //     }
-          //   }, 100);
-          // }, 2000);
         }
       }
     }, 90);
@@ -63,13 +51,8 @@ export function Home() {
 
   return (
     <Styled>
-      <Header />
       <div className="HomePage">
-        <main className="HomePage__Main"></main>
         <div className="HomePage__Animation">
-          <div className="AnimationLottie">
-            <Lottie animationData={AnimationLottie} loop={false} />
-          </div>
           <div className="Rocket">
             {/* <Lottie animationData={RocketAnima} /> */}
             <img src={RocketAnima} alt="" />
@@ -110,18 +93,101 @@ export function Home() {
                   <span> {ponto}</span>
                 </span>
               </div>
-                <small>
-                  <Balance>
-                  Juntos vamos levar os seus produtos da loja física ao mundo do
-                  e-commerce
-                  </Balance>
-                </small>
+              <small className="HomePage__SmallText">
+                Juntos vamos levar os seus produtos da loja física ao mundo do
+                e-commerce
+              </small>
               <button>SAIBA MAIS</button>
             </div>
           </div>
-          <div className="HomePage__Text"></div>
         </div>
-        <div className="HomePage__Services"></div>
+        <div className="HomePage__Services">
+          <div className="HomePage__Services__Text">
+            <h1>
+              Garantimos a <strong>relevância</strong> <br />
+              da sua empresa e criamos uma
+              <br /> <strong>conexão inseparável</strong>
+              <br /> com o seu consumidor.{" "}
+            </h1>
+            <br />
+            <div>
+              <Lottie animationData={animaEcommerce} loop={true} />
+            </div>
+            <p>
+              O produto você tem, mas a experiência do seu consumidor nós
+              criamos junto com você. Você entra com o produto e nós entramos
+              com mais de 10 anos de experiência em e-commerce, gestão de
+              resultado e um modelo digital único de atendimento ao consumidor
+            </p>
+          </div>
+          <div className="HomePage__Services__Title">
+            <h1>
+              Nós somos a <strong>solução</strong> que integra
+              <br /> o <strong>seu negócio</strong> físico
+              <br /> com uma experiência única de
+              <br /> <strong>e-commerce</strong>
+            </h1>
+            <div className="HomePage__Services__Title__Button">
+              <button>FALE CONOSCO</button>
+            </div>
+          </div>
+          <div className="HomePage__Services__Icons">
+            <div className="HomePage__Services__Icons__Icon">
+                <BsShopWindow />
+              <div className="backgroundCard">
+                <h1>Criação / Migração do <br />E-commerce</h1>
+              </div>
+            </div>
+            <div className="HomePage__Services__Icons__Icon">
+                <BsCartCheck />
+              <div className="backgroundCard">
+                <h1>Merketplaces</h1>
+              </div>
+            </div>
+            <div className="HomePage__Services__Icons__Icon">
+              <BsLayoutThreeColumns />
+              <div className="backgroundCard">
+                <h1>Design/Layout</h1>
+              </div>
+            </div>
+            <div className="HomePage__Services__Icons__Icon">
+              <Bs1Circle />
+              <div className="backgroundCard">
+                <h1>SEO</h1>
+              </div>
+            </div>
+            <div className="HomePage__Services__Icons__Icon">
+              <BsAndroid />
+              <div className="backgroundCard">
+                <h1>CRO</h1>
+              </div>
+            </div>
+            <div className="HomePage__Services__Icons__Icon">
+              <BsGoogle />
+              <div className="backgroundCard">
+                <h1> ADS</h1>
+              </div>
+            </div>
+            <div className="HomePage__Services__Icons__Icon">
+              <BsInstagram />
+              <div className="backgroundCard">
+                <h1>Mídias Sociais</h1>
+              </div>
+            </div>
+            <div className="HomePage__Services__Icons__Icon">
+              <BsChatSquareDots />
+              <div className="backgroundCard">
+                <h1>Mentoria</h1>
+              </div>
+            </div>
+            <div className="HomePage__Services__Icons__Icon">
+              <BsHeadset />
+              <div className="backgroundCard">
+                <h1>Suporte Técnico</h1>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </Styled>
   );

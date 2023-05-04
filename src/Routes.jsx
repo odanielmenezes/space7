@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Home } from "./pages/homepage/Home";
 import { Servicos } from "./pages/servicos";
+import { Header } from "./components/header";
 import { Agencia } from "./pages/a_agencia";
 import { Contato } from "./pages/contato";
 import { Mentoria } from "./pages/mentoria";
@@ -11,6 +12,7 @@ export function AppRoutes() {
   return (
     <>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/servicos" element={<Servicos />}></Route>
