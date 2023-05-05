@@ -6,6 +6,7 @@ const style_footer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #000;
   }
 `;
 export default style_footer;

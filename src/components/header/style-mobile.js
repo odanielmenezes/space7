@@ -5,14 +5,14 @@ const style_header_mobile = styled.div`
     width: 100vw;
     position: relative;
     z-index: 1;
-    .HeaderMobile__Hamburguer {
+    .Header__MenuHamburguer {
       top: 100px;
       margin: 10px;
       position: absolute;
       left: 0;
       transition: 0.3s;
 
-      .HeaderMobile__Hamburguer_Bar {
+      .Header__Bar {
         margin-bottom: 4px;
         width: 30px;
         height: 5px;

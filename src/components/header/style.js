@@ -2,24 +2,21 @@ import styled from "styled-components";
 
 const style_header = styled.div`
   .Header {
+    min-width: 100vw;
     height: 75px;
     color: #fff;
     display: flex;
     z-index: 1;
     position: relative;
-
-    .Header__Content {
-      position: relative;
-      justify-content: space-between;
-      align-items: end;
-      flex-direction: row-reverse;
-      width: 1250px;
-      display: flex;
-      margin: 0 auto;
-      .Header__Logo {
-        position: absolute;
-        left: 0%;
-        bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    z-index: 10;
+    .Header__Logo {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
         small {
           font-weight: bold;
           font-size: 1em;
@@ -29,17 +26,19 @@ const style_header = styled.div`
           width: 30px;
         }
       }
+    .Header__Content {
+      width: auto;
+      position: relative;
+      display: flex;
       ul {
         margin: 0;
         padding: 0;
         list-style: none;
         display: flex;
-        align-items: end;
-        gap: 30px;
         position: relative;
         li {
+          font-weight: bold;
           display: flex;
-          align-items: end;
           transition: 0.2s;
           gap: 10px;
           svg {
@@ -49,13 +48,14 @@ const style_header = styled.div`
           }
         }
         .lis {
+          align-self: flex-end;
+          text-transform: uppercase;
           color: rgba(255, 255, 255, 0.6);
           font-size: 1em;
           cursor: pointer;
-          align-self: flex-end;
           padding: 0px 15px;
           font-weight: 200;
-          transition: all.2s;
+          transition: .2s;
 
           &:nth-child(6) {
             border: 3px solid #dd4035;
@@ -64,10 +64,6 @@ const style_header = styled.div`
             padding: 10px 35px;
             border-radius: 8px;
             color: #fff;
-            margin-top: 10px;
-            position: absolute;
-            right: -150px;
-            top: -23px;
             :hover {
               transform: scale(1.1);
               transition: 0.3s;
@@ -90,32 +86,66 @@ const style_header = styled.div`
     .Header {
       width: 100vw !important;
       overflow: hidden;
-      height: 100px;
-      .Header__Content {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column-reverse;
-        .Header__Logo {
-          display: none;
-          small {
-          }
-          img {
-            position: block;
-          }
+      position: absolute;
+      top: 0;
+      height: auto;
+.OpenBurguer {
+  .Bar {
+    transition: .5s;
+    &:nth-child(1) {
+      transform: rotate(410deg) translateY(26px) translateY(-10px);
+    }
+    &:nth-child(2) {
+      margin-left: -100px;
+    }
+    &:nth-child(3) {
+      transform: rotate(-45deg) translateY(-5px) translateY(-14px);
+    }
+  }
+}
+      .Header__Hamburguer {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        z-index: 100;
+        .Bar {
+          transition: .5s;
+          margin-bottom: 5px;
+          width: 40px;
+          height: 7px;
+          background-color: #FFF;
         }
+      }
+      .Open {
+margin-left: -1000px;
+transition: 1s;
+overflow: hidden;
+      }
+      .Header__Content {
+        overflow: hidden;
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        transition: 1s;
+        justify-content: center;
+        background-color: rgba(0,0,0, .8);
         ul {
+          display: flex;
+          flex-direction: column;
           gap: 0;
           li {
+            color: #FFF;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-size: 3em;
             svg {
               font-size: 20px;
+              display: none;
             }
           }
           .lis {
-            white-space: nowrap;
+            margin: 20px 0;
+            display: flex;
+            align-self: center;
             font-size: 0.7em;
             &:nth-child(6) {
               display: none;
@@ -125,6 +155,14 @@ const style_header = styled.div`
           }
         }
       }
+      .Header__Logo {
+          display: none;
+          small {
+          }
+          img {
+            position: block;
+          }
+        }
     }
   }
 `;

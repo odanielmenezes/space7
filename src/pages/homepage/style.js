@@ -1,16 +1,7 @@
 import styled from "styled-components";
 import CloudImage from "../../assets/cloud.svg";
 import CloudImageMobile from "../../assets/cloud-mobile.svg";
-import fundoTitleServices from "../../assets/ads.jpg";
-import imageMarketplace from "../../assets/marketplace.jpg";
-import imageCommerce from "../../assets/ecommerce-bg.jpg";
-import imageDesign from "../../assets/design.jpg";
-import imageAds from "../../assets/ads.jpg";
-import imageCro from "../../assets/CRO.jpg";
-import imageSEO from "../../assets/SEO.jpg";
-import imageMentoria from "../../assets/Mentoria.jpg";
-import imageSociais from "../../assets/sociais.jpg";
-import imageSuport from "../../assets/suport.jpg";
+import fundoTitleServices from "../../assets/adss.jpg"
 
 const style_footer = styled.div`
   .HomePage {
@@ -20,7 +11,6 @@ const style_footer = styled.div`
     align-items: center;
     justify-content: space-evenly;
     margin-top: -100px;
-    z-index: -10;
     overflow-x: hidden;
 
     .HomePage__Main {
@@ -31,7 +21,7 @@ const style_footer = styled.div`
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      z-index: -1;
+      z-index: 1;
       height: 1080px;
       max-width: 1920px;
       position: relative;
@@ -41,7 +31,7 @@ const style_footer = styled.div`
       align-items: center;
 
       .Rocket {
-        height: 400px;
+        height: 320px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -75,7 +65,7 @@ const style_footer = styled.div`
 
             :hover {
               transform: scale(1.1);
-              transition: all.3s;
+              transition: .3s;
             }
           }
           small {
@@ -169,6 +159,7 @@ const style_footer = styled.div`
       color: #000;
       width: 100vw;
       height: auto;
+      padding: 200px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -195,17 +186,17 @@ const style_footer = styled.div`
         }
         p {
           margin: 10px 0;
-          letter-spacing: 1px;
           height: 100%;
           color: #fff;
           padding: 60px;
           text-align: center;
           line-height: 25px;
-          font-size: 1.5em;
+          font-size: 1.8em;
           color: #111c3f;
         }
       }
       .HomePage__Services__Title {
+        margin: 100px 0;
         background-image: linear-gradient(
             to right,
             rgba(0, 0, 0, 0.9),
@@ -243,22 +234,23 @@ const style_footer = styled.div`
             padding: 20px 100px;
             color: #fff;
             font-size: 1.1em;
-            transition: all.3s;
+            transition: .3s;
 
             :hover {
               transform: scale(1.1);
-              transition: all.3s;
+              transition: .3s;
               box-shadow: 4px 4px 4px rgba(155, 155, 155, 0.8);
             }
           }
         }
       }
       .HomePage__Services__Icons {
+        margin: 100px 0 50px 0;
         height: auto;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 50px;
-        padding: 100px 0;
+
         .HomePage__Services__Icons__Icon {
           position: relative;
           width: 400px;
@@ -267,429 +259,29 @@ const style_footer = styled.div`
           display: flex;
           align-items: center;
           justify-content: center;
+          flex-direction: column;
           transition: 0.5s;
-          &:nth-child(1) {
-            position: relative;
-            transition: background-image 0.5s linear;
-            color: #fff;
-            background: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)
-              ),
-              url(${imageCommerce});
-            background-position: center;
-            background-size: cover;
-            transition: 0.3s;
-            z-index: 1;
-            :before {
-              position: absolute;
-              content: "";
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background-image: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0)
-              );
-              z-index: -1;
-              transition: opacity 0.3s linear;
-              opacity: 0;
-            }
-            :hover:before {
-              opacity: 1;
-              svg {
-                text-shadow: 0px 0px 6px #000;
-              }
-              text-shadow: 0px 0px 6px #000;
-              background: linear-gradient(
-                  to right,
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                ),
-                url(${imageCommerce});
-              background-position: center;
-              background-size: cover;
-            }
-          }
-          &:nth-child(2) {
-            color: #fff;
-            background: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)
-              ),
-              url(${imageMarketplace});
-            background-position: center;
-            background-size: cover;
-            transition: 0.3s;
-            transition: 0.3s;
-            z-index: 1;
-            :before {
-              position: absolute;
-              content: "";
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background-image: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0)
-              );
-              z-index: -1;
-              transition: opacity 0.3s linear;
-              opacity: 0;
-            }
-            :hover:before {
-              opacity: 1;
-              svg {
-                text-shadow: 0px 0px 6px #000;
-              }
-              text-shadow: 0px 0px 6px #000;
-              background: linear-gradient(
-                  to right,
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                ),
-                url(${imageMarketplace});
-              background-position: center;
-              background-size: cover;
-            }
-          }
-          &:nth-child(3) {
-            color: #fff;
-            background: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)
-              ),
-              url(${imageDesign});
-            background-position: center;
-            background-size: cover;
-            transition: 0.3s;
-            transition: 0.3s;
-            z-index: 1;
-            :before {
-              position: absolute;
-              content: "";
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background-image: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0)
-              );
-              z-index: -1;
-              transition: opacity 0.3s linear;
-              opacity: 0;
-            }
-            :hover:before {
-              opacity: 1;
-              svg {
-                text-shadow: 0px 0px 6px #000;
-              }
-              text-shadow: 0px 0px 6px #000;
-              background: linear-gradient(
-                  to right,
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                ),
-                url(${imageDesign});
-              background-position: center;
-              background-size: cover;
-            }
-          }
-          &:nth-child(4) {
-            color: #fff;
-            background: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)
-              ),
-              url(${imageSEO});
-            background-position: center;
-            background-size: cover;
-            transition: 0.3s;
-            z-index: 1;
-            :before {
-              position: absolute;
-              content: "";
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background-image: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0)
-              );
-              z-index: -1;
-              transition: opacity 0.3s linear;
-              opacity: 0;
-            }
-            :hover:before {
-              opacity: 1;
-              svg {
-                text-shadow: 0px 0px 6px #000;
-              }
-              text-shadow: 0px 0px 6px #000;
-              background: linear-gradient(
-                  to right,
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                ),
-                url(${imageSEO});
-              background-position: center;
-              background-size: cover;
-            }
-          }
-          &:nth-child(5) {
-            color: #fff;
-            background: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)
-              ),
-              url(${imageCro});
-            background-position: center;
-            background-size: cover;
-            transition: 0.3s;
-            z-index: 1;
-            :before {
-              position: absolute;
-              content: "";
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background-image: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0)
-              );
-              z-index: -1;
-              transition: opacity 0.3s linear;
-              opacity: 0;
-            }
-            :hover:before {
-              opacity: 1;
-              svg {
-                text-shadow: 0px 0px 6px #000;
-              }
-              text-shadow: 0px 0px 6px #000;
-              background: linear-gradient(
-                  to right,
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                ),
-                url(${imageCro});
-              background-position: center;
-              background-size: cover;
-            }
-          }
-          &:nth-child(6) {
-            color: #fff;
-            background: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)
-              ),
-              url(${imageAds});
-            background-position: center;
-            background-size: cover;
-            transition: 0.3s;
-            z-index: 1;
-            :before {
-              position: absolute;
-              content: "";
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background-image: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0)
-              );
-              z-index: -1;
-              transition: opacity 0.3s linear;
-              opacity: 0;
-            }
-            :hover:before {
-              opacity: 1;
-              svg {
-                text-shadow: 0px 0px 6px #000;
-              }
-              text-shadow: 0px 0px 6px #000;
-              background: linear-gradient(
-                  to right,
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                ),
-                url(${imageAds});
-              background-position: center;
-              background-size: cover;
-            }
-          }
-          &:nth-child(7) {
-            color: #fff;
-            background: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)
-              ),
-              url(${imageSociais});
-            background-position: center;
-            background-size: cover;
-            transition: 0.3s;
-            z-index: 1;
-            :before {
-              position: absolute;
-              content: "";
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background-image: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0)
-              );
-              z-index: -1;
-              transition: opacity 0.3s linear;
-              opacity: 0;
-            }
-            :hover:before {
-              opacity: 1;
-              svg {
-                text-shadow: 0px 0px 6px #000;
-              }
-              text-shadow: 0px 0px 6px #000;
-              background: linear-gradient(
-                  to right,
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                ),
-                url(${imageSociais});
-              background-position: center;
-              background-size: cover;
-            }
-          }
-          &:nth-child(8) {
-            color: #fff;
-            background: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)
-              ),
-              url(${imageMentoria});
-            background-position: center;
-            background-size: cover;
-            transition: 0.3s;
-            z-index: 1;
-            :before {
-              position: absolute;
-              content: "";
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background-image: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0)
-              );
-              z-index: -1;
-              transition: opacity 0.3s linear;
-              opacity: 0;
-            }
-            :hover:before {
-              opacity: 1;
-              svg {
-                text-shadow: 0px 0px 6px #000;
-              }
-              text-shadow: 0px 0px 6px #000;
-              background: linear-gradient(
-                  to right,
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                ),
-                url(${imageMentoria});
-              background-position: center;
-              background-size: cover;
-            }
-          }
-          &:nth-child(9) {
-            color: #fff;
-            background: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)
-              ),
-              url(${imageSuport});
-            background-position: center;
-            background-size: cover;
-            transition: 0.3s;
-            z-index: 1;
-            :before {
-              position: absolute;
-              content: "";
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background-image: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0)
-              );
-              z-index: -1;
-              transition: opacity 0.3s linear;
-              opacity: 0;
-            }
-            :hover:before {
-              opacity: 1;
-              svg {
-                text-shadow: 0px 0px 6px #000;
-              }
-              text-shadow: 0px 0px 6px #000;
-              background: linear-gradient(
-                  to right,
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                ),
-                url(${imageSuport});
-              background-position: center;
-              background-size: cover;
-            }
+          background-position: center;
+          background-size: cover;
+          box-shadow: 0px 0px 10px rgba(155, 155, 155, 0.7);
+          h1 {
+            width: 100%;
+            font-size: 1em;
+            white-space: nowrap;
+            flex-wrap: nowrap;
+            text-align: center;
           }
           :hover {
             transform: scale(1.1);
             transition: 0.3s;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
           }
-          .backgroundCard {
-            width: 100%;
-            position: absolute;
-            left: 50%;
-            transition: 0.3s;
-            top: 55%;
-            transform: translateX(-50%) translateY(-50%);
-
-            h1 {
-              text-align: center;
-              width: 100%;
-              font-size: 1.4em;
-            }
-          }
           svg {
-            margin-top: -100px;
-            font-size: 3em;
+            color: #111c3f;
+            font-size: 2.5em;
+          }
+          p {
+            text-align: center;
           }
         }
       }
@@ -712,9 +304,6 @@ const style_footer = styled.div`
       margin-top: -200px;
       min-height: 100vh;
       flex-direction: column;
-      background-position: left;
-      background-size: cover;
-      background-image: url(${CloudImageMobile});
       .HomePage__Main {
         font-size: 0.5em;
         .HomePage__Content {
@@ -725,7 +314,6 @@ const style_footer = styled.div`
         }
       }
       .HomePage__Animation {
-        margin-top: -70px;
         width: 100vw;
         margin: 0;
         .AnimationLottie {
@@ -736,7 +324,6 @@ const style_footer = styled.div`
           width: 100vw;
           .HomePage__Content {
             width: 100vw;
-
             .HomePage__SmallText {
               background-color: rgba(0, 0, 0, 0.3);
               max-width: 90vw !important;
@@ -764,7 +351,6 @@ const style_footer = styled.div`
               height: 20vh;
               font-size: 2em;
               line-height: 40px;
-              margin-top: 240px;
               margin-bottom: -20px;
               letter-spacing: -2px;
               span {
@@ -799,6 +385,64 @@ const style_footer = styled.div`
           }
         }
       }
+      .HomePage__Services {
+        .HomePage__Services__Text {
+          margin: 0;
+          width: 100vw !important;
+          h1 {
+            width: 85%;
+            font-size: 2em;
+          }
+          strong {
+            font-size: 1.8em;
+          }
+          p {
+            width: 95vw;
+            font-size: 1.5em;
+            text-align: center;
+          }
+        }
+        .HomePage__Services__Title {
+          width: 100vw;
+          height: 80vh;
+          gap: 100px;
+          h1 {
+            width: 90vw;
+            font-size: 1.8em;
+            line-height: 50px;
+          }
+        }
+        .HomePage__Services__Icons__Title {
+          h1 {
+            font-size: 1.5em;
+          }
+        }
+        .HomePage__Services__Icons {
+          grid-template-columns: 1fr;
+
+          .HomePage__Services__Icons__Icon {
+            width: 90vw;
+          }
+        }
+      }
+      .HomePage__ButtonContact {
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          z-index: 100;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #2C954A;
+          box-shadow: 0px 0px 10px #111c3f;
+          svg {
+            color: #FFF;
+            font-size: 2em;
+          }
+        }
     }
     @keyframes flutua {
       100% {
