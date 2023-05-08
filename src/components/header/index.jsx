@@ -13,7 +13,7 @@ import { useState } from "react";
 
 export function Header() {
   const [isHome, setIsHome] = useState("/");
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(true);
   const isMobile =
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
@@ -24,6 +24,9 @@ export function Header() {
         setIsHome(location.pathname);
         console.log(isHome)
       }, 10)
+      if(isMobile) {
+        setOpenMenu(true)
+      }
     }
 
     const toggleMenu = () => {
@@ -32,42 +35,42 @@ export function Header() {
 
   return (
     <Styled>
-      <div className="Header" >
+      <div className="Header">
         {isMobile && (
-          <div onClick={() => toggleMenu()} className={!openMenu ? "Header__Hamburguer" : "Header__Hamburguer OpenBurguer"}>
+          <div onClick={() => toggleMenu()} className={openMenu ? "Header__Hamburguer" : "Header__Hamburguer OpenBurguer"}>
             <div className="Bar"></div>
             <div className="Bar"></div>
             <div className="Bar"></div>
           </div>
         )}
-        <div className={openMenu ? "Header__Content" : "Header__Content Open"}>
+        <div className={!openMenu ? "Header__Content" : "Header__Content Open"}>
           <ul>
             <Link onClick={() => changePage()} className="lis" to="/">
-              <li  style={{color: isHome !== "/" && "#000"}}>
-                <MdOutlineHome color={isHome !== "/" && "#000"}/>
+              <li  style={{color: isHome !== "/" && !isMobile && "#000"}}>
+                <MdOutlineHome color={isHome !== "/" && !isMobile && "#000"}/>
                 Home
               </li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/agencia">
-              <li style={{color: isHome !== "/" && "#000"}}>
-                <MdWorkOutline color={isHome !== "/" && "#000"}/>A agencia
+              <li style={{color: isHome !== "/" && !isMobile && "#000"}}>
+                <MdWorkOutline color={isHome !== "/" && !isMobile && "#000"}/>A agencia
               </li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/mentoria">
-              <li style={{color: isHome !== "/" && "#000"}}>
-                <MdMoving color={isHome !== "/" && "#000"}/>
+              <li style={{color: isHome !== "/" && !isMobile && "#000"}}>
+                <MdMoving color={isHome !== "/" && !isMobile && "#000"}/>
                 Mentoria
               </li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/servicos">
-              <li style={{color: isHome !== "/" && "#000"}}>
-                <MdMiscellaneousServices color={isHome !== "/" && "#000"}/>
+              <li style={{color: isHome !== "/" && !isMobile && "#000"}}>
+                <MdMiscellaneousServices color={isHome !== "/" && !isMobile && "#000"}/>
                 Serviços
               </li>
             </Link>
-            <Link className="lis" to="/trabalhe-conosco">
-              <li  style={{color: isHome != "/" &&  "#000"}}>
-                <MdOutlineGroupAdd color={isHome !== "/" && "#000"}/>
+            <Link onClick={() => changePage()} className="lis" to="/trabalhe-conosco">
+              <li  style={{color: isHome != "/" && !isMobile &&  "#000"}}>
+                <MdOutlineGroupAdd color={isHome !== "/" && !isMobile && "#000"}/>
                 Trabalhe Conosco
               </li>
             </Link>
@@ -78,7 +81,7 @@ export function Header() {
         </div>
         <div className="Header__Logo">
           <img src={Logo} alt="" />
-          <small style={{color: isHome !== "/" && "#000"}}>SPACE7 digital</small>
+          <small style={{color: isHome !== "/" && !isMobile && "#000"}}>SPACE7 digital</small>
         </div>
       </div>
     </Styled>

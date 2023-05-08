@@ -14,18 +14,18 @@ const style_header = styled.div`
     flex-direction: row-reverse;
     z-index: 10;
     .Header__Logo {
-        display: flex;
-        align-items: baseline;
-        gap: 10px;
-        small {
-          font-weight: bold;
-          font-size: 1em;
-          margin-left: -7px;
-        }
-        img {
-          width: 30px;
-        }
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      small {
+        font-weight: bold;
+        font-size: 1em;
+        margin-left: -7px;
       }
+      img {
+        width: 30px;
+      }
+    }
     .Header__Content {
       width: auto;
       position: relative;
@@ -55,7 +55,7 @@ const style_header = styled.div`
           cursor: pointer;
           padding: 0px 15px;
           font-weight: 200;
-          transition: .2s;
+          transition: 0.2s;
 
           &:nth-child(6) {
             border: 3px solid #dd4035;
@@ -86,55 +86,58 @@ const style_header = styled.div`
     .Header {
       width: 100vw !important;
       overflow: hidden;
-      position: absolute;
+      position: fixed;
       top: 0;
-      height: auto;
-.OpenBurguer {
-  .Bar {
-    transition: .5s;
-    &:nth-child(1) {
-      transform: rotate(410deg) translateY(26px) translateY(-10px);
-    }
-    &:nth-child(2) {
-      margin-left: -100px;
-    }
-    &:nth-child(3) {
-      transform: rotate(-45deg) translateY(-5px) translateY(-14px);
-    }
-  }
-}
+      height: 100vh;
+      .OpenBurguer {
+        margin: 0px 4px;
+        .Bar {
+          transition: 0.5s;
+          &:nth-child(1) {
+            transform: rotate(410deg) translateY(29px) translateY(-10px);
+          }
+          &:nth-child(2) {
+            margin-left: -100px;
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg) translateY(-5px) translateY(-16px);
+          }
+        }
+      }
       .Header__Hamburguer {
         position: absolute;
         left: 15px;
         top: 15px;
         z-index: 100;
         .Bar {
-          transition: .5s;
+          transition: 0.5s;
           margin-bottom: 5px;
           width: 40px;
-          height: 7px;
-          background-color: #FFF;
+          border: 1px solid #000;
+          height: 6px;
+          background-color: #fff;
         }
       }
       .Open {
-margin-left: -1000px;
-transition: 1s;
-overflow: hidden;
+        height: 100vh;
+        margin-left: -1000px;
+        transition: .5s;
+        overflow: hidden;
       }
       .Header__Content {
         overflow: hidden;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         align-items: center;
-        transition: 1s;
+        transition: .5s;
         justify-content: center;
-        background-color: rgba(0,0,0, .8);
+        background-color: #111c3f;
         ul {
           display: flex;
           flex-direction: column;
           gap: 0;
           li {
-            color: #FFF;
+            color: #fff;
             display: flex;
             font-size: 3em;
             svg {
@@ -156,13 +159,13 @@ overflow: hidden;
         }
       }
       .Header__Logo {
-          display: none;
-          small {
-          }
-          img {
-            position: block;
-          }
+        display: none;
+        small {
         }
+        img {
+          position: block;
+        }
+      }
     }
   }
 `;
