@@ -18,26 +18,32 @@ export function Header() {
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     );
-    
-    const changePage = (valor) => {
-      setTimeout(() => {
-        setIsHome(location.pathname);
-        console.log(isHome)
-      }, 10)
-      if(isMobile) {
-        setOpenMenu(true)
-      }
-    }
 
-    const toggleMenu = () => {
-      setOpenMenu(!openMenu);
+  const changePage = (valor) => {
+    setTimeout(() => {
+      setIsHome(location.pathname);
+      console.log(isHome);
+    }, 10);
+    if (isMobile) {
+      setOpenMenu(true);
     }
+  };
+
+  const toggleMenu = () => {
+    setOpenMenu(!openMenu);
+  };
+
 
   return (
     <Styled>
       <div className="Header">
         {isMobile && (
-          <div onClick={() => toggleMenu()} className={openMenu ? "Header__Hamburguer" : "Header__Hamburguer OpenBurguer"}>
+          <div
+            onClick={() => toggleMenu()}
+            className={
+              openMenu ? "Header__Hamburguer" : "Header__Hamburguer OpenBurguer"
+            }
+          >
             <div className="Bar"></div>
             <div className="Bar"></div>
             <div className="Bar"></div>
@@ -45,32 +51,32 @@ export function Header() {
         )}
         <div className={!openMenu ? "Header__Content" : "Header__Content Open"}>
           <ul>
-            <Link onClick={() => changePage()} className="lis" to="/">
-              <li  style={{color: isHome !== "/" && !isMobile && "#000"}}>
-                <MdOutlineHome color={isHome !== "/" && !isMobile && "#000"}/>
+            <Link onClick={() => changePage()} className="lis" to="/space7">
+              <li>
                 Home
               </li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/agencia">
-              <li style={{color: isHome !== "/" && !isMobile && "#000"}}>
-                <MdWorkOutline color={isHome !== "/" && !isMobile && "#000"}/>A agencia
+              <li>
+                A agencia
               </li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/mentoria">
-              <li style={{color: isHome !== "/" && !isMobile && "#000"}}>
-                <MdMoving color={isHome !== "/" && !isMobile && "#000"}/>
+              <li>
                 Mentoria
               </li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/servicos">
-              <li style={{color: isHome !== "/" && !isMobile && "#000"}}>
-                <MdMiscellaneousServices color={isHome !== "/" && !isMobile && "#000"}/>
+              <li>
                 Serviços
               </li>
             </Link>
-            <Link onClick={() => changePage()} className="lis" to="/trabalhe-conosco">
-              <li  style={{color: isHome != "/" && !isMobile &&  "#000"}}>
-                <MdOutlineGroupAdd color={isHome !== "/" && !isMobile && "#000"}/>
+            <Link
+              onClick={() => changePage()}
+              className="lis"
+              to="/trabalhe-conosco"
+            >
+              <li>
                 Trabalhe Conosco
               </li>
             </Link>
@@ -81,7 +87,9 @@ export function Header() {
         </div>
         <div className="Header__Logo">
           <img src={Logo} alt="" />
-          <small style={{color: isHome !== "/" && !isMobile && "#000"}}>SPACE7 digital</small>
+          <small>
+            SPACE7 digital
+          </small>
         </div>
       </div>
     </Styled>

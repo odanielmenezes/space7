@@ -22,7 +22,6 @@ const style_footer = styled.div`
       background-size: cover;
       background-repeat: no-repeat;
       z-index: 1;
-      height: 1080px;
       max-width: 1920px;
       position: relative;
       display: flex;
@@ -31,36 +30,48 @@ const style_footer = styled.div`
       align-items: center;
 
       .Rocket {
-        height: 320px;
+        position: absolute;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        position: relative;
+        height: auto;
+
+        .AnimationLottie {
+          top: 0;
+          position: absolute;
+          div {
+            svg {
+              opacity: 0 !important;
+            }
+          }
+        }
         .HomePage__Content {
+          height: 80vh;
+          padding: 0 0 0 200px;
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
+          justify-content: center;
           gap: 80px;
           .HomePage__SmallText {
-            border-radius: 8px;
-            box-shadow: 0px 0px 4px 4px rgba(155, 155, 155, 0.2);
-            padding: 20px 50px;
-            font-size: 1.3em;
             background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            font-size: 1.3em;
             z-index: 10;
             animation: opaciter 1s ease-in-out;
             line-height: 20px;
+            margin: -20px 0;
           }
           button {
-            padding: 15px 100px;
+            padding: 25px 100px;
             font-size: 1.2em;
             color: #fff;
-            background-color: #dd4035;
+            background: #dd4035;
             border-radius: 10px;
             transition: 0.3s;
-            border: 0;
             cursor: pointer;
+            border: 0;
             animation: opaciter 1s ease-in-out;
 
             :hover {
@@ -76,29 +87,30 @@ const style_footer = styled.div`
             width: 300px;
           }
           .letreiro {
-            text-shadow: 0px 0px 10px rgba(155, 155, 155, 0.8);
             z-index: 2;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: start;
             width: 100vw;
             letter-spacing: -3px;
             text-transform: uppercase;
             font-family: "Audiowide", cursive;
             text-align: center;
             line-height: 35px;
-            font-size: 4em;
             font-weight: 400;
             animation: opaciter 1s ease-in-out;
             span {
               .frase01 {
+                letter-spacing: 0px;
+                font-size: 2em;
                 display: flex;
-                justify-content: center;
-                margin: 0 auto;
+                justify-content: start;
+                margin: -20px auto;
               }
               .frase02 {
+                font-size: 4em;
                 display: flex;
-                justify-content: center;
+                justify-content: start;
                 margin: 0 auto;
                 color: #dd4035;
               }
@@ -317,12 +329,16 @@ const style_footer = styled.div`
         width: 100vw;
         margin: 0;
         .AnimationLottie {
-          width: 1620px;
+          width: 1920px;
+          height: 100%;
           margin-top: 80px;
         }
         .Rocket {
           width: 100vw;
           .HomePage__Content {
+            justify-content: center;
+            align-items: center;
+            padding: 0;
             width: 100vw;
             .HomePage__SmallText {
               background-color: rgba(0, 0, 0, 0.3);
@@ -349,19 +365,22 @@ const style_footer = styled.div`
             }
             .letreiro {
               height: 20vh;
-              font-size: 2em;
+              font-size: .7em;
               line-height: 40px;
               margin-bottom: -20px;
               letter-spacing: -2px;
               span {
+                width: 100vw;
+                margin: 0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 .frase01 {
-                  margin-bottom: -40px;
+                  margin: 0 0 -30px 0;
                 }
                 .frase02 {
+                  margin: 0;
                   display: contents !important;
                 }
               }

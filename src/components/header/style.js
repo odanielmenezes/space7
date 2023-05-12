@@ -2,18 +2,21 @@ import styled from "styled-components";
 
 const style_header = styled.div`
   .Header {
-    min-width: 100vw;
-    height: 75px;
+    width: 100vw;
     color: #fff;
     display: flex;
     z-index: 1;
-    position: relative;
     display: flex;
     align-items: flex-end;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-direction: row-reverse;
     z-index: 10;
+    background-color: rgba(0, 0, 0, .8);
+    position: absolute;
+    top: 0;
+    z-index: 1000;
     .Header__Logo {
+      margin: 30px 60px;
       display: flex;
       align-items: baseline;
       gap: 10px;
@@ -27,17 +30,16 @@ const style_header = styled.div`
       }
     }
     .Header__Content {
-      width: auto;
       position: relative;
       display: flex;
+      margin-right: 250px;
       ul {
-        margin: 0;
+        margin: 30px 0;
         padding: 0;
         list-style: none;
         display: flex;
         position: relative;
         li {
-          font-weight: bold;
           display: flex;
           transition: 0.2s;
           gap: 10px;
@@ -50,7 +52,7 @@ const style_header = styled.div`
         .lis {
           align-self: flex-end;
           text-transform: uppercase;
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(255, 255, 255, 1);
           font-size: 1em;
           cursor: pointer;
           padding: 0px 15px;
@@ -64,6 +66,9 @@ const style_header = styled.div`
             padding: 10px 35px;
             border-radius: 8px;
             color: #fff;
+            position: absolute;
+            right: -150px;
+            bottom: -10px;
             :hover {
               transform: scale(1.1);
               transition: 0.3s;

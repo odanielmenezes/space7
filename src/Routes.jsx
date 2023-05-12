@@ -9,12 +9,13 @@ import { Mentoria } from "./pages/mentoria";
 import { TrabalheConosco } from "./pages/trabalhe_conosco";
 
 export function AppRoutes() {
+
   return (
     <>
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path={`/space7` || `/space7/`} element={<Home />}></Route>
           <Route path="/servicos" element={<Servicos />}></Route>
           <Route path="/agencia" element={<Agencia />}></Route>
           <Route path="/contato" element={<Contato />}></Route>

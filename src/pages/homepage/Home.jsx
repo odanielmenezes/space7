@@ -5,7 +5,7 @@ import Styled from "./style";
 import { Link } from "react-router-dom";
 import animaEcommerce from "../../assets/eCommerce.json";
 import Lottie from "lottie-react";
-import RocketAnima from "../../assets/rocket-image.png";
+import RocketAnima from "../../assets/36418-cecil-portfolio-background.json";
 import Balance from "react-wrap-balancer";
 import {
   BsShopWindow,
@@ -17,7 +17,7 @@ import {
   BsInstagram,
   BsChatSquareDots,
   BsHeadset,
-  BsChatDots
+  BsChatDots,
 } from "react-icons/bs";
 
 export function Home() {
@@ -33,6 +33,67 @@ export function Home() {
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     );
+
+  const infosCards = [
+    {
+      icon: <BsShopWindow />,
+      title: "Teste 01",
+      description: "Breve texto explicativo sobre o serviço descrito.",
+    },
+    {
+      icon: <BsCartCheck />,
+      title: "Teste 02",
+      description: "Breve texto explicativo sobre o serviço descrito.",
+    },
+    {
+      icon: <BsLayoutThreeColumns />,
+      title: "Teste 03",
+      description: "Breve texto explicativo sobre o serviço descrito.",
+    },
+    {
+      icon: <Bs1Circle />,
+      title: "Teste 04",
+      description: "Breve texto explicativo sobre o serviço descrito.",
+    },
+    {
+      icon: <BsAndroid />,
+      title: "Teste 05",
+      description: "Breve texto explicativo sobre o serviço descrito.",
+    },
+    {
+      icon: <BsGoogle />,
+      title: "Teste 06",
+      description: "Breve texto explicativo sobre o serviço descrito.",
+    },
+    {
+      icon: <BsInstagram />,
+      title: "Teste 07",
+      description: "Breve texto explicativo sobre o serviço descrito.",
+    },
+    {
+      icon: <BsChatSquareDots />,
+      title: "Teste 08",
+      description: "Breve texto explicativo sobre o serviço descrito.",
+    },
+    {
+      icon: <BsHeadset />,
+      title: "Teste 09",
+      description: "Breve texto explicativo sobre o serviço descrito.",
+    },
+  ];
+
+  const card = (props) => {
+    const { title, description, icon } = props;
+    return (
+      <div className="HomePage__Services__Icons__Icon">
+        {icon}
+        <h1>{title}</h1>
+        <p>
+          <Balance>{description}</Balance>
+        </p>
+      </div>
+    );
+  };
 
   function animation() {
     var mostrarLetras = setInterval(() => {
@@ -68,9 +129,10 @@ export function Home() {
           </Link>
         )}
         <div className="HomePage__Animation">
+          <div className="AnimationLottie">
+            <Lottie animationData={RocketAnima} loop={false} />
+          </div>
           <div className="Rocket">
-            {/* <Lottie animationData={RocketAnima} /> */}
-            <img src={RocketAnima} alt="" />
             <Fade left>
               <div className="HomePage__Content">
                 <div className="letreiro">
@@ -78,32 +140,10 @@ export function Home() {
                     <span className="frase01">
                       <Balance>
                         {fraseCompleta}{" "}
-                        <div
-                          style={{
-                            display:
-                              fraseCompleta.length < fraseCompleta.length
-                                ? "block"
-                                : "none",
-                          }}
-                          id="cursor"
-                          className={`cursor${cursor ? "cursor-none" : ""}`}
-                        ></div>
                       </Balance>
                     </span>
                     <br />
                     <span className="frase02">
-                      <div
-                        style={{
-                          display:
-                            fraseCompleta2.length !== fraseCompleta2.length &&
-                            fraseCompleta2.length === 27
-                              ? "block"
-                              : "none",
-                          backgroundColor: "blue",
-                        }}
-                        id="cursor"
-                        className={`cursor${cursor ? "cursor-none" : ""}`}
-                      ></div>
                       <Balance>{fraseCompleta2}</Balance>
                     </span>
                     <span> {ponto}</span>
@@ -160,219 +200,19 @@ export function Home() {
           <div className="HomePage__Services__Icons__Title">
             <h1>CONHEÇA NOSSOS SERVIÇOS</h1>
           </div>
-          {isMobile && (
-            <div className="HomePage__Services__Icons">
-              <Fade left>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsShopWindow />
-                  <h1>
-                    Criação / Migração do <br />
-                    E-commerce
-                  </h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para pree
-                      nchimento do card
-                    </Balance>
-                  </p>
-                </div>
-              </Fade>
-              <Fade left>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsCartCheck />
-                  <h1>Merketplaces</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-              </Fade>
-              <Fade left>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsLayoutThreeColumns />
-                  <h1>Design/Layout</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-              </Fade>
-              <Fade left>
-                <div className="HomePage__Services__Icons__Icon">
-                  <Bs1Circle />
-                  <h1>SEO</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-              </Fade>
-              <Fade left>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsAndroid />
-                  <h1>CRO</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-              </Fade>
-              <Fade left>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsGoogle />
-                  <h1> ADS</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-              </Fade>
-              <Fade left>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsInstagram />
-                  <h1>Mídias Sociais</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-              </Fade>
-              <Fade left>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsChatSquareDots />
-                  <h1>Mentoria</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-              </Fade>
-              <Fade left>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsHeadset />
-                  <h1>Suporte Técnico</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-              </Fade>
-            </div>
-          )}
           {!isMobile && (
             <Fade left>
               <div className="HomePage__Services__Icons">
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsShopWindow />
-                  <h1>
-                    Criação / Migração do <br />
-                    E-commerce
-                  </h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsCartCheck />
-                  <h1>Merketplaces</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsLayoutThreeColumns />
-                  <h1>Design/Layout</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-                <div className="HomePage__Services__Icons__Icon">
-                  <Bs1Circle />
-                  <h1>SEO</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsAndroid />
-                  <h1>CRO</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsGoogle />
-                  <h1> ADS</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsInstagram />
-                  <h1>Mídias Sociais</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsChatSquareDots />
-                  <h1>Mentoria</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
-                <div className="HomePage__Services__Icons__Icon">
-                  <BsHeadset />
-                  <h1>Suporte Técnico</h1>
-                  <p>
-                    <Balance>
-                      Breve descrição do serviço. Texto de exemplo para
-                      preenchimento do card
-                    </Balance>
-                  </p>
-                </div>
+                {infosCards.map((item) => card(item))}
               </div>
             </Fade>
+          )}
+          {isMobile && (
+            <div className="HomePage__Services__Icons">
+              <Fade left>
+              {infosCards.map((item) => card(item))}
+              </Fade>
+            </div>
           )}
         </div>
       </div>
