@@ -217,7 +217,7 @@ Error generating stack: `+tt.message+`
             text-align: center;
             line-height: 35px;
             font-weight: 400;
-            margin-top: -130px;
+            margin-top: -100px;
             animation: opaciter 1s ease-in-out;
             span {
               .frase01 {
@@ -997,7 +997,7 @@ o.goToAndStop(ht-o.firstFrame-1,!0)}ct.type==="loop"&&(pt===null||pt!==ct.frames
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0;
-    z-index: 1000;
+    
     .Header__Logo {
       margin: 30px 60px;
       display: flex;
@@ -1305,7 +1305,8 @@ o.goToAndStop(ht-o.firstFrame-1,!0)}ct.type==="loop"&&(pt===null||pt!==ct.frames
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
+    color: #FFF;
+    background-color: #000;
 
     .Agencia__MainContent {
       margin-top: 100px;
@@ -1328,14 +1329,14 @@ o.goToAndStop(ht-o.firstFrame-1,!0)}ct.type==="loop"&&(pt===null||pt!==ct.frames
             position: absolute;
             font-size: 60px;
             color: red;
-            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 0.8));
           }
         }
         .Divider {
           width: 1px;
           height: 400px;
           border: 0;
-          border-right: 1px solid rgba(0, 0, 0, 0.2);
+          border-right: 1px solid rgba(255, 255, 255, .3);
         }
         p {
           display: flex;
@@ -1347,14 +1348,13 @@ o.goToAndStop(ht-o.firstFrame-1,!0)}ct.type==="loop"&&(pt===null||pt!==ct.frames
           width: 600px;
           text-align: justify;
           letter-spacing: 1px;
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(255, 255, 255, 0);
 
           strong {
             font-size: 1.3em;
           }
           &:nth-child(1) {
             box-shadow: none;
-            color: #000;
             margin: 0 30px;
             display: block;
             height: 100%;
@@ -1371,7 +1371,7 @@ o.goToAndStop(ht-o.firstFrame-1,!0)}ct.type==="loop"&&(pt===null||pt!==ct.frames
       h1 {
         &:nth-child(1) {
           letter-spacing: -2px;
-          font-size: 3em;
+          font-size: 5em;
           margin-top: 120px;
 
           strong {
@@ -1398,7 +1398,9 @@ o.goToAndStop(ht-o.firstFrame-1,!0)}ct.type==="loop"&&(pt===null||pt!==ct.frames
           display: flex;
           justify-content: center;
           gap: 65px;
+          width: 93vw;
           .ComoAgimos__Item {
+            border: 1px solid #FFF;
             display: flex;
             flex-direction: column;
             align-items: center;
