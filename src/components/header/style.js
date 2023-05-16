@@ -3,6 +3,8 @@ import styled from "styled-components";
 const style_header = styled.div`
   .Header {
     width: 100vw;
+    height: auto;
+    padding: 10px 0;
     color: #fff;
     display: flex;
     z-index: 1;
@@ -11,7 +13,7 @@ const style_header = styled.div`
     justify-content: space-between;
     flex-direction: row-reverse;
     z-index: 10;
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0;
     z-index: 1000;
@@ -88,56 +90,61 @@ const style_header = styled.div`
     }
   }
   @media (max-width: 600px) {
+    .OpenBurguer {
+      z-index: 10;
+      margin: 0px 4px;
+      .Bar {
+        transition: 0.5s;
+        &:nth-child(1) {
+          transform: rotate(410deg) translateY(29px) translateY(-10px);
+        }
+        &:nth-child(2) {
+          margin-left: -100px;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translateY(-5px) translateY(-16px);
+        }
+      }
+    }
+    .Header__Hamburguer {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      z-index: 10;
+      .Bar {
+        transition: 0.5s;
+        margin-bottom: 5px;
+        width: 40px;
+        border: 1px solid #000;
+        height: 6px;
+        background-color: #fff;
+      }
+    }
     .Header {
-      width: 100vw !important;
-      overflow: hidden;
-      position: fixed;
-      top: 0;
-      height: 100vh;
-      .OpenBurguer {
-        margin: 0px 4px;
-        .Bar {
-          transition: 0.5s;
-          &:nth-child(1) {
-            transform: rotate(410deg) translateY(29px) translateY(-10px);
-          }
-          &:nth-child(2) {
-            margin-left: -100px;
-          }
-          &:nth-child(3) {
-            transform: rotate(-45deg) translateY(-5px) translateY(-16px);
-          }
-        }
-      }
-      .Header__Hamburguer {
-        position: absolute;
-        left: 15px;
-        top: 15px;
-        z-index: 100;
-        .Bar {
-          transition: 0.5s;
-          margin-bottom: 5px;
-          width: 40px;
-          border: 1px solid #000;
-          height: 6px;
-          background-color: #fff;
-        }
-      }
+      z-index: 9;
+      background: none;
+      width: 100%;
+      overflow: hidden !important;
       .Open {
-        height: 100vh;
-        margin-left: -1000px;
-        transition: .5s;
+        margin-top: -1000px;
+        opacity: 0;
+        transition: 0.5s;
+        display: none;
         overflow: hidden;
       }
       .Header__Content {
         overflow: hidden;
-        width: 100%;
-        height: 100%;
+        display: flex;
         align-items: center;
-        transition: .5s;
         justify-content: center;
+        height: 100vh;
+        width: 100%;
         background-color: #111c3f;
+        transition: 0.5s;
+        margin-right: 0;
+        margin-top: -10px;
         ul {
+          width: 100vw;
           display: flex;
           flex-direction: column;
           gap: 0;

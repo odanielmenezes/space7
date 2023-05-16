@@ -31,12 +31,12 @@ export function Header() {
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
+    console.log(openMenu);
   };
-
 
   return (
     <Styled>
-      <div className="Header">
+      <>
         {isMobile && (
           <div
             onClick={() => toggleMenu()}
@@ -49,36 +49,28 @@ export function Header() {
             <div className="Bar"></div>
           </div>
         )}
+      </>
+      <div className={`${!openMenu ? "Header OpenMain" : "Header"}`}>
         <div className={!openMenu ? "Header__Content" : "Header__Content Open"}>
           <ul>
             <Link onClick={() => changePage()} className="lis" to="/space7">
-              <li>
-                Home
-              </li>
+              <li>Home</li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/agencia">
-              <li>
-                A agencia
-              </li>
+              <li>A agencia</li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/mentoria">
-              <li>
-                Mentoria
-              </li>
+              <li>Mentoria</li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/servicos">
-              <li>
-                Serviços
-              </li>
+              <li>Serviços</li>
             </Link>
             <Link
               onClick={() => changePage()}
               className="lis"
               to="/trabalhe-conosco"
             >
-              <li>
-                Trabalhe Conosco
-              </li>
+              <li>Trabalhe Conosco</li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/contato">
               <li>Contato</li>
@@ -87,9 +79,7 @@ export function Header() {
         </div>
         <div className="Header__Logo">
           <img src={Logo} alt="" />
-          <small>
-            SPACE7 digital
-          </small>
+          <small>SPACE7 digital</small>
         </div>
       </div>
     </Styled>

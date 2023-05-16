@@ -3,6 +3,7 @@ import Fade from "react-reveal/Fade";
 import Flip from "react-reveal/Flip";
 import Styled from "./style";
 import { Link } from "react-router-dom";
+import { SenderEmail } from "../../components/form-email";
 import animaEcommerce from "../../assets/eCommerce.json";
 import Lottie from "lottie-react";
 import RocketAnima from "../../assets/36418-cecil-portfolio-background.json";
@@ -86,7 +87,7 @@ export function Home() {
     const { title, description, icon } = props;
     return (
       <div className="HomePage__Services__Icons__Icon">
-        {icon}
+        <div className="Icon">{icon}</div>
         <h1>{title}</h1>
         <p>
           <Balance>{description}</Balance>
@@ -138,9 +139,7 @@ export function Home() {
                 <div className="letreiro">
                   <span>
                     <span className="frase01">
-                      <Balance>
-                        {fraseCompleta}{" "}
-                      </Balance>
+                      <Balance>{fraseCompleta} </Balance>
                     </span>
                     <br />
                     <span className="frase02">
@@ -198,7 +197,10 @@ export function Home() {
             </Flip>
           </div>
           <div className="HomePage__Services__Icons__Title">
-            <h1>CONHEÇA NOSSOS SERVIÇOS</h1>
+            <h1>
+              Conheça nossos <strong>serviços</strong>.
+            </h1>
+            <div className="Divider"></div>
           </div>
           {!isMobile && (
             <Fade left>
@@ -209,11 +211,28 @@ export function Home() {
           )}
           {isMobile && (
             <div className="HomePage__Services__Icons">
-              <Fade left>
-              {infosCards.map((item) => card(item))}
-              </Fade>
+              <Fade left>{infosCards.map((item) => card(item))}</Fade>
             </div>
           )}
+        </div>
+        <div className="HomePage__Email">
+          <Fade right>
+            <div className="HomePage__Email__Title">
+              <h1>
+                Ficou com alguma <strong>duvida</strong>?
+              </h1>
+              <p>
+                Deixe-nos ajudar! Envie uma mensagem preenchendo os campos a
+                baixo e um analista entrará em contato o mais breve possível.
+              </p>
+            </div>
+            <div className="Divider"></div>
+          </Fade>
+          <Fade left>
+            <div className="HomePage__Email__Form">
+              <SenderEmail />
+            </div>
+          </Fade>
         </div>
       </div>
     </Styled>

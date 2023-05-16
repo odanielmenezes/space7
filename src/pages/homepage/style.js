@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import CloudImage from "../../assets/cloud.svg";
 import CloudImageMobile from "../../assets/cloud-mobile.svg";
-import fundoTitleServices from "../../assets/adss.jpg"
+import fundoTitleServices from "../../assets/adss.jpg";
 
 const style_footer = styled.div`
   .HomePage {
@@ -12,11 +12,13 @@ const style_footer = styled.div`
     justify-content: space-evenly;
     margin-top: -100px;
     overflow-x: hidden;
+    z-index: 2;
 
     .HomePage__Main {
       animation: opaciter 0.8s ease-in-out;
     }
     .HomePage__Animation {
+      margin-top: 100px;
       background-image: url(${CloudImage});
       background-position: center;
       background-size: cover;
@@ -56,7 +58,7 @@ const style_footer = styled.div`
           gap: 80px;
           .HomePage__SmallText {
             background-color: rgba(0, 0, 0, 0.3);
-            padding: 10px;
+            padding: 20px;
             font-size: 1.3em;
             z-index: 10;
             animation: opaciter 1s ease-in-out;
@@ -76,7 +78,7 @@ const style_footer = styled.div`
 
             :hover {
               transform: scale(1.1);
-              transition: .3s;
+              transition: 0.3s;
             }
           }
           small {
@@ -98,6 +100,7 @@ const style_footer = styled.div`
             text-align: center;
             line-height: 35px;
             font-weight: 400;
+            margin-top: -130px;
             animation: opaciter 1s ease-in-out;
             span {
               .frase01 {
@@ -246,11 +249,11 @@ const style_footer = styled.div`
             padding: 20px 100px;
             color: #fff;
             font-size: 1.1em;
-            transition: .3s;
+            transition: 0.3s;
 
             :hover {
               transform: scale(1.1);
-              transition: .3s;
+              transition: 0.3s;
               box-shadow: 4px 4px 4px rgba(155, 155, 155, 0.8);
             }
           }
@@ -276,6 +279,7 @@ const style_footer = styled.div`
           background-position: center;
           background-size: cover;
           box-shadow: 0px 0px 10px rgba(155, 155, 155, 0.7);
+          position: relative;
           h1 {
             width: 100%;
             font-size: 1em;
@@ -288,14 +292,71 @@ const style_footer = styled.div`
             transition: 0.3s;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
           }
-          svg {
-            color: #111c3f;
-            font-size: 2.5em;
+          .Icon {
+            width: 60px;
+            height: 60px;
+            background-color: #111c3f;
+            position: absolute;
+            top: 20px;
+            left: -20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+            svg {
+              color: #fff;
+              font-size: 1px;
+              font-size: 30px;
+            }
           }
           p {
             text-align: center;
           }
         }
+      }
+    }
+    .HomePage__Services__Icons__Title {
+      h1 {
+        font-size: 3em;
+
+        strong {
+          color: #dd4035;
+        }
+      }
+      .Divider {
+        width: 100%;
+        height: auto;
+        border: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+    .HomePage__Email {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .HomePage__Email__Title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #000;
+        h1 {
+          font-size: 3em;
+
+          strong {
+            color: #dd4035;
+          }
+        }
+        p {
+          font-size: 1.2em;
+        }
+      }
+      .Divider {
+        width: 100%;
+        height: 1px;
+        border: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
       }
     }
     @keyframes opaciter {
@@ -312,7 +373,6 @@ const style_footer = styled.div`
   }
   @media (max-width: 600px) {
     .HomePage {
-      width: 100vw;
       margin-top: -200px;
       min-height: 100vh;
       flex-direction: column;
@@ -365,7 +425,7 @@ const style_footer = styled.div`
             }
             .letreiro {
               height: 20vh;
-              font-size: .7em;
+              font-size: 0.7em;
               line-height: 40px;
               margin-bottom: -20px;
               letter-spacing: -2px;
@@ -380,6 +440,7 @@ const style_footer = styled.div`
                   margin: 0 0 -30px 0;
                 }
                 .frase02 {
+                  width: 80vw;
                   margin: 0;
                   display: contents !important;
                 }
@@ -423,7 +484,8 @@ const style_footer = styled.div`
         }
         .HomePage__Services__Title {
           width: 100vw;
-          height: 80vh;
+          height: auto;
+          padding: 200px;
           gap: 100px;
           h1 {
             width: 90vw;
@@ -438,30 +500,55 @@ const style_footer = styled.div`
         }
         .HomePage__Services__Icons {
           grid-template-columns: 1fr;
-
+          .Icon {
+            top: -20px !important;
+            left: 20px !important;
+          }
           .HomePage__Services__Icons__Icon {
             width: 90vw;
           }
         }
       }
       .HomePage__ButtonContact {
-          position: fixed;
-          bottom: 10px;
-          right: 10px;
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          z-index: 100;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: #2C954A;
-          box-shadow: 0px 0px 10px #111c3f;
-          svg {
-            color: #FFF;
-            font-size: 2em;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #2c954a;
+        box-shadow: 0px 0px 10px #111c3f;
+        svg {
+          color: #fff;
+          font-size: 2em;
+        }
+      }
+      .HomePage__Email {
+        .HomePage__Email__Title {
+          h1 {
+            font-size: 1.5em;
+            strong {
+              color: #dd4035;
+            }
+          }
+          p {
+            font-size: 1em;
+            text-align: center;
+            width: 90vw;
           }
         }
+        .Divider {
+          width: 80%;
+          height: 1px;
+          border: 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          margin: 50px 0 -50px 0;
+        }
+      }
     }
     @keyframes flutua {
       100% {

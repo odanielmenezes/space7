@@ -25,6 +25,7 @@ const styleHome = styled.div`
         .SenderEmail__Text {
             width: 400px;
             text-align: center;
+            color: #000;
             h2 {
                 color: #FFF;
                 background-color: #EF342B;
@@ -32,8 +33,9 @@ const styleHome = styled.div`
             }
         }
         .SenderEmail__Divider {
-            height: 300px;
-            border: 1px solid rgba(0, 0, 0, .2);
+            height: 400px;
+            border: 0;
+            border-left: 1px solid rgba(0, 0, 0, .1);
         }
         .SenderEmail__Content {
             display: flex;
