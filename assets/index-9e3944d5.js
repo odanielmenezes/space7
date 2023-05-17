@@ -898,6 +898,7 @@ Error generating stack: `+tt.message+`
     }
     @media (max-width: 500px) {
         .SenderEmail{ 
+            margin-top: -70px !important;
             width: 100vw;
             .test {
                 display: flex !important;
