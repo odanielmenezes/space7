@@ -944,6 +944,22 @@ Error generating stack: `+tt.message+`
                             transition: .5s;
                         }
                     }
+
+                    .inputsFuncionários {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 10px;
+                    .checkboxItem {
+                        display: flex;
+                        gap: 15px;
+                    }
+                    input[type=checkbox] {
+                        width: 20px;
+                    }
+                }
                 }
                 .SenderEmail__TextField {
                     width: 90%;
