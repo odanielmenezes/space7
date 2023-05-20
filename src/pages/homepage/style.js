@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import CloudImage from "../../assets/cloud.svg";
-import CloudImageMobile from "../../assets/cloud-mobile.svg";
+import BackgroundCards from "../../assets/background-cards.png";
 import fundoTitleServices from "../../assets/adss.jpg";
 
 const style_footer = styled.div`
@@ -12,7 +12,6 @@ const style_footer = styled.div`
     justify-content: space-evenly;
     margin-top: -100px;
     overflow-x: hidden;
-    z-index: 2;
 
     .HomePage__Main {
       animation: opaciter 0.8s ease-in-out;
@@ -100,7 +99,7 @@ const style_footer = styled.div`
             text-align: center;
             line-height: 35px;
             font-weight: 400;
-            margin-top: -130px;
+            margin-top: -100px;
             animation: opaciter 1s ease-in-out;
             span {
               .frase01 {
@@ -268,22 +267,25 @@ const style_footer = styled.div`
 
         .HomePage__Services__Icons__Icon {
           position: relative;
-          width: 400px;
-          height: 200px;
+          width: 300px;
+          height: 400px;
           border-radius: 8px;
           display: flex;
           align-items: center;
-          justify-content: center;
+          border: 1px solid #111c3f;
           flex-direction: column;
+          justify-content: center;
+          gap: 30px;
           transition: 0.5s;
+          /* background-image: url(${BackgroundCards}); */
           background-position: center;
           background-size: cover;
           box-shadow: 0px 0px 10px rgba(155, 155, 155, 0.7);
           position: relative;
           h1 {
-            width: 100%;
-            font-size: 1em;
-            white-space: nowrap;
+            line-height: 120%;
+            width: 80%;
+            font-size: 1.3em;
             flex-wrap: nowrap;
             text-align: center;
           }
@@ -293,25 +295,45 @@ const style_footer = styled.div`
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
           }
           .Icon {
-            width: 60px;
-            height: 60px;
-            background-color: #111c3f;
+            width: 80px;
+            height: 80px;
+            background-color: #FFF;
             position: absolute;
-            top: 20px;
-            left: -20px;
+            top: -30px;
+            left: 118px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
             svg {
-              color: #fff;
-              font-size: 1px;
-              font-size: 30px;
+              color: #111c3f;
+              font-size: 23px;
             }
           }
           p {
+            width: 90%;
+            line-height: 15px;
             text-align: center;
+            font-size: .9em;
+            color: rgba(0, 0, 0, 0.7);
+          }
+          button {
+            cursor: pointer;
+            margin: 15px 0 0 0;
+            padding: 8px 50px;
+            border: 0;
+            border-radius: 4px;
+            background-color: #111c3f;
+            color: #FFF;
+            border: 1px solid #111c3f;
+            transition: .3s;
+
+            :hover {
+              background-color: transparent;
+              color: #111c3f;
+              transition: .3s;
+            }
           }
         }
       }
@@ -371,6 +393,11 @@ const style_footer = styled.div`
       }
     }
   }
+  @media (max-width: 1366px) {
+        .letreiro {
+          margin-top: 15px !important;
+        }
+    }
   @media (max-width: 600px) {
     .HomePage {
       margin-top: -200px;

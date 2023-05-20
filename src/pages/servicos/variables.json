@@ -1,0 +1,138 @@
+{
+    "cards": [
+        {
+            "id": "01",
+            "title": "Criação ou migração de sua Loja Virtual",
+            "text": "Ajudamos na seleção da plataforma e criamos sua loja virtual para operar no Digital com as melhores funcionalidades para oseu negócio",
+            "text02": "Escolhemos juntos a melhor plataforma para o seu negócio.",
+            "list": [
+                {
+                    "li": "Diagnóstico"
+                },
+                {
+                    "li": "Planejamento"
+                },
+                {
+                    "li": "Definição de plataforma"
+                }
+            ]
+        },
+        {
+            "id": "02",
+            "title": "Marketplaces",
+            "text": "Definiremos em conjunto a melhor estratégia para integrar e impulsionar as suas vendas através de marketplaces. Canais como: ",
+            "text02": "",
+            "list": [
+                {
+                    "li": "Mercado Livre"
+                },
+                {
+                    "li": "B2W/Americanas"
+                },
+                {
+                    "li": "Amazon"
+                },
+                {
+                    "li": "Magalu"
+                },
+                {
+                    "li": "OLX"
+                },
+                {
+                    "li": "Via"
+                },
+                {
+                    "li": "Shopee"
+                },
+                {
+                    "li": "Carrefour"
+                }
+            ]
+        },
+        {
+            "id": "03",
+            "title": "Design e Layout do seu Website",
+            "text": "Tenha uma loja otimizada com as melhores práticas visando eficiência e conversões de vendas.",
+            "text02": "",
+            "list": [
+                {
+                    "li": "Desenvolvimento de novos layouts"
+                },
+                {
+                    "li": "Páginas mais rápidas (otimização)"
+                },
+                {
+                    "li": "Ajustes visando as melhores práticas do mercado de e-commerce"
+                }
+            ]
+        },
+        {
+            "id": "04",
+            "title": "SEO - Otimização para motores de busca",
+            "text": "Buscaremos as melhores técnicas de SEO para manter o seu site bem posicionado nos sites de pesquisas, Google, Bing, entre outros.",
+            "text02": "",
+            "list": [
+                {
+                    "li": "Análise e acompanhamento do seu rankeamento nos buscadores"
+                },
+                {
+                    "li": "Sua empresa bem posicionada no Google"
+                },
+                {
+                    "li": "Seleção de palavras chaves, páginas e conteúdos."
+                }
+            ]
+        },
+        {
+            "id": "05",
+            "title": "CRO - Otimização da Taxa de Conversão",
+            "text": "Aumente as suas vendas através de técnicas de otimização de taxa de conversão. A taxa de conversão…",
+            "text02": "",
+            "list": []
+        },
+        {
+            "id": "06",
+            "title": "ADS - Anúncio",
+            "text": "Através de anúncios (Ads) buscaremos novos clientes em canais como:",
+            "text02": "",
+            "list": [
+                {
+                    "li": "Facebook Ads"
+                },
+                {
+                    "li": "Google Ads"
+                },
+                {
+                    "li": "Instagram Ads"
+                },
+                {
+                    "li": "Twitter Ads"
+                },
+                {
+                    "li": "TikTok Ads"
+                }
+            ]
+        },
+        {
+            "id": "07",
+            "title": "Mídias Sociais",
+            "text": "Definiremos estratégias para engajar e manter um relacionamento duradouro entre sua marca e seus clientes, utilizando canais como Whatsapp, Facebook, Instagram, entre outros.",
+            "text02": "",
+            "list": []
+        },
+        {
+            "id": "08",
+            "title": "Mentoria - Link com a página de mentoria",
+            "text": "",
+            "text02": "Diagnóstico e planejamento para a transformação digital do seu negócio.",
+            "list": []
+        },
+        {
+            "id": "09",
+            "title": "Suporte ",
+            "text": "Aqui não temos papo furado, somos francos e transparentes para propor soluções que realmente façam sentido para o seu negócio.",
+            "text02": "Tenha um suporte 24x7",
+            "list": []
+        }
+    ]
+}

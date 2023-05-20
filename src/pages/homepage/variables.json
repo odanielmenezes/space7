@@ -1,0 +1,49 @@
+{
+    "cards": [
+        {
+            "id": 1,
+            "title": "Criação / Migração do E-commerce",
+            "description": "Ajudamos na seleção da plataforma e criamos sua loja virtual para operar no Digital com as melhores funcionalidades para o seu negócio."
+        },
+        {
+            "id": 2,
+            "title": "Marketplaces",
+            "description": "Definiremos em conjunto a melhor estratégia para integrar e impulsionar as suas vendas através de marketplaces."
+        },
+        {
+            "id": 3,
+            "title": "Design / Layout ",
+            "description": "Tenha uma loja otimizada com as melhores práticas visando eficiência e conversões de vendas."
+        },
+        {
+            "id": 4,
+            "title": "SEO",
+            "description": "Buscaremos as melhores técnicas de SEO para manter o seu site bem posicionado nos sites de pesquisas, Google, Bing, entre outros."
+        },
+        {
+            "id": 5,
+            "title": "CRO",
+            "description": "Aumente as suas vendas através de técnicas de otimização de taxa de conversão. A taxa de conversão…"
+        },
+        {
+            "id": 6,
+            "title": "ADS",
+            "description": "Através de anúncios (Ads) buscaremos novos clientes em canais como: "
+        },
+        {
+            "id": 7,
+            "title": "Mídias Sociais",
+            "description": "Definiremos estratégias para engajar e manter um relacionamento duradouro entre sua marca e seus clientes, utilizando canais como Whatsapp, Facebook, Instagram, entre outros."
+        },
+        {
+            "id": 8,
+            "title": "Mentoria - Link com a página de mentoria",
+            "description": "Diagnóstico e planejamento para a transformação digital do seu negócio."
+        },
+        {
+            "id": 9,
+            "title": "Suporte",
+            "description": "Aqui não temos papo furado, somos francos e transparentes para propor soluções que realmente façam sentido para o seu negócio."
+        }
+    ]
+}

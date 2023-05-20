@@ -42,7 +42,7 @@ export function Agencia() {
             <div className="Agencia__MainContent__ComoAgimos__Title">
               <Fade left>
                 <h1>
-                  Como <strong>AGIMOS</strong>
+                  Como <strong>AGIMOS</strong>.
                 </h1>
               </Fade>
             </div>

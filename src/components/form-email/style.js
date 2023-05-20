@@ -44,6 +44,41 @@ const styleHome = styled.div`
             gap: 1px;
             .SenderEmail__MainForm {
                 width: 400px;
+
+                .inputsFuncionários {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 10px;
+                    .checkboxItem {
+                        display: flex;
+                        gap: 30px;
+                    }
+                    .inputsCheckbox {
+                        display: flex;
+                    }
+                    small {
+                        color: #000;
+                    }
+                    input {
+                        margin-right: 5px;
+                        border: 0;
+                        box-shadow: none;
+
+                        :focus {
+                        box-shadow: none;
+                        }
+                    }
+                    input[type=checkbox] {
+                        width: 20px;
+                    }
+                    label {
+                        white-space: nowrap;
+                        color: #000;
+                    }
+                }
                 input {
                     background-color: #FFF;
                     width: 98%;
@@ -154,6 +189,7 @@ const styleHome = styled.div`
     }
     @media (max-width: 500px) {
         .SenderEmail{ 
+            margin-top: -70px !important;
             width: 100vw;
             .test {
                 display: flex !important;
@@ -200,6 +236,22 @@ const styleHome = styled.div`
                             transition: .5s;
                         }
                     }
+
+                    .inputsFuncionários {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 10px;
+                    .checkboxItem {
+                        display: flex;
+                        gap: 15px;
+                    }
+                    input[type=checkbox] {
+                        width: 20px;
+                    }
+                }
                 }
                 .SenderEmail__TextField {
                     width: 90%;

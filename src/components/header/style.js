@@ -107,7 +107,7 @@ const style_header = styled.div`
       }
     }
     .Header__Hamburguer {
-      position: absolute;
+      position: fixed;
       left: 15px;
       top: 15px;
       z-index: 10;
@@ -120,63 +120,34 @@ const style_header = styled.div`
         background-color: #fff;
       }
     }
-    .Header {
-      z-index: 9;
-      background: none;
-      width: 100%;
-      overflow: hidden !important;
-      .Open {
-        margin-top: -1000px;
-        opacity: 0;
-        transition: 0.5s;
-        display: none;
-        overflow: hidden;
-      }
+    .HeaderMobile {
+      margin-left: -1000px;
+      transition: .3s;
       .Header__Content {
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100%;
-        background-color: #111c3f;
-        transition: 0.5s;
-        margin-right: 0;
-        margin-top: -10px;
         ul {
-          width: 100vw;
-          display: flex;
-          flex-direction: column;
-          gap: 0;
+
           li {
-            color: #fff;
-            display: flex;
-            font-size: 3em;
+
             svg {
-              font-size: 20px;
-              display: none;
+
             }
           }
           .lis {
-            margin: 20px 0;
-            display: flex;
-            align-self: center;
-            font-size: 0.7em;
             &:nth-child(6) {
-              display: none;
             }
             :hover {
             }
           }
         }
       }
-      .Header__Logo {
-        display: none;
-        small {
-        }
-        img {
-          position: block;
-        }
+    }
+    .HeaderMobile__Open {
+      background-color: red;
+      transition: 3;
+      }
+    .Header__Logo {
+      display: none;
+      small {
       }
     }
   }

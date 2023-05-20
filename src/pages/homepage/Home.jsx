@@ -1,8 +1,8 @@
 import { useEffect, useCallback, useState } from "react";
 import Fade from "react-reveal/Fade";
 import Flip from "react-reveal/Flip";
+import infosCards from "./variables.json";
 import Styled from "./style";
-import { Link } from "react-router-dom";
 import { SenderEmail } from "../../components/form-email";
 import animaEcommerce from "../../assets/eCommerce.json";
 import Lottie from "lottie-react";
@@ -17,8 +17,7 @@ import {
   BsGoogle,
   BsInstagram,
   BsChatSquareDots,
-  BsHeadset,
-  BsChatDots,
+  BsHeadset
 } from "react-icons/bs";
 
 export function Home() {
@@ -35,63 +34,29 @@ export function Home() {
       navigator.userAgent
     );
 
-  const infosCards = [
-    {
-      icon: <BsShopWindow />,
-      title: "Teste 01",
-      description: "Breve texto explicativo sobre o serviço descrito.",
-    },
-    {
-      icon: <BsCartCheck />,
-      title: "Teste 02",
-      description: "Breve texto explicativo sobre o serviço descrito.",
-    },
-    {
-      icon: <BsLayoutThreeColumns />,
-      title: "Teste 03",
-      description: "Breve texto explicativo sobre o serviço descrito.",
-    },
-    {
-      icon: <Bs1Circle />,
-      title: "Teste 04",
-      description: "Breve texto explicativo sobre o serviço descrito.",
-    },
-    {
-      icon: <BsAndroid />,
-      title: "Teste 05",
-      description: "Breve texto explicativo sobre o serviço descrito.",
-    },
-    {
-      icon: <BsGoogle />,
-      title: "Teste 06",
-      description: "Breve texto explicativo sobre o serviço descrito.",
-    },
-    {
-      icon: <BsInstagram />,
-      title: "Teste 07",
-      description: "Breve texto explicativo sobre o serviço descrito.",
-    },
-    {
-      icon: <BsChatSquareDots />,
-      title: "Teste 08",
-      description: "Breve texto explicativo sobre o serviço descrito.",
-    },
-    {
-      icon: <BsHeadset />,
-      title: "Teste 09",
-      description: "Breve texto explicativo sobre o serviço descrito.",
-    },
+  const icons = [
+     <BsShopWindow />,
+     <BsCartCheck />,
+     <BsLayoutThreeColumns />,
+     <Bs1Circle />,
+     <BsAndroid />,
+     <BsGoogle />,
+     <BsInstagram />,
+     <BsChatSquareDots />,
+     <BsHeadset />,
   ];
 
   const card = (props) => {
-    const { title, description, icon } = props;
+    const { title, description, id } = props;
+    console.log('icon', icons)
     return (
       <div className="HomePage__Services__Icons__Icon">
-        <div className="Icon">{icon}</div>
+        <div className="Icon">{icons[id - 1]}</div>
         <h1>{title}</h1>
         <p>
           <Balance>{description}</Balance>
         </p>
+        <button>conhecer</button>
       </div>
     );
   };
@@ -122,13 +87,6 @@ export function Home() {
   return (
     <Styled>
       <div className="HomePage">
-        {isMobile && (
-          <Link to="/contato">
-            <div className="HomePage__ButtonContact">
-              <BsChatDots />
-            </div>
-          </Link>
-        )}
         <div className="HomePage__Animation">
           <div className="AnimationLottie">
             <Lottie animationData={RocketAnima} loop={false} />
@@ -205,13 +163,13 @@ export function Home() {
           {!isMobile && (
             <Fade left>
               <div className="HomePage__Services__Icons">
-                {infosCards.map((item) => card(item))}
+                {infosCards.cards.map((item) => card(item))}
               </div>
             </Fade>
           )}
           {isMobile && (
             <div className="HomePage__Services__Icons">
-              <Fade left>{infosCards.map((item) => card(item))}</Fade>
+              <Fade left>{infosCards.cards.map((item) => card(item))}</Fade>
             </div>
           )}
         </div>

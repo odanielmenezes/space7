@@ -1,14 +1,19 @@
-import { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Styled from "./style";
+
 import api from "../../api/api";
 
 export function SenderEmail() {
+  const [checkbox01, setCheckbox01] = useState(false);
+  const [checkbox02, setCheckbox02] = useState(false);
+  const [checkbox03, setCheckbox03] = useState(false);
+  const [checkbox04, setCheckbox04] = useState(false);
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
+  const [file, setFile] = useState();
   const [celular, setCelular] = useState("");
   const [empresa, setEmpresa] = useState("");
   const [funcionarios, setFuncionarios] = useState("");
-  const [posuiLoja, setPosuiLoja] = useState("");
   const [assunto, setAssunto] = useState("");
   const [mensagem, setMensagem] = useState("");
   const [send, setSend] = useState(false);
@@ -17,16 +22,22 @@ export function SenderEmail() {
   const sendEmail = () => {
     setSend(true);
     setSendText("Enviando");
-    api
-      .post("/send-email", {
-        nome,
-        email,
-        mensagem,
-        celular,
-        empresa,
-        funcionarios,
-        posuiLoja,
-        assunto,
+    console.log(file,' file');
+    const formData = new FormData()
+    const dados = {
+      nome,
+      email,
+      mensagem,
+      celular,
+      empresa,
+      funcionarios,
+      assunto,
+    }
+    formData.append('newBody', dados);
+      api.post("/send-email", formData, {
+        headers: {
+          "content-type": "multipart/form-data"
+        },
       })
       .then((response) => {
         console.log(response);
@@ -44,7 +55,7 @@ export function SenderEmail() {
         setTimeout(() => {
           setSendText("Enviar");
         }, 5000);
-        console.log("ERROR");
+        console.log("ERROR", err);
       });
     console.log(send);
   };
@@ -57,6 +68,39 @@ export function SenderEmail() {
     );
   };
 
+  const changeCheckBox = (e) => {
+    if (e.target.id === "01" && !checkbox01) {
+      setCheckbox01(true);
+      setCheckbox02(false);
+      setCheckbox03(false);
+      setCheckbox04(false);
+      setFuncionarios("2-10");
+    } else if (e.target.id === "02" && !checkbox02) {
+      setCheckbox02(true);
+      setCheckbox01(false);
+      setCheckbox03(false);
+      setCheckbox04(false);
+      setFuncionarios("11-50");
+    } else if (e.target.id === "03" && !checkbox03) {
+      setCheckbox03(true);
+      setCheckbox02(false);
+      setCheckbox01(false);
+      setCheckbox04(false);
+      setFuncionarios("51-200");
+    } else if (e.target.id === "04" && !checkbox04) {
+      setCheckbox04(true);
+      setCheckbox02(false);
+      setCheckbox03(false);
+      setCheckbox01(false);
+      setFuncionarios("+200");
+    } else {
+      setCheckbox04(false);
+      setCheckbox02(false);
+      setCheckbox03(false);
+      setCheckbox01(false);
+    }
+  };
+
   const clearFields = () => {
     console.log("CLEAR");
     setNome("");
@@ -66,10 +110,10 @@ export function SenderEmail() {
     setCelular("");
     setEmpresa("");
     setFuncionarios("");
-    setPosuiLoja("");
     setSend(false);
     setSendText("Enviar");
   };
+
 
   return (
     <Styled>
@@ -109,24 +153,62 @@ export function SenderEmail() {
                 onChange={(e) => setEmpresa(e.target.value)}
                 placeholder="Empresa"
               />
-              <input
-                type="text"
-                value={funcionarios}
-                onChange={(e) => setFuncionarios(e.target.value)}
-                placeholder="Número de funcionários"
-              />
-              <input
-                type="text"
-                value={posuiLoja}
-                onChange={(e) => setPosuiLoja(e.target.value)}
-                placeholder="Você já possui uma loja virtual?"
-              />
+              <div className="inputsFuncionários">
+                <div>
+                  <small>Selecione o número de funcionários da empresa.</small>
+                  <br />
+                </div>
+                <div className="checkboxItem">
+                  <div className="inputsCheckbox">
+                    <input
+                      type="checkbox"
+                      value={funcionarios}
+                      placeholder="Teste"
+                      checked={checkbox01}
+                      id="01"
+                      onClick={(e) => changeCheckBox(e)}
+                    />
+                    <label>2-10</label>
+                  </div>
+                  <div className="inputsCheckbox">
+                    <input
+                      type="checkbox"
+                      value={funcionarios}
+                      checked={checkbox02}
+                      id="02"
+                      onClick={(e) => changeCheckBox(e)}
+                    />
+                    <label>11-50</label>
+                  </div>
+                  <div className="inputsCheckbox">
+                    <input
+                      type="checkbox"
+                      value={funcionarios}
+                      checked={checkbox03}
+                      id="03"
+                      onClick={(e) => changeCheckBox(e)}
+                    />
+                    <label>51-200</label>
+                  </div>
+                  <div className="inputsCheckbox">
+                    <input
+                      type="checkbox"
+                      value={funcionarios}
+                      checked={checkbox04}
+                      id="04"
+                      onClick={(e) => changeCheckBox(e)}
+                    />
+                    <label>+200</label>
+                  </div>
+                </div>
+              </div>
               <input
                 type="text"
                 value={assunto}
                 onChange={(e) => setAssunto(e.target.value)}
                 placeholder="Assunto"
               />
+              <input type="file"  onChange={(e) => setFile(e.target.files[0])}/>
             </div>
             <div className="SenderEmail__TextField">
               <textarea

@@ -2,142 +2,72 @@ import styled from "styled-components";
 
 const style_header_mobile = styled.div`
   .HeaderMobile {
+    z-index: 2;
     width: 100vw;
-    position: relative;
-    z-index: 1;
-    .Header__MenuHamburguer {
-      top: 100px;
-      margin: 10px;
-      position: absolute;
-      left: 0;
-      transition: 0.3s;
-
-      .Header__Bar {
-        margin-bottom: 4px;
-        width: 30px;
-        height: 5px;
-        background-color: red;
-        transition-duration: 0.3s;
-
-        &:nth-child(2) {
-          animation: opaciter 0.3s ease-in-out;
-          transition: 0.3s;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .OpenBurguer {
+      z-index: 10;
+      margin: 0px 4px;
+      .Bar {
+        transition: 0.5s;
+        &:nth-child(1) {
+          transform: rotate(410deg) translateY(29px) translateY(-10px);
         }
-        @keyframes opaciter {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-      }
-      .HeaderMobile__Hamburguer_Bar__Click {
-        transition-duration: 0.3s;
-        margin-bottom: 4px;
-        width: 30px;
-        height: 5px;
-        background-color: #111c3f;
-        transform: rotate(45deg) translate(7px, 7px);
-        transition: 0.3s;
         &:nth-child(2) {
-          transform: rotate(-45deg) translate(-1px, -1px);
-          transition: 0.3s;
+          margin-left: -100px;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translateY(-5px) translateY(-16px);
         }
       }
     }
-    .HeaderMobile__Hamburguer__Click {
-      z-index: 3;
-      margin: 10px;
-      position: absolute;
-      top: 100px;
-      left: 0;
-      .HeaderMobile__Hamburguer_Bar {
-        z-index: 10;
-        margin-bottom: 4px;
-        width: 30px;
-        height: 5px;
-        background-color: #111c3f;
-        transition-duration: 0.3s;
-
-        &:nth-child(2) {
-          transition: 0.3s;
-          animation: opaciter 0.3s ease-in-out;
-        }
-        @keyframes opaciter {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-      }
-      .HeaderMobile__Hamburguer_Bar__Click {
-        z-index: 1;
-        margin-bottom: 4px;
-        width: 30px;
-        height: 5px;
+    .Header__Hamburguer {
+      position: fixed;
+      left: 15px;
+      top: 15px;
+      z-index: 10;
+      .Bar {
+        transition: 0.5s;
+        margin-bottom: 5px;
+        width: 40px;
+        border: 1px solid #000;
+        height: 6px;
         background-color: #fff;
-        transition-duration: 0.3s;
-        transform: rotate(45deg) translate(7px, 7px);
-        transition-duration: 0.3s;
-        &:nth-child(2) {
-          transform: rotate(-45deg) translate(-1px, -1px);
-        }
       }
     }
-    .HeaderMobile__Content {
-      overflow: hidden;
-      z-index: 2;
-      position: absolute;
-      width: 100vw;
-      top: 100px;
-      height: 0vh;
-      transition-duration: 0.8s;
-      background-color: #111c3f;
-      overflow-y: hidden;
-      visibility: hidden;
+    .Header__Content {
+      display: flex;
       ul {
-        margin-top: 100px;
-        margin-left: -30px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        margin: 0;
+        padding: 0;
+        gap: 30px;
         li {
-          transition: 1s;
-          margin-bottom: 10px;
-          font-size: 1.5em;
+          text-transform: uppercase;
           color: #fff;
-          list-style: none;
-        }
-      }
-    }
-    .HeaderMobile__Content__Click {
-      position: absolute;
-      top: 100px;
-      width: 100vw;
-      height: 100vh;
-      transition-duration: 0.8s;
-      background-color: #111c3f;
-      border-bottom: 5px solid #fff;
-      ul {
-      overflow: hidden;
-        margin-top: 100px;
-        margin-left: -30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        li {
-          transition: 1s;
-          margin-bottom: 10px;
-          font-size: 1.5em;
-          color: #fff;
+          font-size: 2.4em;
+          text-align: center;
           list-style: none;
         }
       }
     }
   }
+  .HeaderMobile.Open {
+      left: -1000px;
+      transition: .3s;
+
+    }
 `;
 
 export default style_header_mobile;

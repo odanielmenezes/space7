@@ -34,24 +34,61 @@ export function Header() {
     console.log(openMenu);
   };
 
-  return (
-    <Styled>
-      <>
-        {isMobile && (
+  if (!isMobile) {
+    return (
+      <Styled>
+        <div className="Header">
           <div
-            onClick={() => toggleMenu()}
-            className={
-              openMenu ? "Header__Hamburguer" : "Header__Hamburguer OpenBurguer"
-            }
+            className={!openMenu ? "Header__Content" : "Header__Content Open"}
           >
-            <div className="Bar"></div>
-            <div className="Bar"></div>
-            <div className="Bar"></div>
+            <ul>
+              <Link onClick={() => changePage()} className="lis" to="/space7">
+                <li>Home</li>
+              </Link>
+              <Link onClick={() => changePage()} className="lis" to="/agencia">
+                <li>A agencia</li>
+              </Link>
+              <Link onClick={() => changePage()} className="lis" to="/mentoria">
+                <li>Mentoria</li>
+              </Link>
+              <Link onClick={() => changePage()} className="lis" to="/servicos">
+                <li>Serviços</li>
+              </Link>
+              <Link
+                onClick={() => changePage()}
+                className="lis"
+                to="/trabalhe-conosco"
+              >
+                <li>Trabalhe Conosco</li>
+              </Link>
+              <Link onClick={() => changePage()} className="lis" to="/contato">
+                <li>Contato</li>
+              </Link>
+            </ul>
           </div>
-        )}
-      </>
-      <div className={`${!openMenu ? "Header OpenMain" : "Header"}`}>
-        <div className={!openMenu ? "Header__Content" : "Header__Content Open"}>
+          <div className="Header__Logo">
+            <img src={Logo} alt="" />
+            <small>SPACE7 digital</small>
+          </div>
+        </div>
+      </Styled>
+    );
+  }
+
+  return (
+    <StyledMobile>
+      <div className={`HeaderMobile ${openMenu ? "Open" : ""}`}>
+        <div
+          onClick={() => toggleMenu()}
+          className={
+            openMenu ? "Header__Hamburguer" : "Header__Hamburguer OpenBurguer"
+          }
+        >
+          <div className="Bar"></div>
+          <div className="Bar"></div>
+          <div className="Bar"></div>
+        </div>
+        <div className="Header__Content">
           <ul>
             <Link onClick={() => changePage()} className="lis" to="/space7">
               <li>Home</li>
@@ -77,11 +114,7 @@ export function Header() {
             </Link>
           </ul>
         </div>
-        <div className="Header__Logo">
-          <img src={Logo} alt="" />
-          <small>SPACE7 digital</small>
-        </div>
       </div>
-    </Styled>
+    </StyledMobile>
   );
 }

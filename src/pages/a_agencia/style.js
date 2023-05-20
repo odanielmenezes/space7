@@ -6,7 +6,8 @@ const style_footer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
+    color: #FFF;
+    background-color: #000;
 
     .Agencia__MainContent {
       margin-top: 100px;
@@ -29,14 +30,14 @@ const style_footer = styled.div`
             position: absolute;
             font-size: 60px;
             color: red;
-            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 0.8));
           }
         }
         .Divider {
           width: 1px;
           height: 400px;
           border: 0;
-          border-right: 1px solid rgba(0, 0, 0, 0.2);
+          border-right: 1px solid rgba(255, 255, 255, .3);
         }
         p {
           display: flex;
@@ -48,14 +49,13 @@ const style_footer = styled.div`
           width: 600px;
           text-align: justify;
           letter-spacing: 1px;
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(255, 255, 255, 0);
 
           strong {
             font-size: 1.3em;
           }
           &:nth-child(1) {
             box-shadow: none;
-            color: #000;
             margin: 0 30px;
             display: block;
             height: 100%;
@@ -72,7 +72,7 @@ const style_footer = styled.div`
       h1 {
         &:nth-child(1) {
           letter-spacing: -2px;
-          font-size: 3em;
+          font-size: 5em;
           margin-top: 120px;
 
           strong {
@@ -99,7 +99,9 @@ const style_footer = styled.div`
           display: flex;
           justify-content: center;
           gap: 65px;
+          width: 93vw;
           .ComoAgimos__Item {
+            border: 1px solid #FFF;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -132,6 +134,9 @@ const style_footer = styled.div`
       .Agencia__MainContent {
         margin: 0;
         width: 100vw;
+        h1 {
+            font-size: 3em !important;
+          }
         .Agencia__MainContent__Info {
           width: 100vw;
           flex-direction: column !important;
@@ -144,8 +149,8 @@ const style_footer = styled.div`
           }
           p {
             margin: 0 !important;
-            font-size: 1.3em !important;
-            padding: 140px 30px !important;
+            font-size: 1.5em !important;
+            padding: 100px 30px !important;
 
             &:nth-child(1) {
               text-align: center;
@@ -164,9 +169,21 @@ const style_footer = styled.div`
         }
       }
       .Agencia__MainContent__ComoAgimos {
+        .Agencia__MainContent__ComoAgimos__Title {
+
+          h1 {
+            gap: 7px;
+            font-size: 3em;
+            display: flex;
+          }
+        }
         .ComoAgimos__Items {
           display: grid !important;
           grid-template-columns: 1fr;
+
+          .ComoAgimos__Item {
+            margin: 0 auto;
+          }
         }
       }
     }
