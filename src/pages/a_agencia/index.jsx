@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import Balance from "react-wrap-balancer";
 import Styled from "./style";
 import { Fade } from "react-reveal";
 import { ImRocket } from "react-icons/im";
 
 export function Agencia() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <Styled>
       <div className="Agencia">

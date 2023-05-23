@@ -7,7 +7,6 @@ const style_footer = styled.div`
     align-items: center;
     justify-content: center;
     color: #FFF;
-    background-color: #000;
 
     .Agencia__MainContent {
       margin-top: 100px;
@@ -114,7 +113,7 @@ const style_footer = styled.div`
             text-align: end;
             h3 {
               line-height: 120%;
-              color: #f0ff00;
+              color: #dd4035;
               text-align: end;
               width: 100%;
               font-size: 2em;

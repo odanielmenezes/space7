@@ -3878,6 +3878,11 @@ react-router@6.10.0:
   dependencies:
     "@remix-run/router" "1.5.0"
 
+react-telefone-brasileiro@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-telefone-brasileiro/-/react-telefone-brasileiro-1.0.5.tgz#65ebeb909422baeda0da6a21406a015334d33879"
+  integrity sha512-dKmcY5ak0ji8zOYqh/P6Ka8EggVezcqj3kx1s2Ga7Xq94eyZDERIXj327bvqHDbpj/bksBHhSVEVeA0nhnOxYw==
+
 react-wrap-balancer@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/react-wrap-balancer/-/react-wrap-balancer-0.4.1.tgz#5b5500724879f5670ead177d7ab99cc9c5e36704"

@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from "react";
+import { useState, useEffect } from "react";
 import Fade from "react-reveal/Fade";
 import Flip from "react-reveal/Flip";
 import infosCards from "./variables.json";
@@ -6,6 +6,7 @@ import Styled from "./style";
 import { SenderEmail } from "../../components/form-email";
 import animaEcommerce from "../../assets/eCommerce.json";
 import Lottie from "lottie-react";
+import { Link } from "react-router-dom";
 import RocketAnima from "../../assets/36418-cecil-portfolio-background.json";
 import Balance from "react-wrap-balancer";
 import {
@@ -17,7 +18,7 @@ import {
   BsGoogle,
   BsInstagram,
   BsChatSquareDots,
-  BsHeadset
+  BsHeadset,
 } from "react-icons/bs";
 
 export function Home() {
@@ -35,20 +36,23 @@ export function Home() {
     );
 
   const icons = [
-     <BsShopWindow />,
-     <BsCartCheck />,
-     <BsLayoutThreeColumns />,
-     <Bs1Circle />,
-     <BsAndroid />,
-     <BsGoogle />,
-     <BsInstagram />,
-     <BsChatSquareDots />,
-     <BsHeadset />,
+    <BsShopWindow />,
+    <BsCartCheck />,
+    <BsLayoutThreeColumns />,
+    <Bs1Circle />,
+    <BsAndroid />,
+    <BsGoogle />,
+    <BsInstagram />,
+    <BsChatSquareDots />,
+    <BsHeadset />,
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const card = (props) => {
     const { title, description, id } = props;
-    console.log('icon', icons)
     return (
       <div className="HomePage__Services__Icons__Icon">
         <div className="Icon">{icons[id - 1]}</div>
@@ -56,7 +60,9 @@ export function Home() {
         <p>
           <Balance>{description}</Balance>
         </p>
-        <button>conhecer</button>
+        <Link to={title.includes('Mentoria') ? `/mentoria` : `/servicos`}>
+          <button>conhecer</button>
+        </Link>
       </div>
     );
   };
@@ -110,7 +116,9 @@ export function Home() {
                   Juntos vamos levar os seus produtos da loja física ao mundo do
                   e-commerce
                 </small>
-                <button>SAIBA MAIS</button>
+                <Link to="/servicos">
+                  <button>SAIBA MAIS</button>
+                </Link>
               </div>
             </Fade>
           </div>
@@ -150,7 +158,9 @@ export function Home() {
                 {!isMobile && <br />} <strong>e-commerce</strong>
               </h1>
               <div className="HomePage__Services__Title__Button">
-                <button>FALE CONOSCO</button>
+                <Link to="/contato">
+                  <button>FALE CONOSCO</button>
+                </Link>
               </div>
             </Flip>
           </div>
@@ -177,11 +187,10 @@ export function Home() {
           <Fade right>
             <div className="HomePage__Email__Title">
               <h1>
-                Ficou com alguma <strong>duvida</strong>?
+                Como podemos <strong>ajudar</strong>?
               </h1>
               <p>
-                Deixe-nos ajudar! Envie uma mensagem preenchendo os campos a
-                baixo e um analista entrará em contato o mais breve possível.
+              Envie uma mensagem preenchendo os campos abaixo e em breve entraremos em contato.
               </p>
             </div>
             <div className="Divider"></div>

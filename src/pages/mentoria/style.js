@@ -7,7 +7,7 @@ const style_footer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
+    color: #FFF;
     width: 100vw;
 
     .Mentoria__Content {
@@ -19,6 +19,7 @@ const style_footer = styled.div`
           margin: 0 auto;
         }
         h1 {
+          letter-spacing: -3px;
           font-size: 3.4em;
           line-height: 120%;
           strong {

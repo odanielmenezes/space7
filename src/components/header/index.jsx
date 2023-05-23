@@ -8,7 +8,7 @@ import {
   MdMiscellaneousServices,
   MdOutlineGroupAdd,
 } from "react-icons/md";
-import Logo from "../../../public/vite.svg";
+import Logo from "../../assets/space7144x31px.svg";
 import { useState } from "react";
 
 export function Header() {
@@ -46,7 +46,7 @@ export function Header() {
                 <li>Home</li>
               </Link>
               <Link onClick={() => changePage()} className="lis" to="/agencia">
-                <li>A agencia</li>
+                <li>A agncia</li>
               </Link>
               <Link onClick={() => changePage()} className="lis" to="/mentoria">
                 <li>Mentoria</li>
@@ -67,8 +67,9 @@ export function Header() {
             </ul>
           </div>
           <div className="Header__Logo">
+            <Link to="/space7">
             <img src={Logo} alt="" />
-            <small>SPACE7 digital</small>
+            </Link>
           </div>
         </div>
       </Styled>
@@ -94,7 +95,7 @@ export function Header() {
               <li>Home</li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/agencia">
-              <li>A agencia</li>
+              <li>A agncia</li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/mentoria">
               <li>Mentoria</li>

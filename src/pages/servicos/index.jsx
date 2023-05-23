@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Styled from "./style";
 import InfosJson from "./variables.json";
 import Balance from "react-wrap-balancer";
@@ -8,10 +9,12 @@ export function Servicos() {
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     );
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const Card = (props) => {
     const { id, title, text, text02, list } = props;
-
     return (
       <div className="Servicos__Item">
         <h2>

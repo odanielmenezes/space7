@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Styled from "./style";
 import { BsPersonCheck, BsBoxes, BsBoxSeam, BsArrowLeft } from "react-icons/bs";
 import Fade from "react-reveal";
@@ -10,6 +11,9 @@ import { GoGraph } from "react-icons/go";
 import { Link } from "react-router-dom";
 
 export function Mentoria() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Styled>
       <div className="Mentoria">
@@ -29,9 +33,11 @@ export function Mentoria() {
                 Realize a transformação <strong>digital</strong> da sua empresa.
               </p>
             </Fade>
-            <div className="Menoria__Lottie">
-              <Lottie animationData={AnimationMentor} loop={true} />
-            </div>
+            <Fade bottom>
+              <div className="Menoria__Lottie">
+                <Lottie animationData={AnimationMentor} loop={true} />
+              </div>
+            </Fade>
             <Fade right>
               <Balance>
                 <p>

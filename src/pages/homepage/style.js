@@ -12,7 +12,28 @@ const style_footer = styled.div`
     justify-content: space-evenly;
     margin-top: -100px;
     overflow-x: hidden;
-
+    background-color: #fff;
+    .SenderEmail__Text {
+      p {
+        color: #000;
+      }
+    }
+    .SenderEmail__MainForm {
+      .inputsFuncionários {
+        div {
+          small {
+            color: #000 !important;
+          }
+        }
+        .checkboxItem {
+          .inputsCheckbox {
+            label {
+              color: #000;
+            }
+          }
+        }
+      }
+    }
     .HomePage__Main {
       animation: opaciter 0.8s ease-in-out;
     }
@@ -253,7 +274,7 @@ const style_footer = styled.div`
             :hover {
               transform: scale(1.1);
               transition: 0.3s;
-              box-shadow: 4px 4px 4px rgba(155, 155, 155, 0.8);
+              box-shadow: 4px 4px 4px rgba(155, 155, 155, 0.2);
             }
           }
         }
@@ -297,7 +318,7 @@ const style_footer = styled.div`
           .Icon {
             width: 80px;
             height: 80px;
-            background-color: #FFF;
+            background-color: #fff;
             position: absolute;
             top: -30px;
             left: 118px;
@@ -305,7 +326,7 @@ const style_footer = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
             svg {
               color: #111c3f;
               font-size: 23px;
@@ -315,7 +336,7 @@ const style_footer = styled.div`
             width: 90%;
             line-height: 15px;
             text-align: center;
-            font-size: .9em;
+            font-size: 0.9em;
             color: rgba(0, 0, 0, 0.7);
           }
           button {
@@ -324,16 +345,10 @@ const style_footer = styled.div`
             padding: 8px 50px;
             border: 0;
             border-radius: 4px;
-            background-color: #111c3f;
-            color: #FFF;
-            border: 1px solid #111c3f;
-            transition: .3s;
-
-            :hover {
-              background-color: transparent;
-              color: #111c3f;
-              transition: .3s;
-            }
+            background-color: #dd4035;
+            color: #fff;
+            text-transform: uppercase;
+            transition: 0.3s;
           }
         }
       }
@@ -394,10 +409,10 @@ const style_footer = styled.div`
     }
   }
   @media (max-width: 1366px) {
-        .letreiro {
-          margin-top: 15px !important;
-        }
+    .letreiro {
+      margin-top: 15px !important;
     }
+  }
   @media (max-width: 600px) {
     .HomePage {
       margin-top: -200px;

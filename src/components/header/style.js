@@ -13,8 +13,8 @@ const style_header = styled.div`
     justify-content: space-between;
     flex-direction: row-reverse;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
     top: 0;
     z-index: 1000;
     .Header__Logo {
@@ -28,7 +28,8 @@ const style_header = styled.div`
         margin-left: -7px;
       }
       img {
-        width: 30px;
+        cursor: pointer;
+        width: 140px;
       }
     }
     .Header__Content {
@@ -50,12 +51,16 @@ const style_header = styled.div`
             color: #fff;
             transition: 0.3s;
           }
+          :hover {
+            transition: .3s;
+            transform: scale(1.1);
+          }
         }
         .lis {
           align-self: flex-end;
           text-transform: uppercase;
-          color: rgba(255, 255, 255, 1);
-          font-size: 1em;
+          color: rgba(255, 255, 255, .5);
+          font-size: 1.2em;
           cursor: pointer;
           padding: 0px 15px;
           font-weight: 200;
@@ -69,16 +74,17 @@ const style_header = styled.div`
             border-radius: 8px;
             color: #fff;
             position: absolute;
-            right: -150px;
+            right: -160px;
             bottom: -10px;
             :hover {
               transform: scale(1.1);
-              transition: 0.3s;
+              transition: 0.2s;
+              color: #fff;
             }
           }
           :hover {
             color: #fff;
-            transition-duration: 0.3s;
+            transition-duration: 0.2s;
 
             svg {
               transform: scale(1.3);

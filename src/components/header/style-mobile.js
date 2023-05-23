@@ -11,7 +11,7 @@ const style_header_mobile = styled.div`
     right: 0;
     bottom: 0;
     background-color: #000;
-    transition: .3s;
+    transition: .5s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,8 +65,7 @@ const style_header_mobile = styled.div`
   }
   .HeaderMobile.Open {
       left: -1000px;
-      transition: .3s;
-
+      transition: .8s;
     }
 `;
 
