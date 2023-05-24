@@ -7,7 +7,7 @@ const style_footer = styled.div`
     align-items: center;
     justify-content: center;
     color: #FFF;
-    margin-top: 200px;
+    margin-top: 100px;
 
     .Servicos__Content {
       .Servicos__Content__Texts {
@@ -56,6 +56,11 @@ const style_footer = styled.div`
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 50px 0;
+          .Servicos__Item_Btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
           .Servicos__Item {
             margin: 0 auto;
             box-shadow: 0px 0px 15px rgba(0,0,0, .1);
@@ -99,7 +104,7 @@ const style_footer = styled.div`
     .Servicos {
       width: 100vw;
       overflow: hidden;
-
+      margin-top: 90px;
       .Servicos__Content {
         display: flex;
         flex-direction: column;
@@ -118,8 +123,9 @@ const style_footer = styled.div`
             letter-spacing: -1px;
           }
           .Divider {
-            margin: -50px 0 50px 0;
             width: 80vw;
+            border: 0;
+            border: 1px solid rgba(255,255,255, .1);
           }
           p {
             margin: 0 auto;

@@ -8,6 +8,10 @@ const style_footer = styled.div`
     justify-content: center;
     color: #fff !important;
     padding: 100px 0;
+
+    .SenderEmail__Text {
+      display: block;
+    }
   }
 `;
 export default style_footer;

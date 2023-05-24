@@ -7,7 +7,7 @@ import { Agencia } from "./pages/a_agencia";
 import { Contato } from "./pages/contato";
 import { Mentoria } from "./pages/mentoria";
 import { TrabalheConosco } from "./pages/trabalhe_conosco";
-import { BsChatDots } from "react-icons/bs";
+import { BsWhatsapp } from "react-icons/bs";
 
 export function AppRoutes() {
   const isMobile =
@@ -30,9 +30,9 @@ export function AppRoutes() {
           <Route path="/trabalhe-conosco" element={<TrabalheConosco />}></Route>
         </Routes>
         {isMobile &&  (
-          <Link to="/contato" onClick={() => teste()}>
+          <Link to="https://wa.me/5551992797210?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7." onClick={() => teste()}>
             <div className="HomePage__ButtonContact">
-              <BsChatDots />
+              <BsWhatsapp />
             </div>
           </Link>
         )}

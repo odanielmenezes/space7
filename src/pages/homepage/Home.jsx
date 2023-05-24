@@ -9,6 +9,7 @@ import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
 import RocketAnima from "../../assets/36418-cecil-portfolio-background.json";
 import Balance from "react-wrap-balancer";
+import { BtnQueroComecar } from "../../components/buttons/button-quero-comecar";
 import {
   BsShopWindow,
   BsCartCheck,
@@ -60,7 +61,7 @@ export function Home() {
         <p>
           <Balance>{description}</Balance>
         </p>
-        <Link to={title.includes('Mentoria') ? `/mentoria` : `/servicos`}>
+        <Link to={title.includes("Mentoria") ? `/mentoria` : `/servicos`}>
           <button>conhecer</button>
         </Link>
       </div>
@@ -158,9 +159,7 @@ export function Home() {
                 {!isMobile && <br />} <strong>e-commerce</strong>
               </h1>
               <div className="HomePage__Services__Title__Button">
-                <Link to="/contato">
-                  <button>FALE CONOSCO</button>
-                </Link>
+                <BtnQueroComecar name="FALE CONOSCO" link="/contato"/>
               </div>
             </Flip>
           </div>
@@ -190,7 +189,8 @@ export function Home() {
                 Como podemos <strong>ajudar</strong>?
               </h1>
               <p>
-              Envie uma mensagem preenchendo os campos abaixo e em breve entraremos em contato.
+                Envie uma mensagem preenchendo os campos abaixo e em breve
+                entraremos em contato.
               </p>
             </div>
             <div className="Divider"></div>

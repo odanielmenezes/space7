@@ -31,9 +31,6 @@ export function TrabalheConosco() {
             <Lottie animationData={AnimationLottie} loop />
           </div>
         </Fade>
-        <Fade right>
-          <h2>Envie seu curriculo e protfólio:</h2>
-        </Fade>
         <Fade left>
           <SenderEmail />
         </Fade>

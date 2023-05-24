@@ -46,7 +46,7 @@ export function Header() {
                 <li>Home</li>
               </Link>
               <Link onClick={() => changePage()} className="lis" to="/agencia">
-                <li>A agncia</li>
+                <li>A agência</li>
               </Link>
               <Link onClick={() => changePage()} className="lis" to="/mentoria">
                 <li>Mentoria</li>
@@ -95,7 +95,7 @@ export function Header() {
               <li>Home</li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/agencia">
-              <li>A agncia</li>
+              <li>A agência</li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/mentoria">
               <li>Mentoria</li>

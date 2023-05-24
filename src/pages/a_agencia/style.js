@@ -6,6 +6,7 @@ const style_footer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     color: #FFF;
 
     .Agencia__MainContent {
@@ -128,6 +129,7 @@ const style_footer = styled.div`
   }
   @media (max-width: 600px) {
     .Agencia {
+      margin-top: 50px;
       overflow: hidden;
       width: 100vw !important;
       .Agencia__MainContent {

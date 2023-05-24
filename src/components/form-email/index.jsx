@@ -6,7 +6,7 @@ import {
   BsInstagram,
   BsFacebook,
   BsLinkedin,
-  BsPin,
+  BsPinFill,
 } from "react-icons/bs";
 
 import api from "../../api/api";
@@ -25,7 +25,7 @@ export function SenderEmail() {
   const [assunto, setAssunto] = useState("");
   const [mensagem, setMensagem] = useState("");
   const [send, setSend] = useState(false);
-  const [sendText, setSendText] = useState("Enviar");
+  const [sendText, setSendText] = useState(location.pathname === "/trabalhe-conosco" ? "Enviar currículo" : "Enviar");
 
   const sendEmail = () => {
     setSend(true);
@@ -49,7 +49,6 @@ export function SenderEmail() {
       .post("/send-email", formData, {
         responseType: "arraybuffer",
         responseEncoding: "binary",
-        headers: { "Content-Type": "application/pdf" },
       })
       .then((response) => {
         console.log(response);
@@ -123,7 +122,7 @@ export function SenderEmail() {
     setEmpresa("");
     setFuncionarios("");
     setSend(false);
-    setSendText("Enviar");
+    setSendText(location.pathname === "/trabalhe-conosco" ? "Enviar currículi" : "Enviar");
     setFile(null);
     document.getElementById("file").value = "";
     setCheckbox04(false);
@@ -141,7 +140,7 @@ export function SenderEmail() {
               {location.pathname.includes("space7") ||
               location.pathname.includes("contato")
                 ? "COMO PODEMOS AJUDAR?"
-                : "ENVIE SEU CURRÍCULO!"}
+                : "ENVIE SEU CURRÍCULO E PORTFÓLIO!"}
             </h2>
             <p>
               {location.pathname.includes("space7") ||
@@ -159,7 +158,7 @@ export function SenderEmail() {
                 </small>
               </div>
               <div className="Local">
-                <BsPin /> POA/RS
+                <BsPinFill /> POA/RS
               </div>
               <div className="Redes">
                 <BsInstagram />

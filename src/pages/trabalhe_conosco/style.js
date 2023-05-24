@@ -20,11 +20,14 @@ const style_footer = styled.div`
         color: #cf3c32;
       }
     }
+    .Lottie {
+      margin: 100px 0;
+    }
     .Divider {
-      width: 600px;
+      width: 80%;
       height: 1px;
       border: 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       margin: 30px 0 50px 0;
     }
     .p {
@@ -36,6 +39,7 @@ const style_footer = styled.div`
       }
     }
     h2 {
+      margin: 0;
       font-size: 2em;
     }
   }

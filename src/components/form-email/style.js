@@ -24,7 +24,6 @@ const styleHome = styled.div`
       font-size: 14px;
     }
     .SenderEmail__Text {
-      display: none;
       width: 900px;
       text-align: center;
       color: #fff;
@@ -37,25 +36,57 @@ const styleHome = styled.div`
         width: 100%;
         height: 1px;
         border: 0;
-        margin: 30px 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        margin: 50px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
       .RedesSociais {
         margin: 30px 0;
         font-size: 1.3em;
-        color: #000;
+        color: rgba(255, 255, 255, 0.5);
+        margin: 30px 0 100px 0;
         .line01 {
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 10px;
+          small {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            svg {
+              font-size: 18px;
+            }
+          }
         }
         .Divider {
           width: 1px;
           height: 20px;
           border: 0;
           margin: 0 5px 0 5px;
-          border-right: 1px solid rgba(0, 0, 0, 0.1);
+          border-right: 1px solid rgba(255, 255, 255, 0.19);
+        }
+        .Local {
+          margin: 10px 0 20px 0;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          justify-content: center;
+        }
+        .Redes {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+
+          svg {
+            cursor: pointer;
+            font-size: 28px;
+
+            :hover {
+              color: #ef342b;
+            }
+          }
         }
       }
     }
@@ -93,6 +124,7 @@ const styleHome = styled.div`
           }
           small {
             color: #fff;
+            font-size: 14px;
           }
           input {
             margin: 0;
@@ -117,17 +149,21 @@ const styleHome = styled.div`
         .InputFile {
           #file {
             display: none;
+            input {
+            }
           }
           label {
+            border-radius: 5px;
+            margin: 0 auto 20px auto;
             background-color: #ef342b;
-            padding: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: auto;
+            padding: 2px;
+            width: 97%;
+            height: 40px;
             color: #fff;
             font-size: 0.9em;
-            margin: 0 0 8px 0;
             box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
             transition: .3s;
 
@@ -188,11 +224,12 @@ const styleHome = styled.div`
         gap: 8px;
         justify-content: flex-end;
         button {
-          width: 100%;
+          border-radius: 5px;
+          width: 99%;
           height: 40px;
           border: 0;
           padding: 8px;
-          margin: 0 0 5px 0;
+          margin: 0 auto 5px auto;
           color: #fff;
           cursor: pointer;
           transition: 0.3s;
@@ -273,6 +310,21 @@ const styleHome = styled.div`
         p {
           font-size: 0.8em;
         }
+        .RedesSociais {
+          margin: 0 0 30px 0;
+          .line01 {
+          display: flex;
+          flex-direction: column;
+            .Divider {
+              display: none;
+              width: 80vw;
+              border: 0;
+              border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+              height: 1px;
+              margin: 20px 0;
+            }
+        }
+        }
       }
       .SenderEmail__Content {
         width: 90vw;
@@ -284,7 +336,7 @@ const styleHome = styled.div`
             width: 98%;
             height: 22px;
             border: 1px solid rgba(100, 100, 100, 0.3);
-            margin: 0 0 10px 0;
+            margin: 0 0 20px 0;
             outline: none;
             padding: 5px;
             font-size: 1em;
@@ -312,6 +364,9 @@ const styleHome = styled.div`
             input[type="checkbox"] {
               width: 20px;
             }
+            small {
+              font-size: .9em;
+            }
           }
         }
         .SenderEmail__TextField {
@@ -338,15 +393,15 @@ const styleHome = styled.div`
           }
         }
         .SenderEmail__ButonsForm {
-          width: 100vw;
+          width: 85vw;
           display: flex;
           gap: 8px;
           justify-content: center;
           button {
-            width: 100px;
+            width: 100%;
             border: 0;
             padding: 8px;
-            margin: 0 0 5px 0;
+            margin: 10px 0 5px 0;
             color: #fff;
             cursor: pointer;
             transition: 0.3s;

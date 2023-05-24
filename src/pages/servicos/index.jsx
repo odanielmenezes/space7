@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Styled from "./style";
 import InfosJson from "./variables.json";
 import Balance from "react-wrap-balancer";
+import { BtnQueroComecar } from "../../components/buttons/button-quero-comecar";
 import { Fade } from "react-reveal";
 
 export function Servicos() {
@@ -18,7 +19,6 @@ export function Servicos() {
     return (
       <div className="Servicos__Item">
         <h2>
-          <strong>{id}</strong>
           {title}
         </h2>
         <div className="Divider"></div>
@@ -75,12 +75,18 @@ export function Servicos() {
               <Fade left>
                 <div className="Servicos__Items">
                   {InfosJson.cards.map((card) => Card(card))}
+                  <div className="Servicos__Item_Btn">
+                    <BtnQueroComecar />
+                  </div>
                 </div>
               </Fade>
             )}
             {isMobile && (
               <div className="Servicos__Items">
                 <Fade left>{InfosJson.cards.map((card) => Card(card))}</Fade>
+                <div className="Servicos__Item_Btn">
+                  <BtnQueroComecar />
+                </div>
               </div>
             )}
           </div>

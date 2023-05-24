@@ -111,23 +111,6 @@ const style_footer = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-
-        button {
-          border: 0;
-          background-color: #CF3C32;
-          color: #FFF;
-          box-shadow: 4px 4px 4px rgba(0,0,0, 1);
-          padding: 20px 80px;
-          font-size: 2em;
-          transition: .3s;
-          cursor: pointer;
-
-          :hover {
-            transform: scale(1.1);
-            transition: .3s;
-            box-shadow: 9px 9px 5px rgba(0,0,0, .8);
-          }
-        }
       }
       .Mentoria__Table__Text {
         position: relative;
@@ -176,6 +159,7 @@ const style_footer = styled.div`
   @media (max-width: 600px) {
     .Mentoria {
       overflow: hidden;
+      margin-top: -50px;
       .Mentoria__Content {
         .Mentoria__Content__Titles {
           .Menoria__Lottie {
@@ -216,14 +200,6 @@ const style_footer = styled.div`
         margin: 0;
         width: 90vw;
         white-space: nowrap;
-        button {
-          border-radius: 3px;
-          padding: 20px 50px;
-          font-size: 1.5em;
-          :hover {
-
-          }
-        }
       }
       .Mentoria__Table__Text {
         margin: 0;

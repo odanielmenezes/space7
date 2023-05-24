@@ -59,11 +59,11 @@ const style_header = styled.div`
         .lis {
           align-self: flex-end;
           text-transform: uppercase;
-          color: rgba(255, 255, 255, .5);
+          color: rgba(255, 255, 255, 1);
           font-size: 1.2em;
           cursor: pointer;
           padding: 0px 15px;
-          font-weight: 200;
+          font-weight: bold;
           transition: 0.2s;
 
           &:nth-child(6) {
@@ -76,16 +76,12 @@ const style_header = styled.div`
             position: absolute;
             right: -160px;
             bottom: -10px;
-            :hover {
+          }
+          :hover {
+            transition-duration: 0.2s;
               transform: scale(1.1);
               transition: 0.2s;
               color: #fff;
-            }
-          }
-          :hover {
-            color: #fff;
-            transition-duration: 0.2s;
-
             svg {
               transform: scale(1.3);
               transition: 0.3s;

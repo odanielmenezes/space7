@@ -14,6 +14,7 @@ const style_footer = styled.div`
     overflow-x: hidden;
     background-color: #fff;
     .SenderEmail__Text {
+      display: none;
       p {
         color: #000;
       }
@@ -194,7 +195,7 @@ const style_footer = styled.div`
       color: #000;
       width: 100vw;
       height: auto;
-      padding: 200px 0;
+      padding: 80px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -261,22 +262,7 @@ const style_footer = styled.div`
           }
         }
         .HomePage__Services__Title__Button {
-          button {
-            cursor: pointer;
-            border-radius: 8px;
-            background: transparent;
-            border: 2px solid #dd4035;
-            padding: 20px 100px;
-            color: #fff;
-            font-size: 1.1em;
-            transition: 0.3s;
 
-            :hover {
-              transform: scale(1.1);
-              transition: 0.3s;
-              box-shadow: 4px 4px 4px rgba(155, 155, 155, 0.2);
-            }
-          }
         }
       }
       .HomePage__Services__Icons {
@@ -415,7 +401,6 @@ const style_footer = styled.div`
   }
   @media (max-width: 600px) {
     .HomePage {
-      margin-top: -200px;
       min-height: 100vh;
       flex-direction: column;
       .HomePage__Main {
@@ -436,6 +421,8 @@ const style_footer = styled.div`
           margin-top: 80px;
         }
         .Rocket {
+          margin-top: -280px;
+
           width: 100vw;
           .HomePage__Content {
             justify-content: center;

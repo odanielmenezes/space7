@@ -3,6 +3,7 @@ import Balance from "react-wrap-balancer";
 import Styled from "./style";
 import { Fade } from "react-reveal";
 import { ImRocket } from "react-icons/im";
+import { BtnQueroComecar } from "../../components/buttons/button-quero-comecar";
 
 export function Agencia() {
   useEffect(() => {
@@ -100,6 +101,7 @@ export function Agencia() {
             </div>
           </div>
         </div>
+        <BtnQueroComecar />
       </div>
     </Styled>
   );
