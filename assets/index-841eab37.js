@@ -542,6 +542,9 @@ Error generating stack: `+e0.message+`
               line-height: 16px;
               animation: opacitor 1s ease-in-out;
             }
+            button {
+              width: 300px;
+            }
             h2 {
               strong {
               }
