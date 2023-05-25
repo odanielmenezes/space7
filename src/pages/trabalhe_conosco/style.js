@@ -24,7 +24,7 @@ const style_footer = styled.div`
       margin: 100px 0;
     }
     .Divider {
-      width: 80%;
+      width: 800px;
       height: 1px;
       border: 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);

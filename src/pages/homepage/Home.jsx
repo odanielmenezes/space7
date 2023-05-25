@@ -23,8 +23,9 @@ import {
 } from "react-icons/bs";
 
 export function Home() {
-  const frase = "Tenha um parceiro para sua transformação digital.";
+  const frase = `Tenha um parceiro para sua transformação digital.`;
   const [letras, setLetras] = useState([frase.split("")]);
+  let [fraseCompleta1, setFraseCompleta1] = useState("");
   let [fraseCompleta, setFraseCompleta] = useState("");
   let [fraseCompleta2, setFraseCompleta2] = useState("");
   let [ponto, setPonto] = useState("");
@@ -71,7 +72,9 @@ export function Home() {
   function animation() {
     var mostrarLetras = setInterval(() => {
       if (letras.length > 0) {
-        if (cont < 27) {
+        if (cont < 9) {
+          setFraseCompleta1((fraseCompleta1 += letras[0][cont]))
+        } else if (cont > 8 && cont < 27) {
           setFraseCompleta((fraseCompleta += letras[0][cont]));
         } else {
           setFraseCompleta2((fraseCompleta2 += letras[0][cont]));
@@ -80,10 +83,10 @@ export function Home() {
             setPonto(letras[letras.length - 1]);
           }
         }
-        cont++;
         if (cont === decCont) {
           clearInterval(mostrarLetras);
         }
+        cont++
       }
     }, 90);
   }
@@ -104,7 +107,7 @@ export function Home() {
                 <div className="letreiro">
                   <span>
                     <span className="frase01">
-                      <Balance>{fraseCompleta} </Balance>
+                      <Balance>{fraseCompleta1}<br />{fraseCompleta}</Balance>
                     </span>
                     <br />
                     <span className="frase02">
@@ -117,9 +120,7 @@ export function Home() {
                   Juntos vamos levar os seus produtos da loja física ao mundo do
                   e-commerce
                 </small>
-                <Link to="/servicos">
-                  <button>SAIBA MAIS</button>
-                </Link>
+                <BtnQueroComecar name="SAIBA MAIS" link="/servicos" />
               </div>
             </Fade>
           </div>
@@ -159,7 +160,7 @@ export function Home() {
                 {!isMobile && <br />} <strong>e-commerce</strong>
               </h1>
               <div className="HomePage__Services__Title__Button">
-                <BtnQueroComecar name="FALE CONOSCO" link="/contato"/>
+                <BtnQueroComecar name="FALE CONOSCO" link="/contato" />
               </div>
             </Flip>
           </div>

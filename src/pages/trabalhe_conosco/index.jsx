@@ -12,7 +12,7 @@ export function TrabalheConosco() {
   return (
     <Styled>
       <div className="TrabalheConosco">
-        <Fade left>
+        <Fade top>
           <h1>
             Venha fazer parte do nosso <strong>time</strong>.
           </h1>
@@ -20,18 +20,18 @@ export function TrabalheConosco() {
         <Fade right>
           <div className="Divider"></div>
         </Fade>
-        <Fade left>
+        <Fade bottom>
           <p className="p">
             Faça parte da <strong>transformação digital</strong> dos nossos
             clientes.
           </p>
         </Fade>
-        <Fade bottom>
+        <Fade left>
           <div className="Lottie">
             <Lottie animationData={AnimationLottie} loop />
           </div>
         </Fade>
-        <Fade left>
+        <Fade right>
           <SenderEmail />
         </Fade>
       </div>

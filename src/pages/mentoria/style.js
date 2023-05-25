@@ -9,6 +9,7 @@ const style_footer = styled.div`
     justify-content: center;
     color: #FFF;
     width: 100vw;
+    margin-top: 50px;
 
     .Mentoria__Content {
       width: 90%;
@@ -38,9 +39,9 @@ const style_footer = styled.div`
         }
         .Divider {
           border: 0;
-          width: 600px;
+          width: 800px;
           height: 1px;
-          border-bottom: 1px solid rgba(0,0,0, .2);
+          border-bottom: 1px solid rgba(255,255,255, .1);
           margin: 0 auto;
           margin-bottom: 50px;
 

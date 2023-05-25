@@ -19,6 +19,7 @@ export function Agencia() {
               O que nos <strong>MOVE</strong>.
             </h1>
           </Fade>
+          <div className="Divider"></div>
           <div className="Agencia__MainContent__Info">
             <Fade left>
               <p>

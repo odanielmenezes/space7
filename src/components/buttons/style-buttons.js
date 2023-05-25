@@ -11,6 +11,8 @@ const style_buttons = styled.div`
           padding: 20px 80px;
           font-size: 2em;
           transition: .3s;
+          border-radius: 5px;
+          white-space: nowrap;
           cursor: pointer;
 
           :hover {

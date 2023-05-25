@@ -86,22 +86,6 @@ const style_footer = styled.div`
             line-height: 20px;
             margin: -20px 0;
           }
-          button {
-            padding: 25px 100px;
-            font-size: 1.2em;
-            color: #fff;
-            background: #dd4035;
-            border-radius: 10px;
-            transition: 0.3s;
-            cursor: pointer;
-            border: 0;
-            animation: opaciter 1s ease-in-out;
-
-            :hover {
-              transform: scale(1.1);
-              transition: 0.3s;
-            }
-          }
           small {
             font-size: 1em;
           }
@@ -262,7 +246,6 @@ const style_footer = styled.div`
           }
         }
         .HomePage__Services__Title__Button {
-
         }
       }
       .HomePage__Services__Icons {
@@ -446,7 +429,7 @@ const style_footer = styled.div`
               }
             }
             button {
-              animation: opacitor 1s ease-in-out;
+              width: 300px;
             }
             small {
             }
@@ -454,7 +437,7 @@ const style_footer = styled.div`
             }
             .letreiro {
               height: 20vh;
-              font-size: 0.7em;
+              font-size: 0.62em;
               line-height: 40px;
               margin-bottom: -20px;
               letter-spacing: -2px;
@@ -466,11 +449,10 @@ const style_footer = styled.div`
                 align-items: center;
                 justify-content: center;
                 .frase01 {
+                  line-height: 23px;
                   margin: 0 0 -30px 0;
                 }
                 .frase02 {
-                  width: 80vw;
-                  margin: 0;
                   display: contents !important;
                 }
               }
@@ -557,6 +539,9 @@ const style_footer = styled.div`
         }
       }
       .HomePage__Email {
+        .Divider {
+          display: none;
+        }
         .HomePage__Email__Title {
           h1 {
             font-size: 1.5em;

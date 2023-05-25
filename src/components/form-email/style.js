@@ -45,11 +45,16 @@ const styleHome = styled.div`
         color: rgba(255, 255, 255, 0.5);
         margin: 30px 0 100px 0;
         .line01 {
+          a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+          }
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 10px;
           small {
+            text-decoration: underline;
             display: flex;
             align-items: center;
             gap: 5px;
@@ -165,7 +170,7 @@ const styleHome = styled.div`
             color: #fff;
             font-size: 0.9em;
             box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-            transition: .3s;
+            transition: 0.3s;
 
             :hover {
               transform: scale(1.03);
@@ -274,16 +279,6 @@ const styleHome = styled.div`
         }
       }
     }
-    @keyframes opaciter {
-      from {
-        opacity: 0;
-        margin-bottom: -30px;
-      }
-      to {
-        opacity: 1;
-        transition: 0.3s;
-      }
-    }
   }
   @media (max-width: 500px) {
     .SenderEmail {
@@ -313,8 +308,8 @@ const styleHome = styled.div`
         .RedesSociais {
           margin: 0 0 30px 0;
           .line01 {
-          display: flex;
-          flex-direction: column;
+            display: flex;
+            flex-direction: column;
             .Divider {
               display: none;
               width: 80vw;
@@ -323,7 +318,7 @@ const styleHome = styled.div`
               height: 1px;
               margin: 20px 0;
             }
-        }
+          }
         }
       }
       .SenderEmail__Content {
@@ -365,7 +360,7 @@ const styleHome = styled.div`
               width: 20px;
             }
             small {
-              font-size: .9em;
+              font-size: 0.9em;
             }
           }
         }

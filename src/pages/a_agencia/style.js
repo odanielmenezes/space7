@@ -14,6 +14,13 @@ const style_footer = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      .Divider {
+        width: 800px;
+        border: 0;
+        height: 1px;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+      }
       .Agencia__MainContent__Info {
         margin: 50px 0 150px 0;
         width: 1250px;
@@ -37,7 +44,7 @@ const style_footer = styled.div`
           width: 1px;
           height: 400px;
           border: 0;
-          border-right: 1px solid rgba(255, 255, 255, .3);
+          border-right: 1px solid rgba(255, 255, 255, .1);
         }
         p {
           display: flex;

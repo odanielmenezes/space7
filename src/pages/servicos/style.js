@@ -7,17 +7,17 @@ const style_footer = styled.div`
     align-items: center;
     justify-content: center;
     color: #FFF;
-    margin-top: 100px;
+    margin-top: 200px;
 
     .Servicos__Content {
       .Servicos__Content__Texts {
         text-align: center;
         margin: 0 0 100px 0;
         .Divider {
-          width: 700px;
+          width: 800px;
           height: 1px;
           border: 0;
-          border-bottom: 1px solid rgba(0,0,0, .1);
+          border-bottom: 1px solid rgba(255,255,255, .1);
           margin: -30px auto 100px;
         }
         h1 {
