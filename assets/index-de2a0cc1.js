@@ -1607,7 +1607,6 @@ o.goToAndStop(m0-o.firstFrame-1,!0)}h0.type==="loop"&&(x0===null||x0!==h0.frames
               width: 85%;
               font-size: .8em;
               button {
-                margin: 200px 0 0 0;
                 background-color: red;
               }
               h2 {
