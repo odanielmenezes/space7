@@ -1451,6 +1451,7 @@ o.goToAndStop(c0-o.firstFrame-1,!0)}x0.type==="loop"&&(p0===null||p0!==x0.frames
     width: 100vw;
     height: 100vh;
     top: 0;
+    z-index: -1;
  }
 
     .Servicos__Content {
@@ -1886,6 +1887,7 @@ o.goToAndStop(c0-o.firstFrame-1,!0)}x0.type==="loop"&&(p0===null||p0!==x0.frames
     width: 100vw;
     height: 100vh;
     top: 0;
+    z-index: -1;
  }
 
     .Agencia__MainContent {
@@ -2107,6 +2109,7 @@ o.goToAndStop(c0-o.firstFrame-1,!0)}x0.type==="loop"&&(p0===null||p0!==x0.frames
     width: 100vw;
     height: 100vh;
     top: 0;
+    z-index: -1;
  }
     .SenderEmail__Text {
       display: block;
@@ -2144,6 +2147,7 @@ o.goToAndStop(c0-o.firstFrame-1,!0)}x0.type==="loop"&&(p0===null||p0!==x0.frames
     width: 100vw;
     height: 100vh;
     top: 0;
+    z-index: -1;
  }
     .Mentoria__Content {
       width: 90%;
@@ -2380,6 +2384,7 @@ o.goToAndStop(c0-o.firstFrame-1,!0)}x0.type==="loop"&&(p0===null||p0!==x0.frames
     width: 100vw;
     height: 100vh;
     top: 0;
+    z-index: -1;
  }
     .Local { 
       display: none;
@@ -2464,5 +2469,6 @@ o.goToAndStop(c0-o.firstFrame-1,!0)}x0.type==="loop"&&(p0===null||p0!==x0.frames
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    z-index: 2;
   }
 `;function Footer(){return jsx(style_footer,{children:jsx("div",{className:"Footer",children:jsx("h4",{children:"© 2023 - todos os direitos reservados"})})})}const index="";client.createRoot(document.getElementById("root")).render(jsxs(reactExports.Fragment,{children:[jsx(App,{}),jsx(Footer,{})]}));
