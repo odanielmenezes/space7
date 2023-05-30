@@ -31,8 +31,13 @@ const style_footer = styled.div`
 
         .Agencia__CardMain {
           position: relative;
-          svg {
-            top: -20px;
+          line-height: 26px;
+          letter-spacing: 0px;
+          img {
+            transform: rotate(5deg);
+            width: 110px;
+            height: 110px;
+            top: -70px;
             right: 10px;
             position: absolute;
             font-size: 60px;
@@ -136,29 +141,36 @@ const style_footer = styled.div`
   }
   @media (max-width: 600px) {
     .Agencia {
-      margin-top: 50px;
+      margin-top: -70px;
       overflow: hidden;
       width: 100vw !important;
       .Agencia__MainContent {
-        margin: 0;
         width: 100vw;
         h1 {
             font-size: 3em !important;
+            letter-spacing: -1px;
           }
         .Agencia__MainContent__Info {
+          padding: 0;
+          margin: 0;
           width: 100vw;
           flex-direction: column !important;
           .Agencia__CardMain {
-            width: 75vw !important;
+            width: 85vw !important;
             padding: 0;
             margin: 0;
             letter-spacing: -1px;
             line-height: 25px;
+
+            img {
+              width: 80px;
+              top: -52px;
+            }
           }
           p {
             margin: 0 !important;
             font-size: 1.5em !important;
-            padding: 100px 30px !important;
+            padding: 50px 30px !important;
 
             &:nth-child(1) {
               text-align: center;
@@ -169,10 +181,11 @@ const style_footer = styled.div`
             }
           }
           .Divider {
-            width: 90vw !important;
+            width: 80vw !important;
             height: 1px !important;
             border: 0 !important;
-            border-bottom: 1px solid rgba(0, 0, 0, .2) !important;
+            margin: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .2) !important;
           }
         }
       }

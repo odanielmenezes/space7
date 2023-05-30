@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import fundoItem from "../../assets/Hexagon.svg";
 
 const style_footer = styled.div`
   .Servicos {
@@ -6,7 +7,7 @@ const style_footer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFF;
+    color: #fff;
     margin-top: 200px;
 
     .Servicos__Content {
@@ -17,7 +18,7 @@ const style_footer = styled.div`
           width: 800px;
           height: 1px;
           border: 0;
-          border-bottom: 1px solid rgba(255,255,255, .1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           margin: -30px auto 100px;
         }
         h1 {
@@ -26,7 +27,7 @@ const style_footer = styled.div`
           line-height: 120%;
           strong {
             font-size: 1.8em;
-            color: #CF3C32;
+            color: #cf3c32;
           }
         }
         h2 {
@@ -39,7 +40,7 @@ const style_footer = styled.div`
           line-height: 24px;
 
           strong {
-            color: #CF3C32;
+            color: #cf3c32;
             font-size: 1.3em;
           }
         }
@@ -62,18 +63,35 @@ const style_footer = styled.div`
             justify-content: center;
           }
           .Servicos__Item {
+            background-image: linear-gradient(
+                45deg,
+                rgba(0, 0, 0, 0.9),
+                rgba(0, 0, 0, 0.2)
+              ),
+              url(${fundoItem});
+            background-position: center;
+            background-size: cover;
             margin: 0 auto;
-            box-shadow: 0px 0px 15px rgba(0,0,0, .1);
-            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
             width: 80%;
-            height: 400px;
+            height: auto;
+            padding: 20px;
             text-align: start;
-            background-color: rgba(0,0,0, .03);
-            border-top: 5px solid #CF3C32;
+            border-top: 5px solid #cf3c32;
+            position: relative;
+            .icon {
+              img {
+                filter: drop-shadow(0px 0px 6px rgba(155, 155, 155, 0.3));
+                width: 60px;
+              }
+            }
             h2 {
-              font-size: 1.2em;
+              display: flex;
+              gap: 10px;
+              align-items: center;
+              font-size: 1.3em;
               line-height: 120%;
-              strong{
+              strong {
                 margin-right: 10px;
                 font-size: 2em;
               }
@@ -81,18 +99,18 @@ const style_footer = styled.div`
             .Divider {
               width: 90%;
               border: 0;
-              border-bottom: 1px solid rgba(0,0,0, .1);
+              border-bottom: 1px solid rgba(255, 255, 255, 0.1);
               height: 1px;
             }
             p {
               line-height: 18px;
               font-size: 1.1em;
-              color: rgb(150, 150, 150);
+              color: #fff;
             }
             ul {
               margin: 50px 0;
               li {
-                color: rgb(150, 150, 150);
+                color: #fff;
               }
             }
           }
@@ -104,7 +122,7 @@ const style_footer = styled.div`
     .Servicos {
       width: 100vw;
       overflow: hidden;
-      margin-top: 90px;
+      margin-top: 120px;
       .Servicos__Content {
         display: flex;
         flex-direction: column;
@@ -125,12 +143,12 @@ const style_footer = styled.div`
           .Divider {
             width: 80vw;
             border: 0;
-            border: 1px solid rgba(255,255,255, .1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           }
           p {
             margin: 0 auto;
-            font-size: 1.3em;
-            line-height: 18px;
+            font-size: 1.5em;
+            line-height: 28px;
           }
         }
         h1 {
@@ -139,6 +157,18 @@ const style_footer = styled.div`
         .Servicos__MainServicos {
           .Servicos__Items {
             grid-template-columns: 1fr !important;
+            .Servicos__Item {
+              height: 350px;
+              width: 85%;
+              font-size: .8em;
+              h2 {
+                .icon {
+                  img {
+                    width: 40px;
+                  }
+                }
+              }
+            }
           }
         }
       }

@@ -6,10 +6,11 @@ export function Contato() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
   return (
     <Styled>
       <div className="Contato">
-        <SenderEmail />
+        <SenderEmail isCurriculo={false} />
       </div>
     </Styled>
   );

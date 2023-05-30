@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Balance from "react-wrap-balancer";
 import Styled from "./style";
 import { Fade } from "react-reveal";
-import { ImRocket } from "react-icons/im";
+import rocketSvg from "../../assets/rocket-svgrepo-com.svg"
 import { BtnQueroComecar } from "../../components/buttons/button-quero-comecar";
 
 export function Agencia() {
@@ -19,7 +19,6 @@ export function Agencia() {
               O que nos <strong>MOVE</strong>.
             </h1>
           </Fade>
-          <div className="Divider"></div>
           <div className="Agencia__MainContent__Info">
             <Fade left>
               <p>
@@ -32,7 +31,9 @@ export function Agencia() {
             </Fade>
             <Fade right>
               <p className="Agencia__CardMain">
-                  <ImRocket />
+                <Fade bottom left>
+                  <img src={rocketSvg} alt="rocket" />
+                </Fade>
                 <Balance>
                   A <strong>Space7 Digital</strong> nasceu da vontade de uma
                   experiência digital completa, personalizada e com autonomia,

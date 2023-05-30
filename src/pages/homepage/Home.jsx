@@ -10,17 +10,15 @@ import { Link } from "react-router-dom";
 import RocketAnima from "../../assets/36418-cecil-portfolio-background.json";
 import Balance from "react-wrap-balancer";
 import { BtnQueroComecar } from "../../components/buttons/button-quero-comecar";
-import {
-  BsShopWindow,
-  BsCartCheck,
-  BsLayoutThreeColumns,
-  Bs1Circle,
-  BsAndroid,
-  BsGoogle,
-  BsInstagram,
-  BsChatSquareDots,
-  BsHeadset,
-} from "react-icons/bs";
+import migrationSvg from "../../assets/migracao-cards.svg";
+import marketplaceSvg from "../../assets/marketplace-cards.svg";
+import designSvg from "../../assets/design-cards.svg";
+import googleAds from "../../assets/googleads.png";
+import croSvg from "../../assets/cro-cards.svg";
+import seoSvg from "../../assets/seo-cards.svg";
+import instaSvg from "../../assets/insta-cards.png";
+import mentoriaSvg from "../../assets/mentoria-cards.svg";
+import supportSvg from "../../assets/support-cards.svg";
 
 export function Home() {
   const frase = `Tenha um parceiro para sua transformação digital.`;
@@ -38,15 +36,15 @@ export function Home() {
     );
 
   const icons = [
-    <BsShopWindow />,
-    <BsCartCheck />,
-    <BsLayoutThreeColumns />,
-    <Bs1Circle />,
-    <BsAndroid />,
-    <BsGoogle />,
-    <BsInstagram />,
-    <BsChatSquareDots />,
-    <BsHeadset />,
+    migrationSvg,
+    marketplaceSvg,
+    designSvg,
+    croSvg,
+    seoSvg,
+    googleAds,
+    instaSvg,
+    mentoriaSvg,
+    supportSvg,
   ];
 
   useEffect(() => {
@@ -57,7 +55,7 @@ export function Home() {
     const { title, description, id } = props;
     return (
       <div className="HomePage__Services__Icons__Icon">
-        <div className="Icon">{icons[id - 1]}</div>
+        <div className="Icon"><img src={icons[id - 1]} alt="" /></div>
         <h1>{title}</h1>
         <p>
           <Balance>{description}</Balance>
@@ -79,7 +77,6 @@ export function Home() {
         } else {
           setFraseCompleta2((fraseCompleta2 += letras[0][cont]));
           if (cont === letras.length - 1) {
-            console.log("asdasd");
             setPonto(letras[letras.length - 1]);
           }
         }
@@ -107,7 +104,7 @@ export function Home() {
                 <div className="letreiro">
                   <span>
                     <span className="frase01">
-                      <Balance>{fraseCompleta1}<br />{fraseCompleta}</Balance>
+                      <Balance>{fraseCompleta1}{isMobile && <br />} {fraseCompleta}</Balance>
                     </span>
                     <br />
                     <span className="frase02">

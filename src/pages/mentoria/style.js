@@ -74,7 +74,7 @@ const style_footer = styled.div`
         height: 250px;
         margin: 0 0 40px 0;
         border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0,0,0, .3);
+        box-shadow: 0px 0px 10px rgba(255,255,255, .1);
 
         h2 {
           white-space: nowrap;
@@ -94,7 +94,7 @@ const style_footer = styled.div`
           width: 100%;
           border: 0;
           height: 1px;
-          border-bottom: 1px solid rgba(0,0,0, .1);
+          border-bottom: 1px solid rgba(255,255,255, .1);
           margin-top: 10px;
         }
         svg {

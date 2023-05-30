@@ -1,7 +1,7 @@
 {
     "cards": [
         {
-            "id": "01",
+            "id": 1,
             "title": "Criação ou migração de sua Loja Virtual",
             "text": "Ajudamos na seleção da plataforma e criamos sua loja virtual para operar no Digital com as melhores funcionalidades para oseu negócio",
             "text02": "Escolhemos juntos a melhor plataforma para o seu negócio.",
@@ -18,7 +18,7 @@
             ]
         },
         {
-            "id": "02",
+            "id": 2,
             "title": "Marketplaces",
             "text": "Definiremos em conjunto a melhor estratégia para integrar e impulsionar as suas vendas através de marketplaces. Canais como: ",
             "text02": "",
@@ -50,7 +50,7 @@
             ]
         },
         {
-            "id": "03",
+            "id": 3,
             "title": "Design e Layout do seu Website",
             "text": "Tenha uma loja otimizada com as melhores práticas visando eficiência e conversões de vendas.",
             "text02": "",
@@ -67,7 +67,7 @@
             ]
         },
         {
-            "id": "04",
+            "id": 4,
             "title": "SEO - Otimização para motores de busca",
             "text": "Buscaremos as melhores técnicas de SEO para manter o seu site bem posicionado nos sites de pesquisas, Google, Bing, entre outros.",
             "text02": "",
@@ -84,14 +84,14 @@
             ]
         },
         {
-            "id": "05",
+            "id": 5,
             "title": "CRO - Otimização da Taxa de Conversão",
-            "text": "Aumente as suas vendas através de técnicas de otimização de taxa de conversão. A taxa de conversão…",
+            "text": "Aumente as suas vendas através de técnicas de otimização de taxa de conversão.",
             "text02": "",
             "list": []
         },
         {
-            "id": "06",
+            "id": 6,
             "title": "ADS - Anúncio",
             "text": "Através de anúncios (Ads) buscaremos novos clientes em canais como:",
             "text02": "",
@@ -114,21 +114,21 @@
             ]
         },
         {
-            "id": "07",
+            "id": 7,
             "title": "Mídias Sociais",
             "text": "Definiremos estratégias para engajar e manter um relacionamento duradouro entre sua marca e seus clientes, utilizando canais como Whatsapp, Facebook, Instagram, entre outros.",
             "text02": "",
             "list": []
         },
         {
-            "id": "08",
+            "id": 8,
             "title": "Mentoria - Link com a página de mentoria",
             "text": "",
             "text02": "Diagnóstico e planejamento para a transformação digital do seu negócio.",
             "list": []
         },
         {
-            "id": "09",
+            "id": 9,
             "title": "Suporte ",
             "text": "Aqui não temos papo furado, somos francos e transparentes para propor soluções que realmente façam sentido para o seu negócio.",
             "text02": "Tenha um suporte 24x7",

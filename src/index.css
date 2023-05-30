@@ -23,7 +23,8 @@
 body {
   overflow-x: hidden;
   margin: 0;
-  background-image: url('../src/assets/fundo-geral.svg');
+  background-color: #132136;
+  /* background-image: url('../src/assets/fundo-geral.svg'); */
   background-position: center;
   background-size: cover;
   backface-visibility: hidden;

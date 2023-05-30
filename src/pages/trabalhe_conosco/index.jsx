@@ -32,7 +32,7 @@ export function TrabalheConosco() {
           </div>
         </Fade>
         <Fade right>
-          <SenderEmail />
+          <SenderEmail isCurriculo={true}/>
         </Fade>
       </div>
     </Styled>

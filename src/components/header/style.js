@@ -3,13 +3,11 @@ import styled from "styled-components";
 const style_header = styled.div`
   .Header {
     width: 100vw;
-    height: auto;
-    padding: 10px 0;
+    height: 80px;
     color: #fff;
     display: flex;
     z-index: 1;
-    display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     flex-direction: row-reverse;
     z-index: 10;
@@ -18,7 +16,8 @@ const style_header = styled.div`
     top: 0;
     z-index: 1000;
     .Header__Logo {
-      margin: 30px 60px;
+      margin-top: 10px;
+      margin-left: 50px;
       display: flex;
       align-items: baseline;
       gap: 10px;
@@ -32,15 +31,19 @@ const style_header = styled.div`
         width: 140px;
       }
     }
+    a {
+    }
     .Header__Content {
       position: relative;
       display: flex;
+      align-items: end;
       margin-right: 250px;
       ul {
         margin: 30px 0;
         padding: 0;
         list-style: none;
         display: flex;
+        align-items: end;
         position: relative;
         li {
           display: flex;

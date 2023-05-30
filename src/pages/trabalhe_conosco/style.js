@@ -9,7 +9,9 @@ const style_footer = styled.div`
     flex-direction: column;
     color: #FFF;
     margin-top: 200px;
-
+    .Local { 
+      display: none;
+    }
     h1 {
       font-size: 3.4em;
       letter-spacing: -2px;
@@ -42,6 +44,12 @@ const style_footer = styled.div`
       margin: 0;
       font-size: 2em;
     }
+  }
+  .Local {
+    display: none !important;
+  }
+  .Redes {
+    margin-top: 35px;
   }
   @media (max-width: 600px) {
     .TrabalheConosco {

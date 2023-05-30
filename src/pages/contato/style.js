@@ -7,10 +7,21 @@ const style_footer = styled.div`
     align-items: center;
     justify-content: center;
     color: #fff !important;
-    padding: 100px 0;
+    padding: 50px 0;
 
     .SenderEmail__Text {
       display: block;
+    }
+  }
+  .Local {
+    display: none !important;
+  }
+  .Redes {
+    margin-top: 35px;
+  }
+  @media (max-width:600px) {
+    .Contato {
+      margin-top: 70px;
     }
   }
 `;

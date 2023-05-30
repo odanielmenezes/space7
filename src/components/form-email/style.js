@@ -23,6 +23,61 @@ const styleHome = styled.div`
       flex-direction: column;
       font-size: 14px;
     }
+
+    .RedesSociais {
+      font-size: 1.5em;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 100px 0 30px 0;
+      .line01 {
+        a {
+          color: rgba(255, 255, 255, 0.5);
+          text-decoration: none;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        small {
+          text-decoration: underline;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          svg {
+            font-size: 18px;
+          }
+        }
+      }
+      .Divider {
+        width: 1px;
+        height: 20px;
+        border: 0;
+        margin: 0 5px 0 5px;
+        border-right: 1px solid rgba(255, 255, 255, 0.19);
+      }
+      .Local {
+        margin: 30px 0 30px 0;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        justify-content: center;
+      }
+      .Redes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        svg {
+          cursor: pointer;
+          font-size: 28px;
+
+          :hover {
+            color: #ef342b;
+          }
+        }
+      }
+    }
     .SenderEmail__Text {
       width: 900px;
       text-align: center;
@@ -38,61 +93,6 @@ const styleHome = styled.div`
         border: 0;
         margin: 50px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .RedesSociais {
-        margin: 30px 0;
-        font-size: 1.3em;
-        color: rgba(255, 255, 255, 0.5);
-        margin: 30px 0 100px 0;
-        .line01 {
-          a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-          }
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          small {
-            text-decoration: underline;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-
-            svg {
-              font-size: 18px;
-            }
-          }
-        }
-        .Divider {
-          width: 1px;
-          height: 20px;
-          border: 0;
-          margin: 0 5px 0 5px;
-          border-right: 1px solid rgba(255, 255, 255, 0.19);
-        }
-        .Local {
-          margin: 10px 0 20px 0;
-          display: flex;
-          align-items: center;
-          gap: 5px;
-          justify-content: center;
-        }
-        .Redes {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 20px;
-
-          svg {
-            cursor: pointer;
-            font-size: 28px;
-
-            :hover {
-              color: #ef342b;
-            }
-          }
-        }
       }
     }
     .SenderEmail__Divider {
@@ -110,6 +110,9 @@ const styleHome = styled.div`
       gap: 1px;
       .SenderEmail__MainForm {
         width: 900px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
 
         .inputsFuncionários {
           width: 100%;
@@ -132,10 +135,10 @@ const styleHome = styled.div`
             font-size: 14px;
           }
           input {
-            margin: 0;
-            margin-right: 5px;
+            margin: 0 5px 0 0;
             border: 0;
             box-shadow: none;
+            width: 100%;
 
             :focus {
               box-shadow: none;
@@ -152,20 +155,22 @@ const styleHome = styled.div`
           }
         }
         .InputFile {
+          display: flex;
+          width: 100%;
           #file {
             display: none;
             input {
             }
           }
           label {
+            text-transform: uppercase;
             border-radius: 5px;
             margin: 0 auto 20px auto;
             background-color: #ef342b;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2px;
-            width: 97%;
+            width: 99.47%;
             height: 40px;
             color: #fff;
             font-size: 0.9em;
@@ -178,13 +183,16 @@ const styleHome = styled.div`
             }
           }
         }
+        .celular {
+          width: 100%;
+        }
         input {
           border-radius: 5px;
           background-color: #fff;
           width: 98%;
           height: 32px;
           border: 1px solid rgba(100, 100, 100, 0.3);
-          margin: 0 0 20px 0;
+          margin: 0 auto 20px auto;
           outline: none;
           padding: 5px;
           font-size: 1em;
@@ -199,7 +207,9 @@ const styleHome = styled.div`
         }
       }
       .SenderEmail__TextField {
-        width: 100%;
+        width: 100.25%;
+        display: flex;
+        justify-content: center;
         textarea {
           border-radius: 5px;
           color: #000;
@@ -228,9 +238,10 @@ const styleHome = styled.div`
         display: flex;
         gap: 8px;
         justify-content: flex-end;
+        margin-top: 18px;
         button {
           border-radius: 5px;
-          width: 99%;
+          width: 100%;
           height: 40px;
           border: 0;
           padding: 8px;
@@ -288,6 +299,25 @@ const styleHome = styled.div`
         display: flex !important;
         flex-direction: column !important;
         gap: 50px;
+
+        .RedesSociais {
+          margin: 30px 0 0 0;
+          .line01 {
+            flex-direction: column;
+            gap: 30px;
+          }
+          .Divider {
+            display: none;
+            margin: 10px 0;
+            border: 0;
+            width: 80%;
+            height: 1px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          }
+        }
+        .Divider {
+          margin-bottom: 10px;
+        }
       }
       .SenderEmail__Divider {
         display: none;
@@ -305,30 +335,17 @@ const styleHome = styled.div`
         p {
           font-size: 0.8em;
         }
-        .RedesSociais {
-          margin: 0 0 30px 0;
-          .line01 {
-            display: flex;
-            flex-direction: column;
-            .Divider {
-              display: none;
-              width: 80vw;
-              border: 0;
-              border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-              height: 1px;
-              margin: 20px 0;
-            }
-          }
-        }
       }
       .SenderEmail__Content {
-        width: 90vw;
+        width: 90%;
         margin: 0;
         .SenderEmail__MainForm {
-          width: 90%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
           input {
             background-color: #fff;
-            width: 98%;
             height: 22px;
             border: 1px solid rgba(100, 100, 100, 0.3);
             margin: 0 0 20px 0;
@@ -338,6 +355,7 @@ const styleHome = styled.div`
             box-shadow: 2px 2px 2px rgba(100, 100, 100, 0.3);
             transition: 0.3s;
             color: #000;
+            width: 100%;
 
             :focus {
               box-shadow: 2px 2px 4px rgba(0, 117, 218, 1);
@@ -360,18 +378,30 @@ const styleHome = styled.div`
               width: 20px;
             }
             small {
+              white-space: nowrap;
               font-size: 0.9em;
+            }
+          }
+          .celular {
+            width: 100%;
+            display: flex;
+          }
+          .InputFile {
+            width: 103%;
+            display: flex;
+            label {
+              width: 100%;
             }
           }
         }
         .SenderEmail__TextField {
-          width: 90%;
+          width: 100%;
           textarea {
             color: #000;
             background: #fff;
             font-family: "poppins", sans-serif;
-            min-width: 98%;
-            max-width: 98%;
+            min-width: 100%;
+            max-width: 100%;
             min-height: 150px;
             max-height: 200px;
             font-size: 1em;
@@ -388,7 +418,7 @@ const styleHome = styled.div`
           }
         }
         .SenderEmail__ButonsForm {
-          width: 85vw;
+          width: 103%;
           display: flex;
           gap: 8px;
           justify-content: center;

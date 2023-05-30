@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 const style_buttons = styled.div`
     .ButtonQueroComecar {
-        margin: 30px 0;
         button {
           border: 0;
           background-color: #CF3C32;
           color: #FFF;
-          box-shadow: 4px 4px 4px rgba(0,0,0, 1);
-          padding: 20px 80px;
-          font-size: 2em;
+          box-shadow: 2px 2px 4px rgba(0,0,0, .8);
+          font-size: 1.4em;
           transition: .3s;
+          width: 300px;
+          height: 70px;
           border-radius: 5px;
           white-space: nowrap;
           cursor: pointer;
@@ -18,7 +18,7 @@ const style_buttons = styled.div`
           :hover {
             transform: scale(1.1);
             transition: .3s;
-            box-shadow: 9px 9px 5px rgba(0,0,0, .8);
+            box-shadow: 4px 4px 7px rgba(0,0,0, .3);
           }
         }
     }

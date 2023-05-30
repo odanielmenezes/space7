@@ -22,7 +22,6 @@ export function Header() {
   const changePage = (valor) => {
     setTimeout(() => {
       setIsHome(location.pathname);
-      console.log(isHome);
     }, 10);
     if (isMobile) {
       setOpenMenu(true);
@@ -31,7 +30,6 @@ export function Header() {
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
-    console.log(openMenu);
   };
 
   if (!isMobile) {
@@ -42,7 +40,7 @@ export function Header() {
             className={!openMenu ? "Header__Content" : "Header__Content Open"}
           >
             <ul>
-              <Link onClick={() => changePage()} className="lis" to="/space7">
+              <Link onClick={() => changePage()} className="lis" to="/">
                 <li>Home</li>
               </Link>
               <Link onClick={() => changePage()} className="lis" to="/agencia">

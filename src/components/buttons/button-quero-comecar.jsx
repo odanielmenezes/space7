@@ -4,7 +4,6 @@ import Styled from "./style-buttons";
 export function BtnQueroComecar(props) {
   const {name, link} = props
 
-  console.log(name, 'name')
 
   return (
     <Styled>

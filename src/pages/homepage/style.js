@@ -19,6 +19,62 @@ const style_footer = styled.div`
         color: #000;
       }
     }
+    .RedesSociais {
+      font-size: 1.5em;
+      color: rgba(0, 0, 0, 0.8) !important;
+      margin: 50px 0 30px 0 !important;
+      .line01 {
+        a {
+          color: rgba(0, 0, 0, 0.8) !important;
+          text-decoration: none;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        small {
+          text-decoration: underline;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          svg {
+            font-size: 18px;
+          }
+        }
+      }
+      .Divider {
+        width: 1px !important;
+        height: 20px !important;
+        border: 0 !important;
+        margin: 0 5px 0 5px !important;
+        border-right: 1px solid rgba(0, 0, 0, 0.19) !important;
+      }
+      .Local {
+        display: none !important;
+        margin: 30px 0 30px 0;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        justify-content: center;
+      }
+      .Redes {
+        margin: 40px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        svg {
+          cursor: pointer;
+          font-size: 28px;
+
+          :hover {
+            color: #ef342b;
+          }
+        }
+      }
+    }
     .SenderEmail__MainForm {
       .inputsFuncionários {
         div {
@@ -296,7 +352,9 @@ const style_footer = styled.div`
             justify-content: center;
             align-items: center;
             box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-            svg {
+            img {
+              width: 50px;
+              height: 50px;
               color: #111c3f;
               font-size: 23px;
             }

@@ -13,7 +13,7 @@ import {
 
 import api from "../../api/api";
 
-export function SenderEmail() {
+export function SenderEmail(isCurriculo) {
   const [checkbox01, setCheckbox01] = useState(false);
   const [checkbox02, setCheckbox02] = useState(false);
   const [checkbox03, setCheckbox03] = useState(false);
@@ -27,14 +27,11 @@ export function SenderEmail() {
   const [assunto, setAssunto] = useState("");
   const [mensagem, setMensagem] = useState("");
   const [send, setSend] = useState(false);
-  const [sendText, setSendText] = useState(
-    location.pathname === "/trabalhe-conosco" ? "Enviar currículo" : "Enviar"
-  );
+  const [sendText, setSendText] = useState("ENVIAR");
 
-  const sendEmail = () => {
+  const senderEmail = () => {
     setSend(true);
     setSendText("Enviando");
-    console.log(file, " file");
     let formData = new FormData();
     formData.append("nome", nome);
     formData.append("email", email);
@@ -43,26 +40,26 @@ export function SenderEmail() {
     formData.append("empresa", empresa);
     formData.append("funcionarios", funcionarios);
     formData.append("assunto", assunto);
-    formData.append("file", file);
-    formData.append(
-      "curriculo",
-      location.pathname === "/trabalhe-conosco" ? true : false
-    );
+
+    const dados = {
+      nome,
+      email,
+      mensagem,
+      celular,
+      empresa,
+      funcionarios,
+      assunto,
+    };
 
     api
-      .post("/send-email", formData, {
-        responseType: "arraybuffer",
-        responseEncoding: "binary",
-      })
+      .post("/send-email", dados)
       .then((response) => {
-        console.log(response);
         setSend(false);
         setSendText("Enviado!");
         setTimeout(() => {
           setSendText("Enviar");
           clearFields();
         }, 2000);
-        console.log("REPONSE");
       })
       .catch((err) => {
         setSend(false);
@@ -70,9 +67,42 @@ export function SenderEmail() {
         setTimeout(() => {
           setSendText("Enviar");
         }, 5000);
-        console.log("ERROR", err);
       });
-    console.log(send);
+  };
+
+  function onSubmit(token) {
+    document.getElementById("demo-form").submit();
+  }
+
+  const senderCurriculo = () => {
+    setSend(true);
+    setSendText("Enviando");
+    let formData = new FormData();
+    formData.append("nome", nome);
+    formData.append("email", email);
+    formData.append("mensagem", mensagem);
+    formData.append("file", file);
+
+    api
+      .post("/send-curriculo", formData, {
+        responseType: "arraybuffer",
+        responseEncoding: "binary",
+      })
+      .then((response) => {
+        setSend(false);
+        setSendText("Enviado!");
+        setTimeout(() => {
+          setSendText("Enviar");
+          clearFields();
+        }, 2000);
+      })
+      .catch((err) => {
+        setSend(false);
+        setSendText("Erro");
+        setTimeout(() => {
+          setSendText("Enviar");
+        }, 5000);
+      });
   };
 
   const onLoading = () => {
@@ -117,7 +147,6 @@ export function SenderEmail() {
   };
 
   const clearFields = () => {
-    console.log("CLEAR");
     setNome("");
     setEmail("");
     setMensagem("");
@@ -161,41 +190,6 @@ export function SenderEmail() {
             <Fade left>
               <div className="Divider"></div>
             </Fade>
-            <Fade right>
-              <div className="RedesSociais">
-                <div className="line01">
-                  <Link
-                    onClick={(e) => {
-                      window.location.href =
-                        "mailto:comercial@space7digital.com.br";
-                      e.preventDefault();
-                    }}
-                  >
-                    <small>comercial@space7digital.com.br</small>
-                  </Link>
-                  <div className="Divider"></div>
-                  <small>
-                    <Link
-                      onClick={(e) => {
-                        window.location.href =
-                          "https://wa.me/5551992797210?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7.";
-                        e.preventDefault();
-                      }}
-                    >
-                      <BsWhatsapp /> +55 51 93104790
-                    </Link>
-                  </small>
-                </div>
-                <div className="Local">
-                  <BsPinFill /> POA/RS
-                </div>
-                <div className="Redes">
-                  <BsInstagram />
-                  <BsFacebook />
-                  <BsLinkedin />
-                </div>
-              </div>
-            </Fade>
           </div>
           <Fade left>
             <div className="SenderEmail__Divider"></div>
@@ -217,15 +211,13 @@ export function SenderEmail() {
                 />
                 {location.pathname !== "/trabalhe-conosco" && (
                   <>
-                    <div>
-                      <TelefoneBrasileiroInput
-                        value={celular}
-                        onChange={(e) => setCelular(e.target.value)}
-                        temDDD
-                        separaDDD
-                        placeholder="Telefone/Celular"
-                      />
-                    </div>
+                    <TelefoneBrasileiroInput
+                      value={celular}
+                      onChange={(e) => setCelular(e.target.value)}
+                      temDDD
+                      separaDDD
+                      placeholder="Telefone/Celular"
+                    />
                     <input
                       type="text"
                       value={empresa}
@@ -296,7 +288,7 @@ export function SenderEmail() {
                     <label htmlFor="file">
                       {file !== null && file !== undefined
                         ? file.name
-                        : "Anexar currículo (*pdf)"}{" "}
+                        : "Anexar (*pdf)"}{" "}
                     </label>
                     <input
                       type="file"
@@ -316,9 +308,54 @@ export function SenderEmail() {
                 />
               </div>
               <div className="SenderEmail__ButonsForm">
-                <button type="submit" onClick={() => sendEmail()}>
+                <button
+                  class="g-recaptcha"
+                  data-sitekey="reCAPTCHA_site_key"
+                  data-callback={onSubmit}
+                  data-action="submit"
+                  type="submit"
+                  onClick={() =>
+                    location.pathname !== "/trabalhe-conosco"
+                      ? senderEmail()
+                      : senderCurriculo()
+                  }
+                >
                   {!send ? sendText : onLoading()}
                 </button>
+              </div>
+            </div>
+          </Fade>
+          <Fade right>
+            <div className="RedesSociais">
+              <div className="line01">
+                <Link
+                  onClick={(e) => {
+                    window.location.href = "mailto:omercial@space7.com.br";
+                    e.preventDefault();
+                  }}
+                >
+                  <small>omercial@space7.com.br</small>
+                </Link>
+                <div className="Divider"></div>
+                <small>
+                  <Link
+                    onClick={(e) => {
+                      window.location.href =
+                        "https://wa.me/5551992797210?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7.";
+                      e.preventDefault();
+                    }}
+                  >
+                    <BsWhatsapp /> +55 51 99279-7210
+                  </Link>
+                </small>
+              </div>
+              <div className="Local">
+                <BsPinFill /> POA/RS
+              </div>
+              <div className="Redes">
+                <BsInstagram />
+                <BsFacebook />
+                <BsLinkedin />
               </div>
             </div>
           </Fade>
