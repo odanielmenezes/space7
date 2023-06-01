@@ -1956,7 +1956,7 @@ o.goToAndStop(c0-o.firstFrame-1,!0)}x0.type==="loop"&&(p0===null||p0!==x0.frames
 
         .Agencia__CardMain {
           position: relative;
-          line-height: 26px;
+          line-height: 34px;
           letter-spacing: 0px;
           img {
             transform: rotate(5deg);
