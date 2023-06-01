@@ -1657,9 +1657,16 @@ o.goToAndStop(c0-o.firstFrame-1,!0)}x0.type==="loop"&&(p0===null||p0!==x0.frames
           font-size: 1.5em;
         }
         .Servicos__MainServicos {
+          width: 100vw;
           .Servicos__Items {
+            width: 90vw;
             grid-template-columns: 1fr !important;
+            
+            .HomePage__Services__Icons__Icon {
+              width: 85vw;
+            }
             .Servicos__Item {
+              margin: 0 auto;
               height: 350px;
               width: 85%;
               font-size: .8em;
