@@ -1981,7 +1981,6 @@ o.goToAndStop(c0-o.firstFrame-1,!0)}x0.type==="loop"&&(p0===null||p0!==x0.frames
             right: 10px;
             position: absolute;
             font-size: 60px;
-            color: red;
             filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 0.8));
           }
         }
@@ -2139,7 +2138,6 @@ o.goToAndStop(c0-o.firstFrame-1,!0)}x0.type==="loop"&&(p0===null||p0!==x0.frames
     .Agencia__MainContent {
       .Agencia__MainContent__ComoAgimos {
         .ComoAgimos__Items {
-          background-color: red;
           display: flex;
           gap: 10px;
         }
@@ -2214,6 +2212,7 @@ o.goToAndStop(c0-o.firstFrame-1,!0)}x0.type==="loop"&&(p0===null||p0!==x0.frames
           display: grid !important;
           grid-template-columns: 1fr;
           .HomePage__Services__Icons__Icon {
+            margin: 40px 0;
             h1 {
               font-size: 1.5em !important;
             }
