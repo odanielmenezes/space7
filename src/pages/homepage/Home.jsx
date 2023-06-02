@@ -6,19 +6,10 @@ import Styled from "./style";
 import { SenderEmail } from "../../components/form-email";
 import animaEcommerce from "../../assets/eCommerce.json";
 import Lottie from "lottie-react";
-import { Link } from "react-router-dom";
+import { Cards } from "../../components/cards/cards";
 import RocketAnima from "../../assets/36418-cecil-portfolio-background.json";
 import Balance from "react-wrap-balancer";
 import { BtnQueroComecar } from "../../components/buttons/button-quero-comecar";
-import migrationSvg from "../../assets/migracao-cards.svg";
-import marketplaceSvg from "../../assets/marketplace-cards.svg";
-import designSvg from "../../assets/design-cards.svg";
-import googleAds from "../../assets/googleads.png";
-import croSvg from "../../assets/cro-cards.svg";
-import seoSvg from "../../assets/seo-cards.svg";
-import instaSvg from "../../assets/insta-cards.png";
-import mentoriaSvg from "../../assets/mentoria-cards.svg";
-import supportSvg from "../../assets/support-cards.svg";
 
 export function Home() {
   const frase = `Tenha um parceiro para sua transformação digital.`;
@@ -35,37 +26,9 @@ export function Home() {
       navigator.userAgent
     );
 
-  const icons = [
-    migrationSvg,
-    marketplaceSvg,
-    designSvg,
-    croSvg,
-    seoSvg,
-    googleAds,
-    instaSvg,
-    mentoriaSvg,
-    supportSvg,
-  ];
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const card = (props) => {
-    const { title, description, id } = props;
-    return (
-      <div className="HomePage__Services__Icons__Icon">
-        <div className="Icon"><img src={icons[id - 1]} alt="" /></div>
-        <h1>{title}</h1>
-        <p>
-          <Balance>{description}</Balance>
-        </p>
-        <Link to={title.includes("Mentoria") ? `/mentoria` : `/servicos`}>
-          <button>conhecer</button>
-        </Link>
-      </div>
-    );
-  };
 
   function animation() {
     var mostrarLetras = setInterval(() => {
@@ -170,13 +133,13 @@ export function Home() {
           {!isMobile && (
             <Fade left>
               <div className="HomePage__Services__Icons">
-                {infosCards.cards.map((item) => card(item))}
+                {infosCards.cards.map((item) => <Cards {...item} isAgency={infosCards.cards.length }/>)}
               </div>
             </Fade>
           )}
           {isMobile && (
             <div className="HomePage__Services__Icons">
-              <Fade left>{infosCards.cards.map((item) => card(item))}</Fade>
+              <Fade left>{infosCards.cards.map((item) => <Cards {...item} isAgency={infosCards.cards.length } />)}</Fade>
             </div>
           )}
         </div>

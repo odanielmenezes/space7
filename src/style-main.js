@@ -28,6 +28,14 @@ const style_lgpd = styled.div`
         }
     }
 }
+@media (max-width: 1366px) {
+    .lgpd {
+        p {
+            width: 80vw;
+            text-align: center;
+        }
+    }
+}
 @media (max-width: 600px) {
     .lgpd {
         width: 100vw;

@@ -294,6 +294,7 @@ export function SenderEmail(isCurriculo) {
                       type="file"
                       name="file"
                       id="file"
+                      accept=".pdf"
                       onChange={(e) => setFile(e.target.files[0])}
                     />
                   </div>
@@ -334,7 +335,7 @@ export function SenderEmail(isCurriculo) {
                     e.preventDefault();
                   }}
                 >
-                  <small>omercial@space7.com.br</small>
+                  <small>comercial@space7.com.br</small>
                 </Link>
                 <div className="Divider"></div>
                 <small>

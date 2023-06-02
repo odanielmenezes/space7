@@ -10,6 +10,14 @@ const style_footer = styled.div`
     color: #fff;
     margin-top: 200px;
 
+    .animation-geral {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+ }
+
     .Servicos__Content {
       .Servicos__Content__Texts {
         text-align: center;
@@ -55,74 +63,134 @@ const style_footer = styled.div`
         margin: 50px auto;
         .Servicos__Items {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr 1fr 1fr;
           gap: 50px 0;
+          margin: 0 auto;
           .Servicos__Item_Btn {
             display: flex;
             align-items: center;
             justify-content: center;
           }
-          .Servicos__Item {
-            background-image: linear-gradient(
-                45deg,
-                rgba(0, 0, 0, 0.9),
-                rgba(0, 0, 0, 0.2)
-              ),
-              url(${fundoItem});
-            background-position: center;
-            background-size: cover;
-            margin: 0 auto;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            height: auto;
-            padding: 20px;
-            text-align: start;
-            border-top: 5px solid #cf3c32;
+          .HomePage__Services__Icons__Icon {
+            z-index: 1;
+            width: 350px;
+            height: 557px;
+            padding: auto 0;
+            border-radius: 8px;
+            display: flex;
+            border: 1px solid #111c3f;
+            flex-direction: column;
+            transition: 0.5s;
+            justify-content: center !important;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(155, 155, 155, 0.7);
             position: relative;
-            .icon {
-              img {
-                filter: drop-shadow(0px 0px 6px rgba(155, 155, 155, 0.3));
-                width: 60px;
+
+            /* &:nth-child(1) {
+              ul {
+                position: absolute;
+                top: 300px;
               }
-            }
-            h2 {
-              display: flex;
-              gap: 10px;
-              align-items: center;
-              font-size: 1.3em;
-              line-height: 120%;
-              strong {
-                margin-right: 10px;
-                font-size: 2em;
-              }
-            }
-            .Divider {
-              width: 90%;
-              border: 0;
-              border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-              height: 1px;
-            }
-            p {
+            } */
+          h1 {
+            position: absolute;
+            top: 50px;
+            display: block;
+            height: 50px;
+            line-height: 120%;
+            width: 90%;
+            font-size: 1.5em;
+            flex-wrap: nowrap;
+            color: #000;
+            text-align: center;
+          }
+          ul {
+            margin: 0;
+            width: 90%;
+            margin-left: 50px;
+            li {
+              width: 200px;
+              color: #000;
               line-height: 18px;
-              font-size: 1.1em;
-              color: #fff;
+              margin: 5px 0;
             }
-            ul {
-              margin: 50px 0;
-              li {
-                color: #fff;
-              }
+          }
+          :hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+          }
+          .Icon {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+            img {
+              width: 50px;
+              height: 50px;
+              color: #111c3f;
+              font-size: 23px;
             }
+          }
+          p {
+            display: block;
+            width: 90%;
+            line-height: 18px;
+            text-align: center;
+            font-size: 1.1em;
+            position: relative;
+
+            &:nth-child(3) {
+              position: absolute;
+              top: 150px;
+            }
+          }
+          button {
+            display: none;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            cursor: pointer;
+            margin: 15px 0 0 0;
+            padding: 8px 50px;
+            border: 0;
+            border-radius: 4px;
+            background-color: #dd4035;
+            text-transform: uppercase;
+            transition: 0.3s;
           }
         }
       }
+      .ButtonQueroComecar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px !important;
+        margin: 0 auto;
+      }
+      }
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     .Servicos {
       width: 100vw;
       overflow: hidden;
       margin-top: 120px;
+      .animation-geral {
+        position: fixed;
+        width: 2920px;
+        height: 100vh;
+        top: 0;
+      }
       .Servicos__Content {
         display: flex;
         flex-direction: column;
@@ -155,12 +223,22 @@ const style_footer = styled.div`
           font-size: 1.5em;
         }
         .Servicos__MainServicos {
+          width: 100vw;
           .Servicos__Items {
+            width: 90vw;
             grid-template-columns: 1fr !important;
+            
+            .HomePage__Services__Icons__Icon {
+              width: 85vw;
+            }
             .Servicos__Item {
+              margin: 0 auto;
               height: 350px;
               width: 85%;
               font-size: .8em;
+              button {
+                background-color: red;
+              }
               h2 {
                 .icon {
                   img {

@@ -10,7 +10,13 @@ const style_footer = styled.div`
     color: #FFF;
     width: 100vw;
     margin-top: 50px;
-
+    .animation-geral {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+ }
     .Mentoria__Content {
       width: 90%;
       .Mentoria__Content__Titles {
@@ -42,8 +48,7 @@ const style_footer = styled.div`
           width: 800px;
           height: 1px;
           border-bottom: 1px solid rgba(255,255,255, .1);
-          margin: 0 auto;
-          margin-bottom: 50px;
+          margin: 50px auto 100px auto;
 
           &:nth-child(5) {
             margin: 50px auto 80px;
@@ -65,22 +70,27 @@ const style_footer = styled.div`
     }
     .Mentoria__Table {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      justify-content: center;
+
       .Mentoria__Table__Item {
         position: relative;
         display: flex;
-        justify-content: start;
+        justify-content: center;
+        align-items: center;
         width: 400px;
         height: 250px;
         margin: 0 0 40px 0;
         border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(255,255,255, .1);
+        color: #FFF;
 
         h2 {
+          text-transform: uppercase;
           white-space: nowrap;
           line-height: 22px;
           margin: 20px;
           font-size: 1.1em;
+          text-align: center;
 
           strong {
             width: 30px;
@@ -91,6 +101,7 @@ const style_footer = styled.div`
           }
         }
         .Divider {
+          display: none;
           width: 100%;
           border: 0;
           height: 1px;
@@ -100,10 +111,7 @@ const style_footer = styled.div`
         svg {
           filter: drop-shadow(4px 4px 2px rgba(0,0,0, .5));
           opacity: .8;
-          position: absolute;
-          bottom: 20px;
-          right: 30px;
-          font-size: 8em;
+          font-size: 7em;
         }
       }
       .Mentoria__Table__Item__Button {
@@ -157,10 +165,16 @@ const style_footer = styled.div`
       }
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     .Mentoria {
       overflow: hidden;
       margin-top: -50px;
+      .animation-geral {
+        position: fixed;
+        width: 2920px;
+        height: 100vh;
+        top: 0;
+      }
       .Mentoria__Content {
         .Mentoria__Content__Titles {
           .Menoria__Lottie {

@@ -4,15 +4,9 @@ import InfosJson from "./variables.json";
 import Balance from "react-wrap-balancer";
 import { BtnQueroComecar } from "../../components/buttons/button-quero-comecar";
 import { Fade } from "react-reveal";
-import migrationSvg from "../../assets/migracao-cards.svg";
-import marketplaceSvg from "../../assets/marketplace-cards.svg";
-import designSvg from "../../assets/design-cards.svg";
-import googleAds from "../../assets/googleads.png";
-import croSvg from "../../assets/cro-cards.svg";
-import seoSvg from "../../assets/seo-cards.svg";
-import instaSvg from "../../assets/insta-cards.png";
-import mentoriaSvg from "../../assets/mentoria-cards.svg";
-import supportSvg from "../../assets/support-cards.svg";
+import Lottie from "lottie-react";
+import fundoGeral from "../../assets/background-geral.json";
+import { Cards } from "../../components/cards/cards";
 
 export function Servicos() {
   const isMobile =
@@ -23,44 +17,14 @@ export function Servicos() {
     window.scrollTo(0, 0);
   }, []);
 
-  const icons = [
-    migrationSvg,
-    marketplaceSvg,
-    designSvg,
-    croSvg,
-    seoSvg,
-    googleAds,
-    instaSvg,
-    mentoriaSvg,
-    supportSvg,
-  ];
-
-  const Card = (props) => {
-    const { id, title, text, text02, list } = props;
-    return (
-        <div className="Servicos__Item">
-          <h2>
-            <div className="icon">
-              <img src={icons[id - 1]} alt="" />
-            </div>
-            {title}
-          </h2>
-          <div className="Divider"></div>
-          <p>{text}</p>
-          {list.length > 0 && (
-            <ul>
-              {list.map((item) => (
-                <li>{item.li}</li>
-              ))}
-            </ul>
-          )}
-          {text02 !== "" && <p>{text02}</p>}
-        </div>
-    );
-  };
   return (
     <Styled>
       <div className="Servicos">
+        {!isMobile && (
+          <div className="animation-geral">
+            <Lottie animationData={fundoGeral} loop={false} />
+          </div>
+        )}
         <div className="Servicos__Content">
           <div className="Servicos__Content__Texts">
             <Fade top>
@@ -84,34 +48,27 @@ export function Servicos() {
                   <br />
                   um <strong>e-commerce</strong> que vai construir o
                   relacionamento real <strong>empresa/consumidor</strong>
+                  <br />Nossos <strong>seviços</strong> conssistem em:
                 </p>
               </Fade>
             </Balance>
           </div>
-          <Fade left>
-            <div className="Servicos__Title">
-              <h1>Nossos seviços conssistem em:</h1>
-            </div>
-          </Fade>
           <div className="Servicos__MainServicos">
-              {!isMobile && (
-                <Fade left>
-                  <div className="Servicos__Items">
-                    {InfosJson.cards.map((card) => Card(card))}
-                    <div className="Servicos__Item_Btn">
-                      <BtnQueroComecar />
-                    </div>
-                  </div>
-                </Fade>
-              )}
-              {isMobile && (
+            {!isMobile && (
+              <Fade left>
                 <div className="Servicos__Items">
-                  <Fade left>{InfosJson.cards.map((card) => Card(card))}</Fade>
-                  <div className="Servicos__Item_Btn">
-                    <BtnQueroComecar />
-                  </div>
+                  {InfosJson.cards.map((card) => <Cards {...card} isAgency={InfosJson.cards.length }/>)}
                 </div>
-              )}
+              </Fade>
+            )}
+            {isMobile && (
+              <div className="Servicos__Items">
+                <Fade left>{InfosJson.cards.map((card) => <Cards {...card} isAgency={InfosJson.cards.length } />)}</Fade>
+              </div>
+            )}
+                <div className="Servicos__Item_Btn">
+                  <BtnQueroComecar />
+                </div>
           </div>
         </div>
       </div>

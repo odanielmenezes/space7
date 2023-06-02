@@ -7,6 +7,7 @@ const style_footer = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    z-index: 2;
   }
 `;
 export default style_footer;

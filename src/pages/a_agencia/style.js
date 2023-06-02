@@ -9,6 +9,14 @@ const style_footer = styled.div`
     flex-direction: column;
     color: #FFF;
 
+    .animation-geral {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+    }
+
     .Agencia__MainContent {
       margin-top: 100px;
       display: flex;
@@ -31,7 +39,7 @@ const style_footer = styled.div`
 
         .Agencia__CardMain {
           position: relative;
-          line-height: 26px;
+          line-height: 34px;
           letter-spacing: 0px;
           img {
             transform: rotate(5deg);
@@ -110,40 +118,98 @@ const style_footer = styled.div`
         .ComoAgimos__Items {
           display: flex;
           justify-content: center;
-          gap: 65px;
+          gap: 20px;
           width: 93vw;
-          .ComoAgimos__Item {
-            border: 1px solid #FFF;
+          .HomePage__Services__Icons__Icon {
+            gap: 0;
+          h1 {
+            line-height: 100%;
+            width: 90%;
+            font-size: 1.6em;
+            letter-spacing: 1px;
+            flex-wrap: nowrap;
+            text-align: center;
+            color: #000;
+          }
+          :hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+          }
+          .Icon {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 20px;
-            width: 250px;
-            height: auto;
-            background-color: #000;
-            color: #fff;
-            padding: 50px 20px 160px 20px;
-            text-align: end;
-            h3 {
-              line-height: 120%;
-              color: #dd4035;
-              text-align: end;
-              width: 100%;
-              font-size: 2em;
-            }
-            p {
-              font-size: 1.2em;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+            img {
+              width: 50px;
+              height: 50px;
+              color: #111c3f;
+              font-size: 23px;
             }
           }
+          p {
+            width: 90%;
+            line-height: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: rgba(0, 0, 0, 0.7);
+
+            &:nth-child(4) {
+              display: none;
+            }
+          }
+          button {
+            display: none;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            cursor: pointer;
+            margin: 15px 0 0 0;
+            padding: 8px 50px;
+            border: 0;
+            border-radius: 4px;
+            background-color: #dd4035;
+            color: #fff;
+            text-transform: uppercase;
+            transition: 0.3s;
+          }
+        }
         }
       }
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1366px) {
+    .Agencia__MainContent {
+      .Agencia__MainContent__ComoAgimos {
+        .ComoAgimos__Items {
+          background-color: red;
+          display: flex;
+          gap: 10px;
+        }
+      }
+    }
+  }
+  @media (max-width: 960px) {
     .Agencia {
       margin-top: -70px;
       overflow: hidden;
       width: 100vw !important;
+      .animation-geral {
+        position: fixed;
+        width: 2920px;
+        height: 100vh;
+        top: 0;
+      }
       .Agencia__MainContent {
         width: 100vw;
         h1 {
@@ -201,7 +267,11 @@ const style_footer = styled.div`
         .ComoAgimos__Items {
           display: grid !important;
           grid-template-columns: 1fr;
-
+          .HomePage__Services__Icons__Icon {
+            h1 {
+              font-size: 1.5em !important;
+            }
+          }
           .ComoAgimos__Item {
             margin: 0 auto;
           }

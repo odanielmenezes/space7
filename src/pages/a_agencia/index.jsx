@@ -1,18 +1,32 @@
 import { useEffect } from "react";
 import Balance from "react-wrap-balancer";
 import Styled from "./style";
+import infosJson from "./variables.json";
 import { Fade } from "react-reveal";
-import rocketSvg from "../../assets/rocket-svgrepo-com.svg"
+import rocketSvg from "../../assets/rocket-svgrepo-com.svg";
+import Lottie from "lottie-react";
+import fundoGeral from "../../assets/background-geral.json";
+import { Cards } from "../../components/cards/cards";
 import { BtnQueroComecar } from "../../components/buttons/button-quero-comecar";
 
 export function Agencia() {
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
+
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
 
   return (
     <Styled>
       <div className="Agencia">
+        {!isMobile && (
+          <div className="animation-geral">
+            <Lottie animationData={fundoGeral} loop={false} />
+          </div>
+        )}
         <div className="Agencia__MainContent">
           <Fade top>
             <h1>
@@ -54,53 +68,13 @@ export function Agencia() {
                 </h1>
               </Fade>
             </div>
-            <div className="ComoAgimos__Items">
-              <Fade bottom>
-                <div className="ComoAgimos__Item">
-                  <h3>Somos humanos</h3>
-                  <p>
-                    Ambiente e relações de trabalho humanas e conscientes,
-                    ouvimos e valorizamos a sua opinião, dos nossos
-                    colaboradores e dos seus consumidores, tratando cada pessoa
-                    com total atenção e compreensão.
-                  </p>
-                </div>
-              </Fade>
-              <Fade top>
-                <div className="ComoAgimos__Item">
-                  <h3>
-                    Buscamos inovar
-                    <br /> em tudo
-                  </h3>
-                  <p>
-                    Não nos contentamos com o convencional, temos curiosidade e
-                    visão, sempre experimentamos novas ideias e soluções!
-                  </p>
-                </div>
-              </Fade>
-              <Fade bottom>
-                <div className="ComoAgimos__Item">
-                  <h3>
-                    Temos tolerância zero para <br />
-                    papo-furado
-                  </h3>
-                  <p>
-                    Transparência e trabalho aberto proporcionam confiança e
-                    maximizam o potencial de cada colaborador.
-                  </p>
-                </div>
-              </Fade>
-              <Fade top>
-                <div className="ComoAgimos__Item">
-                  <h3>Queremos simplificar</h3>
-                  <p>
-                    Sem complexidades e, sim, com agilidade, eficiência,
-                    organização e objetividade para simplificar sua presença no
-                    e-commerce!
-                  </p>
-                </div>
-              </Fade>
-            </div>
+            <Fade left>
+              <div className="ComoAgimos__Items">
+                {infosJson.cards.map((card) => (
+                  <Cards {...card} isAgency={infosJson.cards.length} />
+                ))}
+              </div>
+            </Fade>
           </div>
         </div>
         <BtnQueroComecar />

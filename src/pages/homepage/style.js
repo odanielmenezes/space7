@@ -247,6 +247,7 @@ const style_footer = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        word-spacing: 5px;
         h1 {
           text-align: center;
           line-height: 40px;
@@ -266,7 +267,7 @@ const style_footer = styled.div`
           color: #fff;
           padding: 60px;
           text-align: center;
-          line-height: 25px;
+          line-height: 33px;
           font-size: 1.8em;
           color: #111c3f;
         }
@@ -310,74 +311,6 @@ const style_footer = styled.div`
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 50px;
-
-        .HomePage__Services__Icons__Icon {
-          position: relative;
-          width: 300px;
-          height: 400px;
-          border-radius: 8px;
-          display: flex;
-          align-items: center;
-          border: 1px solid #111c3f;
-          flex-direction: column;
-          justify-content: center;
-          gap: 30px;
-          transition: 0.5s;
-          /* background-image: url(${BackgroundCards}); */
-          background-position: center;
-          background-size: cover;
-          box-shadow: 0px 0px 10px rgba(155, 155, 155, 0.7);
-          position: relative;
-          h1 {
-            line-height: 120%;
-            width: 80%;
-            font-size: 1.3em;
-            flex-wrap: nowrap;
-            text-align: center;
-          }
-          :hover {
-            transform: scale(1.1);
-            transition: 0.3s;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
-          }
-          .Icon {
-            width: 80px;
-            height: 80px;
-            background-color: #fff;
-            position: absolute;
-            top: -30px;
-            left: 118px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-            img {
-              width: 50px;
-              height: 50px;
-              color: #111c3f;
-              font-size: 23px;
-            }
-          }
-          p {
-            width: 90%;
-            line-height: 15px;
-            text-align: center;
-            font-size: 0.9em;
-            color: rgba(0, 0, 0, 0.7);
-          }
-          button {
-            cursor: pointer;
-            margin: 15px 0 0 0;
-            padding: 8px 50px;
-            border: 0;
-            border-radius: 4px;
-            background-color: #dd4035;
-            color: #fff;
-            text-transform: uppercase;
-            transition: 0.3s;
-          }
-        }
       }
     }
     .HomePage__Services__Icons__Title {
@@ -440,10 +373,16 @@ const style_footer = styled.div`
       margin-top: 15px !important;
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 960px) {
     .HomePage {
       min-height: 100vh;
       flex-direction: column;
+      .animation-geral {
+        position: fixed;
+        width: 2920px;
+        height: 100vh;
+        top: 0;
+      }
       .HomePage__Main {
         font-size: 0.5em;
         .HomePage__Content {
@@ -570,11 +509,9 @@ const style_footer = styled.div`
         .HomePage__Services__Icons {
           grid-template-columns: 1fr;
           .Icon {
-            top: -20px !important;
-            left: 20px !important;
-          }
-          .HomePage__Services__Icons__Icon {
-            width: 90vw;
+            top: 10px !important;
+            left: 50% !important;
+            transform: translateX(-50%) translateY(-50%);
           }
         }
       }

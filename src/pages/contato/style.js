@@ -8,7 +8,13 @@ const style_footer = styled.div`
     justify-content: center;
     color: #fff !important;
     padding: 50px 0;
-
+    .animation-geral {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+ }
     .SenderEmail__Text {
       display: block;
     }
@@ -19,8 +25,14 @@ const style_footer = styled.div`
   .Redes {
     margin-top: 35px;
   }
-  @media (max-width:600px) {
+  @media (max-width: 900px) {
     .Contato {
+      .animation-geral {
+        position: fixed;
+        width: 2920px;
+        height: 100vh;
+        top: 0;
+      }
       margin-top: 70px;
     }
   }

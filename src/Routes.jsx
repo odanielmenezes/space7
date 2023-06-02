@@ -5,7 +5,10 @@ import {
   BrowserRouter,
   Link,
 } from "react-router-dom";
+import Lottie from "lottie-react";
+import fundoGeral from "../src/assets/background-geral.json";
 import StyleLGPD from "./style-main";
+import StyleFundo from "./style-main";
 import { Home } from "./pages/homepage/Home";
 import { Servicos } from "./pages/servicos";
 import { Header } from "./components/header";
@@ -16,42 +19,56 @@ import { TrabalheConosco } from "./pages/trabalhe_conosco";
 import { BsWhatsapp } from "react-icons/bs";
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
+import { useEffect } from "react";
 
 export function AppRoutes() {
-  const [open, setOpen] = useState(true);
+  const [isHome, setIshome] = useState(location.pathname);
+  const [open, setOpen] = useState(false);
   const isMobile =
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     );
 
-    const openPopUp = () => {
-      setOpen(!open)
-    }
+  const openPopUp = () => {
+    sessionStorage.setItem("cookiesOk", "ok");
+    setOpen(sessionStorage.getItem("cookiesOk") === "ok");
+    console.log(sessionStorage.cookiesOk);
+  };
+
+  useEffect(() => {
+    setIshome(location.pathname)
+  }, [Location.path])
 
   const deskLGPD = () => {
     return (
       <StyleLGPD>
         <Fade bottom>
-        <div className="lgpd">
-          <p>
-            Utilizamos cookies para fornecer uma melhor experiência, melhorar o
-            desempenho, analisar como você interage com nosso site e
-            personalizar conteúdo. Ao utilizar este site, você concorda com o
-            use de cookies.
-          </p>
-          <button onClick={() => openPopUp()}>OK, ENTENDI</button>
-        </div>
+          <div className="lgpd">
+            <p>
+              Utilizamos cookies para fornecer uma melhor experiência, melhorar
+              o desempenho, analisar como você interage com nosso site e
+              personalizar conteúdo. Ao utilizar este site, você concorda com o
+              uso de cookies.
+            </p>
+            <button onClick={() => openPopUp()}>OK, ENTENDI</button>
+          </div>
         </Fade>
       </StyleLGPD>
     );
   };
+  console.log(isHome);
 
   return (
     <>
+      {isHome !== "/space7" && (
+        <StyleFundo>
+
+        </StyleFundo>
+      )}
       <Router basename="/">
         <Header />
         <Routes>
-          <Route path={`/`} element={<Home />}></Route>
+          <Route path={`/space7`} element={<Home />}></Route>
           <Route path="/servicos" element={<Servicos />}></Route>
           <Route path="/agencia" element={<Agencia />}></Route>
           <Route path="/contato" element={<Contato />}></Route>
@@ -68,7 +85,7 @@ export function AppRoutes() {
             </div>
           </Link>
         )}
-        {open && deskLGPD()}
+        {sessionStorage.cookiesOk !== "ok" && deskLGPD()}
       </Router>
     </>
   );

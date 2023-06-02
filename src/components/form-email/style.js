@@ -291,7 +291,7 @@ const styleHome = styled.div`
       }
     }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 960px) {
     .SenderEmail {
       margin-top: -70px !important;
       width: 100vw;

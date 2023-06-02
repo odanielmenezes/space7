@@ -30,7 +30,11 @@ body {
   backface-visibility: hidden;
   color: #FFF;
 }
-
+.animation-geral {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
 .HomePage__ButtonContact {
   position: fixed;
   bottom: 10px;

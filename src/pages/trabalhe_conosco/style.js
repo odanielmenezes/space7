@@ -9,6 +9,13 @@ const style_footer = styled.div`
     flex-direction: column;
     color: #FFF;
     margin-top: 200px;
+    .animation-geral {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+ }
     .Local { 
       display: none;
     }
@@ -51,11 +58,17 @@ const style_footer = styled.div`
   .Redes {
     margin-top: 35px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     .TrabalheConosco {
       overflow: hidden;
       width: 100vw;
       margin-top: 100px;
+      .animation-geral {
+        position: fixed;
+        width: 2920px;
+        height: 100vh;
+        top: 0;
+      }
       h1 {
         width: 300px;
         font-size: 2em;

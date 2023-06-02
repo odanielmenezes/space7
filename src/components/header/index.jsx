@@ -40,7 +40,7 @@ export function Header() {
             className={!openMenu ? "Header__Content" : "Header__Content Open"}
           >
             <ul>
-              <Link onClick={() => changePage()} className="lis" to="/">
+              <Link onClick={() => changePage()} className="lis" to="/space7">
                 <li>Home</li>
               </Link>
               <Link onClick={() => changePage()} className="lis" to="/agencia">

@@ -94,7 +94,15 @@ const style_header = styled.div`
       }
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1366px) {
+    .Header {
+      font-size: .9em;
+      .Header__Content {
+        margin-right: 210px;
+      }
+    }
+  }
+  @media (max-width: 960px) {
     .OpenBurguer {
       z-index: 10;
       margin: 0px 4px;
