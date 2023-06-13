@@ -24,7 +24,7 @@ export function TrabalheConosco() {
         )}
         <Fade top>
           <h1>
-            Venha fazer parte do nosso <strong>time</strong>.
+            Venha fazer parte do nosso <strong>time</strong>
           </h1>
         </Fade>
         <Fade right>

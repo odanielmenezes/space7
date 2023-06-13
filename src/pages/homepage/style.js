@@ -64,7 +64,14 @@ const style_footer = styled.div`
         align-items: center;
         justify-content: center;
         gap: 20px;
-
+        a {
+          display: flex;
+          align-items: center;
+          padding: 0;
+          margin: 0;
+          text-decoration: none;
+          color: rgba(0, 0, 0, 0.8);
+        }
         svg {
           cursor: pointer;
           font-size: 28px;

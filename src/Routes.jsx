@@ -2,7 +2,7 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  BrowserRouter,
+  HashRouter,
   Link,
 } from "react-router-dom";
 import Lottie from "lottie-react";
@@ -36,8 +36,8 @@ export function AppRoutes() {
   };
 
   useEffect(() => {
-    setIshome(location.pathname)
-  }, [Location.path])
+    setIshome(location.pathname);
+  }, [Location.path]);
 
   const deskLGPD = () => {
     return (
@@ -60,15 +60,11 @@ export function AppRoutes() {
 
   return (
     <>
-      {isHome !== "/space7" && (
-        <StyleFundo>
-
-        </StyleFundo>
-      )}
-      <Router basename="/">
+      {isHome !== "/space7" && <StyleFundo></StyleFundo>}
+      <HashRouter basename="/">
         <Header />
         <Routes>
-          <Route path={`/space7`} element={<Home />}></Route>
+          <Route path={`/`} element={<Home />}></Route>
           <Route path="/servicos" element={<Servicos />}></Route>
           <Route path="/agencia" element={<Agencia />}></Route>
           <Route path="/contato" element={<Contato />}></Route>
@@ -86,7 +82,7 @@ export function AppRoutes() {
           </Link>
         )}
         {sessionStorage.cookiesOk !== "ok" && deskLGPD()}
-      </Router>
+      </HashRouter>
     </>
   );
 }

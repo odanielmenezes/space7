@@ -11,12 +11,12 @@ const style_footer = styled.div`
     margin-top: 200px;
 
     .animation-geral {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    z-index: -1;
- }
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      z-index: -1;
+    }
 
     .Servicos__Content {
       .Servicos__Content__Texts {
@@ -72,111 +72,99 @@ const style_footer = styled.div`
             justify-content: center;
           }
           .HomePage__Services__Icons__Icon {
-            z-index: 1;
-            width: 350px;
-            height: 557px;
-            padding: auto 0;
-            border-radius: 8px;
-            display: flex;
-            border: 1px solid #111c3f;
-            flex-direction: column;
-            transition: 0.5s;
-            justify-content: center !important;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(155, 155, 155, 0.7);
-            position: relative;
-
-            /* &:nth-child(1) {
-              ul {
-                position: absolute;
-                top: 300px;
-              }
-            } */
-          h1 {
-            position: absolute;
-            top: 50px;
-            display: block;
-            height: 50px;
-            line-height: 120%;
-            width: 90%;
-            font-size: 1.5em;
-            flex-wrap: nowrap;
-            color: #000;
-            text-align: center;
-          }
-          ul {
-            margin: 0;
-            width: 90%;
-            margin-left: 50px;
-            li {
-              width: 200px;
-              color: #000;
-              line-height: 18px;
-              margin: 5px 0;
-            }
-          }
-          :hover {
-            transform: scale(1.1);
-            transition: 0.3s;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
-          }
-          .Icon {
-            width: 80px;
-            height: 80px;
-            background-color: #fff;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-            img {
-              width: 50px;
-              height: 50px;
-              color: #111c3f;
-              font-size: 23px;
-            }
-          }
-          p {
-            display: block;
-            width: 90%;
-            line-height: 18px;
-            text-align: center;
-            font-size: 1.1em;
-            position: relative;
-
-            &:nth-child(3) {
+            margin: 0 auto;
+            height: 466px;
+            .div_title {
+              width: 100%;
               position: absolute;
-              top: 150px;
+              top: 60px;
+              display: flex;
+              justify-content: center;
+              h1 {
+                height: 50px;
+                line-height: 120%;
+                width: 90%;
+                font-size: 1.5em;
+                flex-wrap: nowrap;
+                color: #000;
+                text-align: center;
+              }
             }
-          }
-          button {
-            display: none;
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            cursor: pointer;
-            margin: 15px 0 0 0;
-            padding: 8px 50px;
-            border: 0;
-            border-radius: 4px;
-            background-color: #dd4035;
-            text-transform: uppercase;
-            transition: 0.3s;
+            .Icon {
+              width: 80px;
+              height: 80px;
+              background-color: #fff;
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%) translateY(-50%);
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+              img {
+                width: 50px;
+                height: 50px;
+                color: #111c3f;
+                font-size: 23px;
+              }
+            }
+            .content-card {
+              position: absolute;
+              top: 134px;
+              display: flex;
+              flex-direction: column;
+              justify-content: start;
+              align-items: center;
+              width: 90%;
+              ul {
+                margin: 30px 0 0 0;
+                width: 90%;
+                li {
+                  text-align: start;
+                  width: 200px;
+                  color: rgba(0, 0, 0, 0.8);
+                  line-height: 18px;
+                  margin: 5px 0;
+                }
+              }
+              p {
+                width: 90%;
+                line-height: 18px;
+                text-align: start;
+                font-size: 1.1em;
+              }
+            }
+            button {
+              display: none;
+              position: absolute;
+              bottom: 40px;
+              left: 50%;
+              transform: translateX(-50%) translateY(-50%);
+              cursor: pointer;
+              margin: 15px 0 0 0;
+              padding: 8px 50px;
+              border: 0;
+              border-radius: 4px;
+              background-color: #dd4035;
+              text-transform: uppercase;
+              transition: 0.3s;
+            }
+            :hover {
+                transform: scale(1.1);
+                transition: 0.3s;
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+              }
           }
         }
-      }
-      .ButtonQueroComecar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px !important;
-        margin: 0 auto;
-      }
+        .ButtonQueroComecar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 50px !important;
+          margin: 0 auto;
+        }
       }
     }
   }
@@ -227,7 +215,7 @@ const style_footer = styled.div`
           .Servicos__Items {
             width: 90vw;
             grid-template-columns: 1fr !important;
-            
+
             .HomePage__Services__Icons__Icon {
               width: 85vw;
             }
@@ -235,7 +223,7 @@ const style_footer = styled.div`
               margin: 0 auto;
               height: 350px;
               width: 85%;
-              font-size: .8em;
+              font-size: 0.8em;
               button {
                 background-color: red;
               }

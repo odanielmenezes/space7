@@ -3,22 +3,26 @@
         {
             "id": 1,
             "title": "Somos humanos",
-            "description": "Ambiente e relações de trabalho humanas e conscientes, ouvimos e valorizamos a sua opinião, dos nossos colaboradores e dos seus consumidores, tratando cada pessoa com total atenção e compreensão."
+            "description": "Ambiente e relações de trabalho humanas e conscientes, ouvimos e valorizamos a sua opinião, dos nossos colaboradores e dos seus consumidores, tratando cada pessoa com total atenção e compreensão.",
+            "description02": ""
         },
         {
             "id": 2,
             "title": "Buscamos inovar em tudo",
-            "description": "Não nos contentamos com o convencional, temos curiosidade e visão, sempre experimentamos novas ideias e soluções!"
+            "description": "Não nos contentamos com o convencional, temos curiosidade e visão, sempre experimentamos novas ideias e soluções!",
+            "description02": ""
         },
         {
             "id": 3,
             "title": "Temos tolerância zero para papo-furado",
-            "description": "Transparência e trabalho aberto proporcionam confiança e maximizam o potencial de cada colaborador."
+            "description": "Transparência e trabalho aberto proporcionam confiança e maximizam o potencial de cada colaborador.",
+            "description02": ""
         },
         {
             "id": 4,
             "title": "Queremos simplificar",
-            "description": "Sem complexidades e, sim, com agilidade, eficiência, organização e objetividade para simplificar sua presença no e-commerce!"
+            "description": "Sem complexidades e, sim, com agilidade, eficiência, organização e objetividade para simplificar sua presença no e-commerce!",
+            "description02": ""
         }
     ]
 }

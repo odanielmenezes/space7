@@ -35,7 +35,7 @@ export function Servicos() {
             </Fade>
             <Fade bottom>
               <h2>
-                Da <strong>estratégia</strong> à <strong>execução</strong>.
+                Da <strong>estratégia</strong> à <strong>execução</strong>
               </h2>
             </Fade>
             <Fade left>
@@ -48,7 +48,8 @@ export function Servicos() {
                   <br />
                   um <strong>e-commerce</strong> que vai construir o
                   relacionamento real <strong>empresa/consumidor</strong>
-                  <br />Nossos <strong>seviços</strong> conssistem em:
+                  <br />
+                  Nossos <strong>seviços</strong> conssistem em:
                 </p>
               </Fade>
             </Balance>
@@ -57,18 +58,24 @@ export function Servicos() {
             {!isMobile && (
               <Fade left>
                 <div className="Servicos__Items">
-                  {InfosJson.cards.map((card) => <Cards {...card} isAgency={InfosJson.cards.length }/>)}
+                  {InfosJson.cards.map((card) => (
+                    <Cards {...card} isAgency={InfosJson.cards.length} />
+                  ))}
                 </div>
               </Fade>
             )}
             {isMobile && (
               <div className="Servicos__Items">
-                <Fade left>{InfosJson.cards.map((card) => <Cards {...card} isAgency={InfosJson.cards.length } />)}</Fade>
+                <Fade left>
+                  {InfosJson.cards.map((card) => (
+                    <Cards {...card} isAgency={InfosJson.cards.length} />
+                  ))}
+                </Fade>
               </div>
             )}
-                <div className="Servicos__Item_Btn">
-                  <BtnQueroComecar />
-                </div>
+            <div className="Servicos__Item_Btn">
+              <BtnQueroComecar />
+            </div>
           </div>
         </div>
       </div>

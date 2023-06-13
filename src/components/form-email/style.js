@@ -67,7 +67,6 @@ const styleHome = styled.div`
         align-items: center;
         justify-content: center;
         gap: 20px;
-
         svg {
           cursor: pointer;
           font-size: 28px;

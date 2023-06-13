@@ -7,14 +7,14 @@ const style_footer = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #FFF;
+    color: #fff;
 
     .animation-geral {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    z-index: -1;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      z-index: -1;
     }
 
     .Agencia__MainContent {
@@ -27,7 +27,7 @@ const style_footer = styled.div`
         width: 800px;
         border: 0;
         height: 1px;
-        border-bottom: 1px solid rgba(255, 255, 255, .1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
       .Agencia__MainContent__Info {
         margin: 50px 0 150px 0;
@@ -49,7 +49,6 @@ const style_footer = styled.div`
             right: 10px;
             position: absolute;
             font-size: 60px;
-            color: red;
             filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 0.8));
           }
         }
@@ -57,7 +56,7 @@ const style_footer = styled.div`
           width: 1px;
           height: 400px;
           border: 0;
-          border-right: 1px solid rgba(255, 255, 255, .1);
+          border-right: 1px solid rgba(255, 255, 255, 0.1);
         }
         p {
           display: flex;
@@ -121,69 +120,84 @@ const style_footer = styled.div`
           gap: 20px;
           width: 93vw;
           .HomePage__Services__Icons__Icon {
-            gap: 0;
-          h1 {
-            line-height: 100%;
-            width: 90%;
-            font-size: 1.6em;
-            letter-spacing: 1px;
-            flex-wrap: nowrap;
-            text-align: center;
-            color: #000;
-          }
-          :hover {
-            transform: scale(1.1);
-            transition: 0.3s;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
-          }
-          .Icon {
-            width: 80px;
-            height: 80px;
-            background-color: #fff;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            border-radius: 50%;
             display: flex;
             justify-content: center;
-            align-items: center;
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-            img {
-              width: 50px;
-              height: 50px;
-              color: #111c3f;
-              font-size: 23px;
+            gap: 0;
+            .div_title {
+              width: 90%;
+              display: flex;
+              justify-content: center;
+              position: absolute;
+              top: 60px;
+              h1 {
+                margin-top: 0;
+                line-height: 100%;
+                width: 90%;
+                font-size: 1.9em !important;
+                letter-spacing: 1px;
+                flex-wrap: nowrap;
+                text-align: center;
+                color: #000;
+              }
             }
-          }
-          p {
-            width: 90%;
-            line-height: 20px;
-            text-align: center;
-            font-size: 1.2em;
-            color: rgba(0, 0, 0, 0.7);
-
-            &:nth-child(4) {
+            :hover {
+              transform: scale(1.1);
+              transition: 0.3s;
+              box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+            }
+            .Icon {
+              width: 80px;
+              height: 80px;
+              background-color: #fff;
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%) translateY(-50%);
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+              img {
+                width: 50px;
+                height: 50px;
+                color: #111c3f;
+                font-size: 23px;
+              }
+            }
+            .content-card {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              top: 30px !important;
+              margin-top: 40px !important;
+              flex-direction: column;
+              p {
+                line-height: 20px;
+                text-align: center;
+                font-size: 1.2em;
+                color: rgba(0, 0, 0, 0.7);
+                margin: 93px auto 0 auto;
+              }
+            }
+            button {
               display: none;
+              position: absolute;
+              bottom: 40px;
+              left: 50%;
+              transform: translateX(-50%) translateY(-50%);
+              cursor: pointer;
+              margin: 15px 0 0 0;
+              padding: 8px 50px;
+              border: 0;
+              border-radius: 4px;
+              background-color: #dd4035;
+              color: #fff;
+              text-transform: uppercase;
+              transition: 0.3s;
             }
           }
-          button {
-            display: none;
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            cursor: pointer;
-            margin: 15px 0 0 0;
-            padding: 8px 50px;
-            border: 0;
-            border-radius: 4px;
-            background-color: #dd4035;
-            color: #fff;
-            text-transform: uppercase;
-            transition: 0.3s;
-          }
-        }
         }
       }
     }
@@ -192,7 +206,6 @@ const style_footer = styled.div`
     .Agencia__MainContent {
       .Agencia__MainContent__ComoAgimos {
         .ComoAgimos__Items {
-          background-color: red;
           display: flex;
           gap: 10px;
         }
@@ -213,9 +226,9 @@ const style_footer = styled.div`
       .Agencia__MainContent {
         width: 100vw;
         h1 {
-            font-size: 3em !important;
-            letter-spacing: -1px;
-          }
+          font-size: 3em !important;
+          letter-spacing: -1px;
+        }
         .Agencia__MainContent__Info {
           padding: 0;
           margin: 0;
@@ -251,13 +264,12 @@ const style_footer = styled.div`
             height: 1px !important;
             border: 0 !important;
             margin: 0;
-            border-bottom: 1px solid rgba(255, 255, 255, .2) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
           }
         }
       }
       .Agencia__MainContent__ComoAgimos {
         .Agencia__MainContent__ComoAgimos__Title {
-
           h1 {
             gap: 7px;
             font-size: 3em;
@@ -268,6 +280,7 @@ const style_footer = styled.div`
           display: grid !important;
           grid-template-columns: 1fr;
           .HomePage__Services__Icons__Icon {
+            margin: 40px 0;
             h1 {
               font-size: 1.5em !important;
             }

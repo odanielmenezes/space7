@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ImageCards from "../../assets/background-email.jpg";
 
 const style_footer = styled.div`
   .Mentoria {
@@ -7,16 +8,16 @@ const style_footer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFF;
+    color: #fff;
     width: 100vw;
     margin-top: 50px;
     .animation-geral {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    z-index: -1;
- }
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      z-index: -1;
+    }
     .Mentoria__Content {
       width: 90%;
       .Mentoria__Content__Titles {
@@ -31,15 +32,15 @@ const style_footer = styled.div`
           line-height: 120%;
           strong {
             font-size: 1.3em;
-            color: #CF3C32;
+            color: #cf3c32;
           }
           &:nth-child(1) {
-          margin: 100px 0 70px 0;
-        }
-        &:nth-child(6) {
-          margin: 200px 0 100px 0;
-        }
-        &:nth-child(7) {
+            margin: 100px 0 70px 0;
+          }
+          &:nth-child(6) {
+            margin: 200px 0 100px 0;
+          }
+          &:nth-child(7) {
             margin: 100px 0 130px;
           }
         }
@@ -47,7 +48,7 @@ const style_footer = styled.div`
           border: 0;
           width: 800px;
           height: 1px;
-          border-bottom: 1px solid rgba(255,255,255, .1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           margin: 50px auto 100px auto;
 
           &:nth-child(5) {
@@ -59,7 +60,7 @@ const style_footer = styled.div`
           font-size: 1.4em;
           margin: 0;
           strong {
-            color: #CF3C32;
+            color: #cf3c32;
             font-size: 1.4em;
           }
           &:nth-child(1) {
@@ -70,48 +71,73 @@ const style_footer = styled.div`
     }
     .Mentoria__Table {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      width: 1250px;
       justify-content: center;
+      margin: 0 auto;
 
       .Mentoria__Table__Item {
+        margin: 20px auto;
+        width: 100%;
         position: relative;
         display: flex;
         justify-content: center;
-        align-items: center;
-        width: 400px;
-        height: 250px;
-        margin: 0 0 40px 0;
-        border-radius: 8px;
-        color: #FFF;
+        flex-direction: column;
+        background: #fff;
+        background-position: center;
+        background-size: cover;
+        height: 300px;
+        align-items: start;
+        gap: 20px;
+        color: #000;
+        border-radius: 5px;
 
         h2 {
-          text-transform: uppercase;
+          padding: 0 0 0 30px;
           white-space: nowrap;
           line-height: 22px;
-          margin: 20px;
-          font-size: 1.1em;
-          text-align: center;
+          font-size: 2em;
 
           strong {
             width: 30px;
             height: 30px;
             margin-right: 10px;
             font-size: 1.5em;
-            color: #CF3C32;
+            color: #cf3c32;
           }
         }
         .Divider {
-          display: none;
           width: 100%;
           border: 0;
           height: 1px;
-          border-bottom: 1px solid rgba(255,255,255, .1);
-          margin-top: 10px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          margin: 20px 0 0 0;
         }
-        svg {
-          filter: drop-shadow(4px 4px 2px rgba(0,0,0, .5));
-          opacity: .8;
-          font-size: 7em;
+        p {
+          padding: 0 30px;
+          font-size: 1.2em;
+        }
+        .icon {
+          position: absolute;
+          top: -40px;
+          right: 30px;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #fff;
+          box-shadow: 0px 0px 10px #000;
+
+          img {
+            filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 1));
+            opacity: 0.8;
+            color: #cf3c32;
+            font-size: 3em !important;
+            width: 50%;
+          }
         }
       }
       .Mentoria__Table__Item__Button {
@@ -132,27 +158,26 @@ const style_footer = styled.div`
           h1 {
             p {
               margin: 1px;
-              color: #FFF;
+              color: #fff;
               width: 300px;
               padding: 20px 0;
-              background-color: #CF3C32;
+              background-color: #cf3c32;
               text-align: center;
               line-height: 1px;
 
               &:nth-child(2) {
-                background-color: #FFF;
+                background-color: #fff;
                 color: #000;
-              } 
+              }
             }
           }
         }
-        svg {
-          position: absolute;
-          left: 0;
-          font-size: 4em;
-          filter: drop-shadow(2px 2px 2px rgba(0,0,0, .7));
-        }
       }
+    }
+    .ButtonQueroComecar {
+      margin: 100px 0;
+      display: flex;
+      justify-content: center;
     }
   }
   @media (max-width: 1366px) {
@@ -197,47 +222,72 @@ const style_footer = styled.div`
         }
       }
       .Mentoria__Table {
-        width: 100vw;
+        width: 100%;
         grid-template-columns: 1fr;
-      .Mentoria__Table__Item {
-        width: 90vw;
-        h2 {
-          white-space: pre-wrap;
-          strong {
-
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .Mentoria__Table__Item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 3px;
+          width: 100%;
+          padding: 0;
+          margin: 30px 0;
+          h2 {
+            padding: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1.3em;
+            white-space: pre-wrap;
+            strong {
+            }
           }
-        }
-        svg {
-
-        }
-      }
-      .Mentoria__Table__Item__Button {
-        margin: 0;
-        width: 90vw;
-        white-space: nowrap;
-      }
-      .Mentoria__Table__Text {
-        margin: 0;
-        width: 90vw;
-        position: relative;
-        .Text {
-          h1 {
-            p {
-
-              &:nth-child(2) {
-
-              } 
+          .Divider {
+            width: 80%;
+            margin: 10px auto 0 auto;
+          }
+          p {
+            padding: 0 20px;
+            font-size: 1em;
+            text-align: center;
+          }
+          .icon {
+            width: 80px;
+            height: 80px;
+            svg {
+              width: 35px;
+              font-size: 1em;
             }
           }
         }
-        svg {
-          left: 45%;
-          top: 0;
-          transform: translateX(-50%) translateY(-50%);
-          transform: rotate(90deg);
+        .Mentoria__Table__Item__Button {
+          margin: 0;
+          width: 90vw;
+          white-space: nowrap;
+        }
+        .Mentoria__Table__Text {
+          margin: 0;
+          width: 90vw;
+          position: relative;
+          .Text {
+            h1 {
+              p {
+                &:nth-child(2) {
+                }
+              }
+            }
+          }
+          svg {
+            left: 45%;
+            top: 0;
+            transform: translateX(-50%) translateY(-50%);
+            transform: rotate(90deg);
+          }
         }
       }
-    }
     }
   }
 `;

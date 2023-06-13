@@ -30,7 +30,7 @@ export function Agencia() {
         <div className="Agencia__MainContent">
           <Fade top>
             <h1>
-              O que nos <strong>MOVE</strong>.
+              O que nos <strong>MOVE</strong>
             </h1>
           </Fade>
           <div className="Agencia__MainContent__Info">
@@ -64,7 +64,7 @@ export function Agencia() {
             <div className="Agencia__MainContent__ComoAgimos__Title">
               <Fade left>
                 <h1>
-                  Como <strong>AGIMOS</strong>.
+                  Como <strong>AGIMOS</strong>:
                 </h1>
               </Fade>
             </div>

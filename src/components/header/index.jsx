@@ -1,13 +1,6 @@
 import { Link } from "react-router-dom";
 import Styled from "./style";
 import StyledMobile from "./style-mobile";
-import {
-  MdOutlineHome,
-  MdWorkOutline,
-  MdMoving,
-  MdMiscellaneousServices,
-  MdOutlineGroupAdd,
-} from "react-icons/md";
 import Logo from "../../assets/space7144x31px.svg";
 import { useState } from "react";
 
@@ -19,7 +12,7 @@ export function Header() {
       navigator.userAgent
     );
 
-  const changePage = (valor) => {
+  const changePage = () => {
     setTimeout(() => {
       setIsHome(location.pathname);
     }, 10);
@@ -40,7 +33,7 @@ export function Header() {
             className={!openMenu ? "Header__Content" : "Header__Content Open"}
           >
             <ul>
-              <Link onClick={() => changePage()} className="lis" to="/space7">
+              <Link onClick={() => changePage()} className="lis" to="/">
                 <li>Home</li>
               </Link>
               <Link onClick={() => changePage()} className="lis" to="/agencia">
@@ -65,8 +58,8 @@ export function Header() {
             </ul>
           </div>
           <div className="Header__Logo">
-            <Link to="/space7">
-            <img src={Logo} alt="" />
+            <Link to="/">
+              <img src={Logo} alt="" />
             </Link>
           </div>
         </div>
@@ -78,18 +71,24 @@ export function Header() {
     <StyledMobile>
       <div className={`HeaderMobile ${openMenu ? "Open" : ""}`}>
         <div
-          onClick={() => toggleMenu()}
           className={
             openMenu ? "Header__Hamburguer" : "Header__Hamburguer OpenBurguer"
           }
         >
-          <div className="Bar"></div>
-          <div className="Bar"></div>
-          <div className="Bar"></div>
+        <div className="Header__Logo">
+          <Link to="/">
+            <img src={Logo} alt="" />
+          </Link>
+        </div>
+          <div className="Bars" onClick={() => toggleMenu()}>
+            <div className="Bar"></div>
+            <div className="Bar"></div>
+            <div className="Bar"></div>
+          </div>
         </div>
         <div className="Header__Content">
           <ul>
-            <Link onClick={() => changePage()} className="lis" to="/space7">
+            <Link onClick={() => changePage()} className="lis" to="/">
               <li>Home</li>
             </Link>
             <Link onClick={() => changePage()} className="lis" to="/agencia">

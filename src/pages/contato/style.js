@@ -24,6 +24,15 @@ const style_footer = styled.div`
   }
   .Redes {
     margin-top: 35px;
+
+    a {
+          display: flex;
+          align-items: center;
+          padding: 0;
+          margin: 0;
+          text-decoration: none;
+          color: rgba(255, 255, 255, 0.5);
+        }
   }
   @media (max-width: 900px) {
     .Contato {

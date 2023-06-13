@@ -166,6 +166,9 @@ export function SenderEmail(isCurriculo) {
     setCheckbox01(false);
   };
 
+  console.log(location.hash === "/",
+  location.hash.includes("/contato"));
+
   return (
     <Styled>
       <div className="SenderEmail">
@@ -173,16 +176,16 @@ export function SenderEmail(isCurriculo) {
           <div className="SenderEmail__Text">
             <Fade top>
               <h2>
-                {location.pathname.includes("space7") ||
-                location.pathname.includes("contato")
+                {location.hash === "/"  ||
+                location.hash.includes("/contato")
                   ? "COMO PODEMOS AJUDAR?"
                   : "ENVIE SEU CURRÍCULO E PORTFÓLIO!"}
               </h2>
             </Fade>
             <Fade bottom>
               <p>
-                {location.pathname.includes("space7") ||
-                location.pathname.includes("contato")
+                {location.hash === "/" ||
+                location.hash.includes("/contato")
                   ? "uma equipe especializada fará contato o mais rápido posssivel assim que receber seu contato!"
                   : "Venha fazer parte do nosso time."}
               </p>
@@ -209,7 +212,7 @@ export function SenderEmail(isCurriculo) {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="E-mail"
                 />
-                {location.pathname !== "/trabalhe-conosco" && (
+                {!location.hash.includes("/trabalhe-conosco") && (
                   <>
                     <TelefoneBrasileiroInput
                       value={celular}
@@ -283,7 +286,7 @@ export function SenderEmail(isCurriculo) {
                     />
                   </>
                 )}
-                {location.pathname === "/trabalhe-conosco" && (
+                {location.hash.includes("/trabalhe-conosco") && (
                   <div className="InputFile">
                     <label htmlFor="file">
                       {file !== null && file !== undefined
@@ -316,7 +319,7 @@ export function SenderEmail(isCurriculo) {
                   data-action="submit"
                   type="submit"
                   onClick={() =>
-                    location.pathname !== "/trabalhe-conosco"
+                    !location.hash.includes("/trabalhe-conosco")
                       ? senderEmail()
                       : senderCurriculo()
                   }
@@ -335,7 +338,12 @@ export function SenderEmail(isCurriculo) {
                     e.preventDefault();
                   }}
                 >
-                  <small>comercial@space7.com.br</small>
+                  {" "}
+                  {!location.hash.includes("/trabalhe-conosco") ? (
+                    <small>comercial@space7.com.br</small>
+                  ) : (
+                    <small>contato@space7.com.br</small>
+                  )}
                 </Link>
                 <div className="Divider"></div>
                 <small>
@@ -354,7 +362,12 @@ export function SenderEmail(isCurriculo) {
                 <BsPinFill /> POA/RS
               </div>
               <div className="Redes">
-                <BsInstagram />
+                <a
+                  href="https://www.instagram.com/space7digital/"
+                  target="_blank"
+                >
+                  <BsInstagram />
+                </a>
                 <BsFacebook />
                 <BsLinkedin />
               </div>

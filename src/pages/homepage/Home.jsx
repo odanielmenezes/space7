@@ -12,7 +12,7 @@ import Balance from "react-wrap-balancer";
 import { BtnQueroComecar } from "../../components/buttons/button-quero-comecar";
 
 export function Home() {
-  const frase = `Tenha um parceiro para sua transformação digital.`;
+  const frase = `Tenha um parceiro para sua transformação digital `;
   const [letras, setLetras] = useState([frase.split("")]);
   let [fraseCompleta1, setFraseCompleta1] = useState("");
   let [fraseCompleta, setFraseCompleta] = useState("");
