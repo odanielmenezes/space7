@@ -106,7 +106,7 @@ export function Home() {
                 O produto você tem, mas a experiência do seu consumidor nós
                 criamos junto com você. Você entra com o produto e nós entramos
                 com mais de 10 anos de experiência em e-commerce, gestão de
-                resultado e um modelo digital único de atendimento ao consumidor
+                resultados e um modelo digital único de atendimento ao consumidor.
               </p>
             </Fade>
           </div>
@@ -116,8 +116,8 @@ export function Home() {
                 Nós somos a {isMobile && <br />}
                 <strong>solução</strong> que integra
                 <br /> o <strong>seu negócio</strong> físico
-                <br /> com uma experiência única de
-                {!isMobile && <br />} <strong>e-commerce</strong>
+                <br /> com uma experiência {isMobile && <br />}única de
+                 <br /> <strong>e-commerce</strong>
               </h1>
               <div className="HomePage__Services__Title__Button">
                 <BtnQueroComecar name="FALE CONOSCO" link="/contato" />

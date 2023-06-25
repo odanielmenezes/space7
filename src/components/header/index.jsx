@@ -3,6 +3,7 @@ import Styled from "./style";
 import StyledMobile from "./style-mobile";
 import Logo from "../../assets/space7144x31px.svg";
 import { useState } from "react";
+import { useEffect } from "react";
 
 export function Header() {
   const [isHome, setIsHome] = useState("/");
@@ -14,13 +15,14 @@ export function Header() {
 
   const changePage = () => {
     setTimeout(() => {
-      setIsHome(location.pathname);
+      setIsHome(location.hash);
     }, 10);
     if (isMobile) {
       setOpenMenu(true);
     }
   };
 
+  console.log(isHome);
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
@@ -33,32 +35,52 @@ export function Header() {
             className={!openMenu ? "Header__Content" : "Header__Content Open"}
           >
             <ul>
-              <Link onClick={() => changePage()} className="lis" to="/">
+              <Link
+                onClick={() => changePage()}
+                className={`lis ${isHome === "#/" && "_focus"}`}
+                to="/"
+              >
                 <li>Home</li>
               </Link>
-              <Link onClick={() => changePage()} className="lis" to="/agencia">
+              <Link
+                onClick={() => changePage()}
+                className={`lis ${isHome === "#/agencia" && "_focus"}`}
+                to="/agencia"
+              >
                 <li>A agência</li>
               </Link>
-              <Link onClick={() => changePage()} className="lis" to="/mentoria">
+              <Link
+                onClick={() => changePage()}
+                className={`lis ${isHome === "#/mentoria" && "_focus"}`}
+                to="/mentoria"
+              >
                 <li>Mentoria</li>
               </Link>
-              <Link onClick={() => changePage()} className="lis" to="/servicos">
+              <Link
+                onClick={() => changePage()}
+                className={`lis ${isHome === "#/servicos" && "_focus"}`}
+                to="/servicos"
+              >
                 <li>Serviços</li>
               </Link>
               <Link
                 onClick={() => changePage()}
-                className="lis"
+                className={`lis ${isHome === "#/trabalhe-conosco" && "_focus"}`}
                 to="/trabalhe-conosco"
               >
                 <li>Trabalhe Conosco</li>
               </Link>
-              <Link onClick={() => changePage()} className="lis" to="/contato">
+              <Link
+                onClick={() => changePage()}
+                className={`lis ${isHome === "#/contato" && "_focus-contato"}`}
+                to="/contato"
+              >
                 <li>Contato</li>
               </Link>
             </ul>
           </div>
           <div className="Header__Logo">
-            <Link to="/">
+            <Link to="/" onClick={() => changePage()}>
               <img src={Logo} alt="" />
             </Link>
           </div>
@@ -75,11 +97,11 @@ export function Header() {
             openMenu ? "Header__Hamburguer" : "Header__Hamburguer OpenBurguer"
           }
         >
-        <div className="Header__Logo">
-          <Link to="/">
-            <img src={Logo} alt="" />
-          </Link>
-        </div>
+          <div className="Header__Logo">
+            <Link to="/" onClick={() => changePage()}>
+              <img src={Logo} alt="" />
+            </Link>
+          </div>
           <div className="Bars" onClick={() => toggleMenu()}>
             <div className="Bar"></div>
             <div className="Bar"></div>
@@ -88,26 +110,46 @@ export function Header() {
         </div>
         <div className="Header__Content">
           <ul>
-            <Link onClick={() => changePage()} className="lis" to="/">
+            <Link
+              onClick={() => changePage()}
+              className={`lis ${isHome === "#/" && "_focus"}`}
+              to="/"
+            >
               <li>Home</li>
             </Link>
-            <Link onClick={() => changePage()} className="lis" to="/agencia">
+            <Link
+              onClick={() => changePage()}
+              className={`lis ${isHome === "#/agencia" && "_focus"}`}
+              to="/agencia"
+            >
               <li>A agência</li>
             </Link>
-            <Link onClick={() => changePage()} className="lis" to="/mentoria">
+            <Link
+              onClick={() => changePage()}
+              className={`lis ${isHome === "#/mentoria" && "_focus"}`}
+              to="/mentoria"
+            >
               <li>Mentoria</li>
             </Link>
-            <Link onClick={() => changePage()} className="lis" to="/servicos">
+            <Link
+              onClick={() => changePage()}
+              className={`lis ${isHome === "#/servicos" && "_focus"}`}
+              to="/servicos"
+            >
               <li>Serviços</li>
             </Link>
             <Link
               onClick={() => changePage()}
-              className="lis"
+              className={`lis ${isHome === "#/trabalhe-conosco" && "_focus"}`}
               to="/trabalhe-conosco"
             >
               <li>Trabalhe Conosco</li>
             </Link>
-            <Link onClick={() => changePage()} className="lis" to="/contato">
+            <Link
+              onClick={() => changePage()}
+              className={`lis ${isHome === "#/contato" && "_focus"}`}
+              to="/contato"
+            >
               <li>Contato</li>
             </Link>
           </ul>

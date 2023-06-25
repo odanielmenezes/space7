@@ -2,12 +2,7 @@
 <html lang="en">
 
 <head>
-  <script src="https://www.google.com/recaptcha/api.js"></script>
-  <script>
-    function onSubmit(token) {
-      document.getElementById("demo-form").submit();
-    }
-  </script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LflMi8mAAAAAKqdZRcyUcIBkNBoV1Ow3KV0iq1o"></script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -25,8 +20,8 @@
   <meta name=”description” content="Agência com foco em e-commerce e marketing digital. Tenha um parceiro para a sua
     TRANSFORMAÇÃO DIGITAL." />
   <title>SPACE7 Digital - Agência de E-commerce e Marketing Digital</title>
-  <script type="module" crossorigin src="/assets/index-0b1f655d.js"></script>
-  <link rel="stylesheet" href="/assets/index-7bddcdac.css">
+  <script type="module" crossorigin src="/assets/index-e434b331.js"></script>
+  <link rel="stylesheet" href="/assets/index-9e4bd872.css">
 </head>
 
 <body>
@@ -36,6 +31,16 @@
   <!-- End Google Tag Manager (noscript) -->
   <div id="root"></div>
   
+  <script>
+    function onClick(e) {
+      e.preventDefault();
+      grecaptcha.ready(function () {
+        grecaptcha.execute('reCAPTCHA_site_key', { action: 'submit' }).then(function (token) {
+          // Add your logic to submit to your backend server here.
+        });
+      });
+    }
+  </script>
 </body>
 
 </html>

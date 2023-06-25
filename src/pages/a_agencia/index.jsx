@@ -27,6 +27,17 @@ export function Agencia() {
             <Lottie animationData={fundoGeral} loop={false} />
           </div>
         )}
+        <div className="bigText">
+          <Fade left>
+            <p>
+              Somos uma agência especializada em soluções de E-commerce e
+              Marketing Digital. Temos como objetivo impulsionar as vendas de
+              nossos clientes com estratégias digitais eficazes e compromisso
+              com a qualidade de nossas entregas. Nosso trabalho é em equipe com
+              nosso cliente, de maneira aberta e transparente.
+            </p>
+          </Fade>
+        </div>
         <div className="Agencia__MainContent">
           <Fade top>
             <h1>

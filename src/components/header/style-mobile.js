@@ -80,6 +80,10 @@ const style_header_mobile = styled.div`
           text-align: center;
           list-style: none;
         }
+        ._focus li {
+          color: #dd4035 !important;
+          transition: .1s;
+        }
       }
     }
   }

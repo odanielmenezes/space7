@@ -1,8 +1,9 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Styled from "./style";
 import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 import { Link } from "react-router-dom";
 import Fade from "react-reveal";
+import { ReCAPTCHA } from "react-google-recaptcha";
 import {
   BsWhatsapp,
   BsInstagram,
@@ -27,85 +28,99 @@ export function SenderEmail(isCurriculo) {
   const [assunto, setAssunto] = useState("");
   const [mensagem, setMensagem] = useState("");
   const [send, setSend] = useState(false);
-  const [sendText, setSendText] = useState("ENVIAR");
+  const [sendText, setSendText] = useState("");
 
   const senderEmail = () => {
-    setSend(true);
-    setSendText("Enviando");
-    let formData = new FormData();
-    formData.append("nome", nome);
-    formData.append("email", email);
-    formData.append("mensagem", mensagem);
-    formData.append("celular", celular);
-    formData.append("empresa", empresa);
-    formData.append("funcionarios", funcionarios);
-    formData.append("assunto", assunto);
+    if (nome !== "" && email !== "" && mensagem !== "" && celular !== "") {
+      setSend(true);
+      setSendText("");
+      let formData = new FormData();
+      formData.append("nome", nome);
+      formData.append("email", email);
+      formData.append("mensagem", mensagem);
+      formData.append("celular", celular);
+      formData.append("empresa", empresa);
+      formData.append("funcionarios", funcionarios);
+      formData.append("assunto", assunto);
 
-    const dados = {
-      nome,
-      email,
-      mensagem,
-      celular,
-      empresa,
-      funcionarios,
-      assunto,
-    };
+      const dados = {
+        nome,
+        email,
+        mensagem,
+        celular,
+        empresa,
+        funcionarios,
+        assunto,
+      };
 
-    api
-      .post("/send-email", dados)
-      .then((response) => {
-        setSend(false);
-        setSendText("Enviado!");
-        setTimeout(() => {
-          setSendText("Enviar");
-          clearFields();
-        }, 2000);
-      })
-      .catch((err) => {
-        setSend(false);
-        setSendText("Erro");
-        setTimeout(() => {
-          setSendText("Enviar");
-        }, 5000);
-      });
+      api
+        .post("/send-email", dados, {
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        })
+        .then((response) => {
+          console.log("RES", response);
+          setSend(false);
+          setSendText("Mensagem enviada com sucesso!");
+          setTimeout(() => {
+            clearFields();
+          }, 2000);
+        })
+        .catch((err) => {
+          console.log("ERRO", err);
+          setSend(false);
+          setSendText("Erro ao enviar sua mensagem!");
+          setTimeout(() => {}, 5000);
+        });
+    } else {
+      setSend(true);
+      setSendText("Preencha os campos obrigatórios *");
+    }
   };
 
-  function onSubmit(token) {
-    document.getElementById("demo-form").submit();
-  }
+  const onChange = () => {};
 
   const senderCurriculo = () => {
-    setSend(true);
-    setSendText("Enviando");
-    let formData = new FormData();
-    formData.append("nome", nome);
-    formData.append("email", email);
-    formData.append("mensagem", mensagem);
-    formData.append("file", file);
+    if (nome !== "" && email !== "" && file) {
+      setSend(true);
+      setSendText("");
+      let formData = new FormData();
+      formData.append("nome", nome);
+      formData.append("email", email);
+      formData.append("mensagem", mensagem);
+      formData.append("file", file);
 
-    api
-      .post("/send-curriculo", formData, {
-        responseType: "arraybuffer",
-        responseEncoding: "binary",
-      })
-      .then((response) => {
-        setSend(false);
-        setSendText("Enviado!");
-        setTimeout(() => {
-          setSendText("Enviar");
-          clearFields();
-        }, 2000);
-      })
-      .catch((err) => {
-        setSend(false);
-        setSendText("Erro");
-        setTimeout(() => {
-          setSendText("Enviar");
-        }, 5000);
-      });
+      api
+        .post("/send-curriculo", formData, {
+          responseType: "arraybuffer",
+          responseEncoding: "binary",
+        })
+        .then((response) => {
+          console.log("ERRO", response);
+          setSend(false);
+          setSendText("Mensagem enviada com sucesso!");
+          setTimeout(() => {
+            clearFields();
+          }, 2000);
+        })
+        .catch((err) => {
+          console.log("ERRO", err);
+          setSendText("Erro ao enviar sua mensagem!");
+          setSend(false);
+          setTimeout(() => {}, 5000);
+        });
+    } else {
+      setSend(true);
+      setSendText("Preencha os campos obrigatórios *");
+    }
   };
 
   const onLoading = () => {
+    if (sendText === "Preencha os campos obrigatórios *") {
+      setSend(false);
+    }
+
     return (
       <div className="loading">
         <div className="spinner"></div>
@@ -155,9 +170,6 @@ export function SenderEmail(isCurriculo) {
     setEmpresa("");
     setFuncionarios("");
     setSend(false);
-    setSendText(
-      location.pathname === "/trabalhe-conosco" ? "Enviar currículi" : "Enviar"
-    );
     setFile(null);
     document.getElementById("file").value = "";
     setCheckbox04(false);
@@ -166,9 +178,6 @@ export function SenderEmail(isCurriculo) {
     setCheckbox01(false);
   };
 
-  console.log(location.hash === "/",
-  location.hash.includes("/contato"));
-
   return (
     <Styled>
       <div className="SenderEmail">
@@ -176,17 +185,15 @@ export function SenderEmail(isCurriculo) {
           <div className="SenderEmail__Text">
             <Fade top>
               <h2>
-                {location.hash === "/"  ||
-                location.hash.includes("/contato")
+                {location.hash === "/" || location.hash.includes("/contato")
                   ? "COMO PODEMOS AJUDAR?"
                   : "ENVIE SEU CURRÍCULO E PORTFÓLIO!"}
               </h2>
             </Fade>
             <Fade bottom>
               <p>
-                {location.hash === "/" ||
-                location.hash.includes("/contato")
-                  ? "uma equipe especializada fará contato o mais rápido posssivel assim que receber seu contato!"
+                {location.hash === "/" || location.hash.includes("/contato")
+                  ? "nossa equipe de e-commerce fará contato em breve!"
                   : "Venha fazer parte do nosso time."}
               </p>
             </Fade>
@@ -203,14 +210,16 @@ export function SenderEmail(isCurriculo) {
                 <input
                   type="text"
                   value={nome}
+                  required
                   onChange={(e) => setNome(e.target.value)}
-                  placeholder="Nome"
+                  placeholder="Nome*"
                 />
                 <input
                   type="text"
                   value={email}
+                  required
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="E-mail"
+                  placeholder="E-mail*"
                 />
                 {!location.hash.includes("/trabalhe-conosco") && (
                   <>
@@ -218,8 +227,9 @@ export function SenderEmail(isCurriculo) {
                       value={celular}
                       onChange={(e) => setCelular(e.target.value)}
                       temDDD
+                      required
                       separaDDD
-                      placeholder="Telefone/Celular"
+                      placeholder="Telefone/Celular*"
                     />
                     <input
                       type="text"
@@ -294,6 +304,7 @@ export function SenderEmail(isCurriculo) {
                         : "Anexar (*pdf)"}{" "}
                     </label>
                     <input
+                      multiple
                       type="file"
                       name="file"
                       id="file"
@@ -308,24 +319,42 @@ export function SenderEmail(isCurriculo) {
                   type="text"
                   value={mensagem}
                   onChange={(e) => setMensagem(e.target.value)}
-                  placeholder="Deixe seu recado"
+                  placeholder="Deixe seu recado*"
                 />
               </div>
               <div className="SenderEmail__ButonsForm">
                 <button
                   class="g-recaptcha"
-                  data-sitekey="reCAPTCHA_site_key"
-                  data-callback={onSubmit}
+                  data-sitekey="6LflMi8mAAAAAKqdZRcyUcIBkNBoV1Ow3KV0iq1o"
+                  data-callback="onSubmit"
                   data-action="submit"
                   type="submit"
-                  onClick={() =>
+                  onClick={
                     !location.hash.includes("/trabalhe-conosco")
-                      ? senderEmail()
-                      : senderCurriculo()
+                      ? () => senderEmail()
+                      : () => senderCurriculo()
                   }
                 >
-                  {!send ? sendText : onLoading()}
+                  {!send ? "Enviar" : onLoading()}
                 </button>
+              </div>
+              {sendText !== "" && (
+                <p
+                  className="alert"
+                  style={
+                    sendText === "Preencha os campos obrigatórios *"
+                      ? { color: "#FFF" }
+                      : { color: !send ? "#2c954a" : "#cf3c32" }
+                  }
+                >
+                  {sendText}
+                </p>
+              )}
+              <div className="recaptcha">
+                <ReCAPTCHA
+                  sitekey="6LflMi8mAAAAAKqdZRcyUcIBkNBoV1Ow3KV0iq1o"
+                  onChange={onChange}
+                />
               </div>
             </div>
           </Fade>
@@ -334,7 +363,7 @@ export function SenderEmail(isCurriculo) {
               <div className="line01">
                 <Link
                   onClick={(e) => {
-                    window.location.href = "mailto:omercial@space7.com.br";
+                    window.location.href = "mailto:comercial@space7.com.br";
                     e.preventDefault();
                   }}
                 >
@@ -347,15 +376,17 @@ export function SenderEmail(isCurriculo) {
                 </Link>
                 <div className="Divider"></div>
                 <small>
-                  <Link
-                    onClick={(e) => {
-                      window.location.href =
-                        "https://wa.me/5551992797210?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7.";
-                      e.preventDefault();
-                    }}
+                  <a
+                    href="https://wa.me/5551992797210?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
+                    target={"_blank"}
+                    // onClick={(e) => {
+                    //   window.location.href =
+                    //     "https://wa.me/5551992797210?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7.";
+                    //   e.preventDefault();
+                    // }}
                   >
                     <BsWhatsapp /> +55 51 99279-7210
-                  </Link>
+                  </a>
                 </small>
               </div>
               <div className="Local">
@@ -368,8 +399,18 @@ export function SenderEmail(isCurriculo) {
                 >
                   <BsInstagram />
                 </a>
-                <BsFacebook />
-                <BsLinkedin />
+                <a
+                  href="https://www.facebook.com/space7digital"
+                  target="_blank"
+                >
+                  <BsFacebook />
+                </a>
+                <a
+                  href="https://linkedin.com/company/space7digital"
+                  target="_blank"
+                >
+                  <BsLinkedin />
+                </a>
               </div>
             </div>
           </Fade>

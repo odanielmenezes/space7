@@ -49,7 +49,7 @@ export function Servicos() {
                   um <strong>e-commerce</strong> que vai construir o
                   relacionamento real <strong>empresa/consumidor</strong>
                   <br />
-                  Nossos <strong>seviços</strong> conssistem em:
+                  Nossos <strong>serviços</strong> consistem em:
                 </p>
               </Fade>
             </Balance>

@@ -59,6 +59,17 @@ const style_header = styled.div`
             transform: scale(1.1);
           }
         }
+        ._focus {
+          color: #dd4035 !important;
+          transition: .1s;
+          font-weight: bold !important;
+        }
+        ._focus-contato {
+          background-color: transparent !important;
+          color: #FFF !important;
+          border: 2px solid #dd4035;
+          transition: .1s;
+        }
         .lis {
           align-self: flex-end;
           text-transform: uppercase;

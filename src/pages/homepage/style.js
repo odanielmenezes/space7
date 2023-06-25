@@ -82,21 +82,24 @@ const style_footer = styled.div`
         }
       }
     }
+    .alert {
+    color: #000 !important;
+  }
     .SenderEmail__MainForm {
-      .inputsFuncionários {
-        div {
-          small {
-            color: #000 !important;
-          }
-        }
-        .checkboxItem {
-          .inputsCheckbox {
-            label {
-              color: #000;
+          .inputsFuncionários {
+            div {
+              small {
+                color: #000 !important;
+              }
+            }
+            .checkboxItem {
+              .inputsCheckbox {
+                label {
+                  color: #000;
+              }
             }
           }
         }
-      }
     }
     .HomePage__Main {
       animation: opaciter 0.8s ease-in-out;
@@ -107,7 +110,7 @@ const style_footer = styled.div`
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      z-index: 1;
+      z-index: 0;
       max-width: 1920px;
       position: relative;
       display: flex;
