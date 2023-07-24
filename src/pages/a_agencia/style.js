@@ -9,30 +9,16 @@ const style_footer = styled.div`
     justify-content: center;
     flex-direction: column;
     color: #fff;
+    margin-top: 100px;
 
     .bigText {
-        background: linear-gradient(to right, rgba(0,0,0, .8), rgba(0,0,0, 0.1)), url(${fundoMain});
-        background-position: center;
-        background-size: cover;
-        width: 100vw;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        height: 100vh;
-        margin-top: 80px;
-        position: relative;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-
-        p {
-          position: absolute;
-          top: 160px;
-          margin-left: 50px;
-          font-size: 1.5em;
-          text-align: justify;
-          line-height: 28px;
-          width: 40%;
-        }
-      }
+      width: 1250px;
+      text-align: center;
+      margin: 20px 0 100px 0;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      padding: 30px;
+    }
 
     .animation-geral {
       position: fixed;
@@ -238,9 +224,18 @@ const style_footer = styled.div`
   }
   @media (max-width: 960px) {
     .Agencia {
-      margin-top: -70px;
+      margin-top: 40px;
       overflow: hidden;
       width: 100vw !important;
+
+      .bigText {
+        width: 80vw;
+        padding: 0;
+        font-size: 0.9em;
+        padding: 30px;
+        text-align: center;
+        margin: 30px 0;
+      }
       .animation-geral {
         position: fixed;
         width: 2920px;

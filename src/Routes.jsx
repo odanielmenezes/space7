@@ -71,16 +71,15 @@ export function AppRoutes() {
           <Route path="/mentoria" element={<Mentoria />}></Route>
           <Route path="/trabalhe-conosco" element={<TrabalheConosco />}></Route>
         </Routes>
-        {isMobile && (
-          <Link
-            to="https://wa.me/5551992797210?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
-            onClick={() => teste()}
-          >
-            <div className="HomePage__ButtonContact">
-              <BsWhatsapp />
-            </div>
-          </Link>
-        )}
+        <a
+          href="https://wa.me/5551989515775?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
+          target="_blank"
+          onClick={() => teste()}
+        >
+          <div className="HomePage__ButtonContact">
+            <BsWhatsapp />
+          </div>
+        </a>
         {sessionStorage.cookiesOk !== "ok" && deskLGPD()}
       </HashRouter>
     </>

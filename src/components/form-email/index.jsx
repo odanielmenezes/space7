@@ -324,6 +324,7 @@ export function SenderEmail(isCurriculo) {
               </div>
               <div className="SenderEmail__ButonsForm">
                 <button
+                style={{ textTransform: "uppercase"}}
                   class="g-recaptcha"
                   data-sitekey="6LflMi8mAAAAAKqdZRcyUcIBkNBoV1Ow3KV0iq1o"
                   data-callback="onSubmit"
@@ -377,7 +378,7 @@ export function SenderEmail(isCurriculo) {
                 <div className="Divider"></div>
                 <small>
                   <a
-                    href="https://wa.me/5551992797210?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
+                    href="https://wa.me/5551989515775?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
                     target={"_blank"}
                     // onClick={(e) => {
                     //   window.location.href =
@@ -385,7 +386,7 @@ export function SenderEmail(isCurriculo) {
                     //   e.preventDefault();
                     // }}
                   >
-                    <BsWhatsapp /> +55 51 99279-7210
+                    <BsWhatsapp /> +55 51 98951-5775
                   </a>
                 </small>
               </div>

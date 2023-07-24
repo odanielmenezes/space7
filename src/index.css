@@ -96,3 +96,9 @@ body {
 a {
   text-decoration: none;
 }
+
+@media (min-width: 600px) {
+  .HomePage__ButtonContact {
+    bottom: 90px;
+  }
+}

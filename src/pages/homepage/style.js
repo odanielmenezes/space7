@@ -137,10 +137,9 @@ const style_footer = styled.div`
         }
         .HomePage__Content {
           height: 80vh;
-          padding: 0 0 0 200px;
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
+          align-items: center;
           justify-content: center;
           gap: 80px;
           .HomePage__SmallText {
@@ -163,7 +162,7 @@ const style_footer = styled.div`
             z-index: 2;
             display: flex;
             align-items: center;
-            justify-content: start;
+            justify-content: center;
             width: 100vw;
             letter-spacing: -3px;
             text-transform: uppercase;
@@ -175,69 +174,15 @@ const style_footer = styled.div`
             animation: opaciter 1s ease-in-out;
             span {
               .frase01 {
-                letter-spacing: 0px;
-                font-size: 2em;
                 display: flex;
-                justify-content: start;
-                margin: -20px auto;
-              }
-              .frase02 {
-                font-size: 4em;
-                display: flex;
-                justify-content: start;
-                margin: 0 auto;
-                color: #dd4035;
+                line-height: 120%;
+                letter-spacing: 1px;
+                font-size: 3em;
+                text-align: center !important;
+                text-shadow: 0px 0px 8px #000;
               }
             }
-            .space {
-              margin: 0 5px;
-            }
-            .cursor {
-              width: 2px;
-              height: 40px;
-              margin: 0 5px;
-              background-color: #dd4035;
-            }
-            .cursorcursor-none {
-              opacity: 0;
-              margin: 0 5px;
-
-              width: 2px;
-              height: 30px;
-              background-color: #fff;
-            }
           }
-        }
-        img {
-          position: absolute;
-          top: 70px;
-          width: 150px;
-          animation: flutua 6s ease-in;
-          margin-left: -2500px;
-          position: absolute;
-          transform: rotate(90deg);
-          opacity: 0;
-
-          @keyframes flutua {
-            100% {
-              opacity: 0;
-              margin-left: 3000px;
-            }
-            50% {
-              opacity: 1;
-            }
-          }
-          /* @keyframes flutua {
-            100% {
-              margin-top: -600px;
-              margin-left: 3000px;
-              transform: rotate(100deg);
-            }
-            50% {
-              transform: rotate(60deg);
-              margin-top: 200px;
-            }
-          } */
         }
       }
     }

@@ -34,7 +34,7 @@ export function Home() {
     var mostrarLetras = setInterval(() => {
       if (letras.length > 0) {
         if (cont < 9) {
-          setFraseCompleta1((fraseCompleta1 += letras[0][cont]))
+          setFraseCompleta1((fraseCompleta1 += letras[0][cont]));
         } else if (cont > 8 && cont < 27) {
           setFraseCompleta((fraseCompleta += letras[0][cont]));
         } else {
@@ -46,7 +46,7 @@ export function Home() {
         if (cont === decCont) {
           clearInterval(mostrarLetras);
         }
-        cont++
+        cont++;
       }
     }, 90);
   }
@@ -67,20 +67,26 @@ export function Home() {
                 <div className="letreiro">
                   <span>
                     <span className="frase01">
-                      <Balance>{fraseCompleta1}{isMobile && <br />} {fraseCompleta}</Balance>
+                      SOLUÇÕES DE E-COMMERCE E MARKETING DIGITAL <br /> PARA SUA
+                      EMPRESA
                     </span>
                     <br />
-                    <span className="frase02">
-                      <Balance>{fraseCompleta2}</Balance>
-                    </span>
-                    <span> {ponto}</span>
                   </span>
                 </div>
                 <small className="HomePage__SmallText">
-                  Juntos vamos levar os seus produtos da loja física ao mundo do
-                  e-commerce
+                  Venda seus produtos 24 horas por dia, 7 dias por semana, com
+                  sua LOJA VIRTUAL
                 </small>
-                <BtnQueroComecar name="SAIBA MAIS" link="/servicos" />
+                <a
+                  href="https://wa.me/5551989515775?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
+                  target="_blank"
+                >
+                  <BtnQueroComecar
+                    name="QUER VENDER MAIS"
+                    link={null}
+                    href="https://wa.me/5551989515775?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
+                  />
+                </a>
               </div>
             </Fade>
           </div>
@@ -106,40 +112,37 @@ export function Home() {
                 O produto você tem, mas a experiência do seu consumidor nós
                 criamos junto com você. Você entra com o produto e nós entramos
                 com mais de 10 anos de experiência em e-commerce, gestão de
-                resultados e um modelo digital único de atendimento ao consumidor.
+                resultados e um modelo digital único de atendimento ao
+                consumidor.
               </p>
             </Fade>
-          </div>
-          <div className="HomePage__Services__Title">
-            <Flip left>
-              <h1>
-                Nós somos a {isMobile && <br />}
-                <strong>solução</strong> que integra
-                <br /> o <strong>seu negócio</strong> físico
-                <br /> com uma experiência {isMobile && <br />}única de
-                 <br /> <strong>e-commerce</strong>
-              </h1>
-              <div className="HomePage__Services__Title__Button">
-                <BtnQueroComecar name="FALE CONOSCO" link="/contato" />
-              </div>
-            </Flip>
           </div>
           <div className="HomePage__Services__Icons__Title">
             <h1>
               Conheça nossos <strong>serviços</strong>.
             </h1>
+            <p>
+              Juntos vamos levar os seus produtos da loja física ao mundo do
+              e-commerce
+            </p>
             <div className="Divider"></div>
           </div>
           {!isMobile && (
             <Fade left>
               <div className="HomePage__Services__Icons">
-                {infosCards.cards.map((item) => <Cards {...item} isAgency={infosCards.cards.length }/>)}
+                {infosCards.cards.map((item) => (
+                  <Cards {...item} isAgency={infosCards.cards.length} />
+                ))}
               </div>
             </Fade>
           )}
           {isMobile && (
             <div className="HomePage__Services__Icons">
-              <Fade left>{infosCards.cards.map((item) => <Cards {...item} isAgency={infosCards.cards.length } />)}</Fade>
+              <Fade left>
+                {infosCards.cards.map((item) => (
+                  <Cards {...item} isAgency={infosCards.cards.length} />
+                ))}
+              </Fade>
             </div>
           )}
         </div>

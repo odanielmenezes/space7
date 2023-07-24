@@ -37,7 +37,7 @@ const style_header = styled.div`
       position: relative;
       display: flex;
       align-items: end;
-      margin-right: 250px;
+      margin-right: 150px;
       ul {
         margin: 30px 0;
         padding: 0;
@@ -55,20 +55,33 @@ const style_header = styled.div`
             transition: 0.3s;
           }
           :hover {
-            transition: .3s;
+            transition: 0.3s;
             transform: scale(1.1);
+          }
+        }
+        .contato {
+          font-size: 1.2em;
+          color: #dd4035;
+          font-weight: bold;
+          li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            span {
+              &:nth-child(2) {
+                font-size: .6em;
+                margin-top: -14px;
+                margin-bottom: -10px;
+              }
+            }
           }
         }
         ._focus {
           color: #dd4035 !important;
-          transition: .1s;
+          transition: 0.1s;
           font-weight: bold !important;
-        }
-        ._focus-contato {
-          background-color: transparent !important;
-          color: #FFF !important;
-          border: 2px solid #dd4035;
-          transition: .1s;
         }
         .lis {
           align-self: flex-end;
@@ -79,23 +92,11 @@ const style_header = styled.div`
           padding: 0px 15px;
           font-weight: bold;
           transition: 0.2s;
-
-          &:nth-child(6) {
-            border: 3px solid #dd4035;
-            background-color: #dd4035;
-            color: rgba(255, 255, 255, 1);
-            padding: 10px 35px;
-            border-radius: 8px;
-            color: #fff;
-            position: absolute;
-            right: -160px;
-            bottom: -10px;
-          }
           :hover {
             transition-duration: 0.2s;
-              transform: scale(1.1);
-              transition: 0.2s;
-              color: #fff;
+            transform: scale(1.1);
+            transition: 0.2s;
+            color: #fff;
             svg {
               transform: scale(1.3);
               transition: 0.3s;
@@ -107,7 +108,7 @@ const style_header = styled.div`
   }
   @media (max-width: 1366px) {
     .Header {
-      font-size: .9em;
+      font-size: 0.9em;
       .Header__Content {
         margin-right: 210px;
       }
@@ -146,14 +147,11 @@ const style_header = styled.div`
     }
     .HeaderMobile {
       margin-left: -1000px;
-      transition: .3s;
+      transition: 0.3s;
       .Header__Content {
         ul {
-
           li {
-
             svg {
-
             }
           }
           .lis {
@@ -168,7 +166,7 @@ const style_header = styled.div`
     .HeaderMobile__Open {
       background-color: red;
       transition: 3;
-      }
+    }
     .Header__Logo {
       display: none;
       small {

@@ -70,13 +70,14 @@ export function Header() {
               >
                 <li>Trabalhe Conosco</li>
               </Link>
-              <Link
+              <a
+              href="https://wa.me/5551989515775?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
+              target="_blank"
                 onClick={() => changePage()}
-                className={`lis ${isHome === "#/contato" && "_focus-contato"}`}
-                to="/contato"
+                className={`contato`}
               >
-                <li>Contato</li>
-              </Link>
+                <li><span>51 98951-5775</span><span>entre em contato</span></li>
+              </a>
             </ul>
           </div>
           <div className="Header__Logo">
