@@ -377,17 +377,7 @@ export function SenderEmail(isCurriculo) {
                 </Link>
                 <div className="Divider"></div>
                 <small>
-                  <a
-                    href="https://wa.me/5551989515775?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
-                    target={"_blank"}
-                    // onClick={(e) => {
-                    //   window.location.href =
-                    //     "https://wa.me/5551992797210?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7.";
-                    //   e.preventDefault();
-                    // }}
-                  >
                     <BsWhatsapp /> +55 51 98951-5775
-                  </a>
                 </small>
               </div>
               <div className="Local">

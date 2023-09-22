@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const style_footer = styled.div`
   .Contato {
-    min-height: 85vh;
+    min-height: 100vh;
+    padding: 180px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff !important;
-    padding: 50px 0;
     .animation-geral {
     position: fixed;
     width: 100vw;

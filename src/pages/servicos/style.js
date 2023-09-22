@@ -168,6 +168,9 @@ const style_footer = styled.div`
       }
     }
   }
+  @media (max-width: 1366px) {
+
+  }
   @media (max-width: 900px) {
     .Servicos {
       width: 100vw;

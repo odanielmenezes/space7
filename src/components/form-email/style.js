@@ -11,7 +11,6 @@ const styleHome = styled.div`
     justify-content: center;
     font-size: 14px;
     gap: 100px;
-    animation: opaciter 0.5s ease-in-out;
     color: #fff !important;
 
     .test {
@@ -22,6 +21,7 @@ const styleHome = styled.div`
       justify-content: center;
       flex-direction: column;
       font-size: 14px;
+      position: relative;
     }
 
     .RedesSociais {
@@ -295,9 +295,7 @@ const styleHome = styled.div`
       margin-top: -70px !important;
       width: 100vw;
       .test {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 50px;
+        position: relative;
 
         .RedesSociais {
           margin: 30px 0 0 0;

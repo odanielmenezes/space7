@@ -105,7 +105,7 @@ const style_footer = styled.div`
       animation: opaciter 0.8s ease-in-out;
     }
     .HomePage__Animation {
-      margin-top: 100px;
+      margin-top: 70px;
       background-image: url(${CloudImage});
       background-position: center;
       background-size: cover;
@@ -148,8 +148,12 @@ const style_footer = styled.div`
             font-size: 1.3em;
             z-index: 10;
             animation: opaciter 1s ease-in-out;
-            line-height: 20px;
+            line-height: 20px !important;
             margin: -20px 0;
+
+            strong {
+              color: #dd4035;
+            }
           }
           small {
             font-size: 1em;
@@ -174,12 +178,18 @@ const style_footer = styled.div`
             animation: opaciter 1s ease-in-out;
             span {
               .frase01 {
+                margin-bottom: -60px;
                 display: flex;
                 line-height: 120%;
                 letter-spacing: 1px;
                 font-size: 3em;
                 text-align: center !important;
                 text-shadow: 0px 0px 8px #000;
+
+                strong {
+                  color: #dd4035;
+                  margin: 0 14px !important;
+                }
               }
             }
           }
@@ -269,6 +279,13 @@ const style_footer = styled.div`
       }
     }
     .HomePage__Services__Icons__Title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p {
+        text-align: center;
+      }
       h1 {
         font-size: 3em;
 
@@ -287,6 +304,10 @@ const style_footer = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      .HomePage__Email__Form {
+        margin-bottom: 100px;
+      }
       .HomePage__Email__Title {
         display: flex;
         flex-direction: column;
@@ -326,6 +347,9 @@ const style_footer = styled.div`
   @media (max-width: 1366px) {
     .letreiro {
       margin-top: 15px !important;
+      .frase01 {
+        font-size: 2.5em !important;
+      }
     }
   }
   @media (max-width: 960px) {
@@ -401,7 +425,8 @@ const style_footer = styled.div`
                 align-items: center;
                 justify-content: center;
                 .frase01 {
-                  line-height: 23px;
+                  font-size: 3.4em !important;
+                  line-height: 36px;
                   margin: 0 0 -30px 0;
                 }
                 .frase02 {

@@ -218,6 +218,10 @@ const style_footer = styled.div`
         .ComoAgimos__Items {
           display: flex;
           gap: 10px;
+
+          .HomePage__Services__Icons__Icon {
+            width: 300px;
+          }
         }
       }
     }

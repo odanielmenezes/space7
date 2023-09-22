@@ -183,9 +183,9 @@ const style_footer = styled.div`
   @media (max-width: 1366px) {
     .Mentoria {
       .Mentoria__Table {
-        gap: 0 30px;
         width: 90vw;
         .Mentoria__Table__Item {
+          width: 100%;
         }
       }
     }

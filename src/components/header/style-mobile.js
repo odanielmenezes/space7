@@ -80,6 +80,16 @@ const style_header_mobile = styled.div`
           text-align: center;
           list-style: none;
         }
+        .contato {
+          color: #dd4035;
+          display: flex;
+          line-height: 30px;
+          flex-direction: column;
+
+          small {
+            font-size: .4em;
+          }
+        }
         ._focus li {
           color: #dd4035 !important;
           transition: .1s;

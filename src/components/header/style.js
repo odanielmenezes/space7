@@ -31,8 +31,6 @@ const style_header = styled.div`
         width: 140px;
       }
     }
-    a {
-    }
     .Header__Content {
       position: relative;
       display: flex;
@@ -63,7 +61,6 @@ const style_header = styled.div`
           font-size: 1.2em;
           color: #dd4035;
           font-weight: bold;
-          li {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -76,7 +73,6 @@ const style_header = styled.div`
                 margin-bottom: -10px;
               }
             }
-          }
         }
         ._focus {
           color: #dd4035 !important;
@@ -110,7 +106,7 @@ const style_header = styled.div`
     .Header {
       font-size: 0.9em;
       .Header__Content {
-        margin-right: 210px;
+        margin-right: 80px;
       }
     }
   }

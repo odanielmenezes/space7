@@ -70,14 +70,11 @@ export function Header() {
               >
                 <li>Trabalhe Conosco</li>
               </Link>
-              <a
-              href="https://wa.me/5551989515775?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
-              target="_blank"
-                onClick={() => changePage()}
-                className={`contato`}
-              >
-                <li><span>51 98951-5775</span><span>entre em contato</span></li>
-              </a>
+
+                <li className="contato">
+                  <span>51 98951-5775</span>
+                  <span>entre em contato</span>
+                </li>
             </ul>
           </div>
           <div className="Header__Logo">
@@ -146,13 +143,10 @@ export function Header() {
             >
               <li>Trabalhe Conosco</li>
             </Link>
-            <Link
-              onClick={() => changePage()}
-              className={`lis ${isHome === "#/contato" && "_focus"}`}
-              to="/contato"
-            >
-              <li>Contato</li>
-            </Link>
+              <li className="contato">
+                <span>51 98951-5775</span>
+                <small>entre em contato</small>
+              </li>
           </ul>
         </div>
       </div>

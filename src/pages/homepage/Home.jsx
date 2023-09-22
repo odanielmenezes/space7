@@ -9,6 +9,7 @@ import Lottie from "lottie-react";
 import { Cards } from "../../components/cards/cards";
 import RocketAnima from "../../assets/36418-cecil-portfolio-background.json";
 import Balance from "react-wrap-balancer";
+import { Newslatter } from "../../components/newslatter/index" 
 import { BtnQueroComecar } from "../../components/buttons/button-quero-comecar";
 
 export function Home() {
@@ -54,6 +55,28 @@ export function Home() {
     animation();
   }, [letras]);
 
+  useEffect(() => {
+    // Criação do formulário RD Station
+    const script1 = document.createElement('script');
+    script1.type = 'text/javascript';
+    script1.src = 'https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js';
+    script1.async = true;
+    document.body.appendChild(script1);
+
+    script1.onload = () => {
+      const script2 = document.createElement('script');
+      script2.type = 'text/javascript';
+      script2.innerHTML = `new RDStationForms('formulario-site-space7digital-7684c85028c061efe7b7', '').createForm();;`;
+      document.body.appendChild(script2);
+    };
+
+    return () => {
+      // Remover os scripts quando o componente for desmontado
+      document.body.removeChild(script1);
+      // Não é necessário remover script2, pois ele é criado e executado apenas uma vez
+    };
+  }, []);
+
   return (
     <Styled>
       <div className="HomePage">
@@ -67,22 +90,22 @@ export function Home() {
                 <div className="letreiro">
                   <span>
                     <span className="frase01">
-                      SOLUÇÕES DE E-COMMERCE E MARKETING DIGITAL <br /> PARA SUA
-                      EMPRESA
+                      SOLUÇÕES DE <strong> E-COMMERCE </strong> E MARKETING{" "}
+                      {isMobile && <br />}DIGITAL
                     </span>
                     <br />
                   </span>
                 </div>
                 <small className="HomePage__SmallText">
                   Venda seus produtos 24 horas por dia, 7 dias por semana, com
-                  sua LOJA VIRTUAL
+                  sua <strong>LOJA VIRTUAL</strong>
                 </small>
                 <a
                   href="https://wa.me/5551989515775?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
                   target="_blank"
                 >
                   <BtnQueroComecar
-                    name="QUER VENDER MAIS"
+                    name="QUERO VENDER MAIS"
                     link={null}
                     href="https://wa.me/5551989515775?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+site+da+SPACE7."
                   />
@@ -117,6 +140,11 @@ export function Home() {
               </p>
             </Fade>
           </div>
+          <Fade left>
+          <div className="newslatter" style={{ margin: "50px 0 100px 0" }}>
+            <Newslatter />
+          </div>
+          </Fade>
           <div className="HomePage__Services__Icons__Title">
             <h1>
               Conheça nossos <strong>serviços</strong>.
@@ -147,21 +175,12 @@ export function Home() {
           )}
         </div>
         <div className="HomePage__Email">
-          <Fade right>
-            <div className="HomePage__Email__Title">
-              <h1>
-                Como podemos <strong>ajudar</strong>?
-              </h1>
-              <p>
-                Envie uma mensagem preenchendo os campos abaixo e em breve
-                entraremos em contato.
-              </p>
-            </div>
-            <div className="Divider"></div>
-          </Fade>
           <Fade left>
             <div className="HomePage__Email__Form">
-              <SenderEmail />
+              <div
+                role="main"
+                id="formulario-site-space7digital-7684c85028c061efe7b7"
+              ></div>
             </div>
           </Fade>
         </div>
