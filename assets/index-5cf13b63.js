@@ -2709,4 +2709,4 @@ o.goToAndStop(x0-o.firstFrame-1,!0)}c0.type==="loop"&&(p0===null||p0!==c0.frames
     margin-top: 10px;
     z-index: 2;
   }
-`;function Footer(){return jsx(style_footer,{children:jsx("div",{className:"Footer",children:jsx("h4",{children:"© 2023 - todos os direitos reservados"})})})}const index="";client.createRoot(document.getElementById("root")).render(jsxs(Fragment,{children:[jsx(App,{}),jsx(Footer,{})]}));
+`;function Footer(){return jsx(style_footer,{children:jsx("div",{className:"Footer",children:jsx("h4",{children:"© 2023 - todos os direitos reservados"})})})}const index="";client.createRoot(document.getElementById("root")).render(jsxs(reactExports.Fragment,{children:[jsx(App,{}),jsx(Footer,{})]}));
