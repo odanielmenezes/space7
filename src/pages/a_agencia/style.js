@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import fundoMain from "../../assets/ideia.jpg";
 
 const style_footer = styled.div`
   .Agencia {

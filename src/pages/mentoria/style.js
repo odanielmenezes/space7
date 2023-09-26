@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import ImageCards from "../../assets/background-email.jpg";
 
 const style_footer = styled.div`
   .Mentoria {

@@ -60,7 +60,6 @@ export function AppRoutes() {
 
   return (
     <>
-      {isHome !== "/space7" && <StyleFundo></StyleFundo>}
       <HashRouter basename="/">
         <Header />
         <Routes>

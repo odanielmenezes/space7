@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import ImageBackground from "../../assets/background-email.jpg";
 
 const styleHome = styled.div`
   .SenderEmail {

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import CloudImage from "../../assets/cloud.svg";
-import BackgroundCards from "../../assets/background-cards.png";
-import fundoTitleServices from "../../assets/adss.jpg";
 
 const style_footer = styled.div`
   .HomePage {
@@ -13,100 +11,9 @@ const style_footer = styled.div`
     margin-top: -100px;
     overflow-x: hidden;
     background-color: #fff;
-    .SenderEmail__Text {
-      display: none;
-      p {
-        color: #000;
-      }
-    }
-    .RedesSociais {
-      font-size: 1.5em;
-      color: rgba(0, 0, 0, 0.8) !important;
-      margin: 50px 0 30px 0 !important;
-      .line01 {
-        a {
-          color: rgba(0, 0, 0, 0.8) !important;
-          text-decoration: none;
-        }
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        small {
-          text-decoration: underline;
-          display: flex;
-          align-items: center;
-          gap: 5px;
 
-          svg {
-            font-size: 18px;
-          }
-        }
-      }
-      .Divider {
-        width: 1px !important;
-        height: 20px !important;
-        border: 0 !important;
-        margin: 0 5px 0 5px !important;
-        border-right: 1px solid rgba(0, 0, 0, 0.19) !important;
-      }
-      .Local {
-        display: none !important;
-        margin: 30px 0 30px 0;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        justify-content: center;
-      }
-      .Redes {
-        margin: 40px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        a {
-          display: flex;
-          align-items: center;
-          padding: 0;
-          margin: 0;
-          text-decoration: none;
-          color: rgba(0, 0, 0, 0.8);
-        }
-        svg {
-          cursor: pointer;
-          font-size: 28px;
-
-          :hover {
-            color: #ef342b;
-          }
-        }
-      }
-    }
-    .alert {
-    color: #000 !important;
-  }
-    .SenderEmail__MainForm {
-          .inputsFuncionários {
-            div {
-              small {
-                color: #000 !important;
-              }
-            }
-            .checkboxItem {
-              .inputsCheckbox {
-                label {
-                  color: #000;
-              }
-            }
-          }
-        }
-    }
-    .HomePage__Main {
-      animation: opaciter 0.8s ease-in-out;
-    }
     .HomePage__Animation {
       margin-top: 70px;
-      background-image: url(${CloudImage});
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -126,15 +33,7 @@ const style_footer = styled.div`
         justify-content: space-between;
         height: auto;
 
-        .AnimationLottie {
-          top: 0;
-          position: absolute;
-          div {
-            svg {
-              opacity: 0 !important;
-            }
-          }
-        }
+
         .HomePage__Content {
           height: 80vh;
           display: flex;
@@ -155,27 +54,10 @@ const style_footer = styled.div`
               color: #dd4035;
             }
           }
-          small {
-            font-size: 1em;
-          }
-          p {
-            text-align: center;
-            width: 300px;
-          }
           .letreiro {
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100vw;
-            letter-spacing: -3px;
             text-transform: uppercase;
             font-family: "Audiowide", cursive;
-            text-align: center;
             line-height: 35px;
-            font-weight: 400;
-            margin-top: -100px;
-            animation: opaciter 1s ease-in-out;
             span {
               .frase01 {
                 margin-bottom: -60px;
@@ -222,9 +104,6 @@ const style_footer = styled.div`
         strong {
           font-size: 1.2em;
           color: #dd4035;
-
-          &:nth-child(1) {
-          }
         }
         p {
           margin: 10px 0;
@@ -239,12 +118,6 @@ const style_footer = styled.div`
       }
       .HomePage__Services__Title {
         margin: 100px 0;
-        background-image: linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0.9),
-            rgba(0, 0, 0, 0.9)
-          ),
-          url(${fundoTitleServices});
         background-position: center;
         background-size: cover;
         display: flex;
@@ -278,69 +151,11 @@ const style_footer = styled.div`
         gap: 50px;
       }
     }
-    .HomePage__Services__Icons__Title {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      p {
-        text-align: center;
-      }
-      h1 {
-        font-size: 3em;
 
-        strong {
-          color: #dd4035;
-        }
-      }
-      .Divider {
-        width: 100%;
-        height: auto;
-        border: 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      }
-    }
     .HomePage__Email {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
 
       .HomePage__Email__Form {
         margin-bottom: 100px;
-      }
-      .HomePage__Email__Title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #000;
-        h1 {
-          font-size: 3em;
-
-          strong {
-            color: #dd4035;
-          }
-        }
-        p {
-          font-size: 1.2em;
-        }
-      }
-      .Divider {
-        width: 100%;
-        height: 1px;
-        border: 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        margin-top: 50px;
-      }
-    }
-    @keyframes opaciter {
-      from {
-        opacity: 0;
-        margin-bottom: -30px;
-        transition: 0.3s;
-      }
-      to {
-        opacity: 1;
-        transition: 0.3s;
       }
     }
   }
@@ -356,12 +171,6 @@ const style_footer = styled.div`
     .HomePage {
       min-height: 100vh;
       flex-direction: column;
-      .animation-geral {
-        position: fixed;
-        width: 2920px;
-        height: 100vh;
-        top: 0;
-      }
       .HomePage__Main {
         font-size: 0.5em;
         .HomePage__Content {
@@ -482,8 +291,20 @@ const style_footer = styled.div`
           }
         }
         .HomePage__Services__Icons__Title {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 90vw;
+          p {
+            text-align: center;
+          }
           h1 {
             font-size: 1.5em;
+
+            strong {
+              color: #dd4035;
+            }
           }
         }
         .HomePage__Services__Icons {
